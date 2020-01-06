@@ -1,0 +1,616 @@
+<ul class="nav navbar-nav navbar-left">
+
+    <li class="dropdown" dropdown="">
+        <a class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
+            <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+            <span translate="header.navbar.file.FILE">File</span> <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu w-md" role="menu">
+            <li data-ng-click="Confirm('', 'Do you want to create a new template, save the old?', '', '')">
+                <a>
+                    <span class="badge bg-light pull-right">Ctrl+N</span>
+                    <i class="fa fa-file-o w-xxxxs"></i>
+                    <span translate="header.navbar.file.NEW">New</span>
+                </a>
+            </li>
+            <li data-ng-click="OpenCheck()">
+                <a>
+                    <span class="badge bg-light pull-right">Ctrl+O</span>
+                    <i class="fa fa-folder-open-o w-xxxxs"></i>
+                    <span translate="header.navbar.file.OPEN">Open</span>
+                </a>
+            </li>
+            <li data-ng-click="SaveCheck();">
+                <a>
+                    <span class="badge bg-light pull-right">Ctrl+S</span>
+                    <i class="fa fa-save w-xxxxs"></i>
+                    <span translate="header.navbar.file.SAVE">Save</span>
+                </a>
+            </li>
+            <li data-ng-click="Confirm('', 'Do you want to clean the template, save the old?', '', '')">
+                <a>
+                    <span class="badge bg-light pull-right">Ctrl+R</span>
+                    <i class="fa fa-trash w-xxxxs"></i>
+                    <span translate="header.navbar.file.CLEAN">Clean</span>
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li class="dropdown-submenu">
+                <a data-ng-click="CheckSaveAs()">
+                    <span class="badge bg-light pull-right">Ctrl+Shift+S</span>
+                    <i class="fa fa-caret-right w-xxxxs"></i>
+                    <span translate="header.navbar.file.SAVE_AS">Save as...</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a tabindex="-1" ng-click="CheckSaveAs('pdf')" href="">Export as PDF</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" ng-click="CheckSaveAs('jpg')" href="">Export as JPG</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" ng-click="CheckSaveAs('png')" href="">Export as PNG</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" ng-click="CheckSaveAs('psd')" href="">Export as PSD</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" ng-click="CheckSaveAs('zip');" href="">Export as ZIP</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="divider" ng-if="cr_LoginFactory.login_status"></li>
+            <li class="dropdown-submenu" ng-if="cr_LoginFactory.login_status">
+                <a>
+                    <i class="fa fa-caret-right w-xxxxs"></i>
+                    <span translate="header.navbar.file.RECENT_DOCUMENTS">Recent documents...</span>
+                </a>
+                <ul class="dropdown-menu recent">
+                    <li ng-if="cr_LoginFactory.user.resent!=[]" ng-repeat="item in cr_LoginFactory.user.resent" ng-click="Confirm('', '', '', '')">
+                        <!--<img src="{{item.mini_img}}" alt="">-->
+                        <a tabindex="-1" href="">{{item.title}}</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="divider" ng-if="cr_LoginFactory.login_status"></li>
+            <li data-ng-click="menu.event.file.open($event)">
+                <a>
+                    <span class="badge bg-light pull-right">Ctrl+P</span>
+                    <i class="fa fa-print w-xxxxs"></i>
+                    <span translate="header.navbar.file.PRINT">Print</span>
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li data-ng-click="">
+                <a>
+                    <span class="badge bg-danger pull-right">4</span>
+                    <span translate="header.navbar.file.NOTIFICATIONS">Notifications</span>
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li data-ng-click="">
+                <a>
+                    <span class="badge bg-light pull-right">Alt+F4</span>
+                    <i class="fa arrow-circle-right"></i>
+                    <span translate="header.navbar.file.EXIT">Exit</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="dropdown" dropdown="">
+        <a class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
+            <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+            <span translate="header.navbar.edit.EDIT">Edit</span> <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu w-md" role="menu">
+            <li data-ng-class="{disabled: !cr_CommandsManager.canUndo()}">
+                <a data-ng-click="cr_CommandsManager.undo()">
+                    <span class="badge bg-light pull-right">Ctrl+Z</span>
+                    <i class="fa fa-undo"></i>
+                    <span translate="header.navbar.edit.UNDO">Undo</span>
+                </a>
+            </li>
+            <li data-ng-class="{disabled: !cr_CommandsManager.canRedo()}">
+                <a data-ng-click="cr_CommandsManager.redo()">
+                    <span class="badge bg-light pull-right">Ctrl+Shift+Z</span>
+                    <i class="fa fa-repeat"></i>
+                    <span translate="header.navbar.edit.REDO">Redo</span>
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li data-ng-click="menu.event.edit.cut($event)" data-ng-class="{disabled: !cr_DrawFactory.selected}">
+                <a>
+                    <span class="badge bg-light pull-right">Ctrl+X</span>
+                    <i class="fa fa-cut"></i>
+                    <span translate="header.navbar.edit.CUT">Cut</span>
+                </a>
+            </li>
+            <li data-ng-click="menu.event.edit.copy($event)" data-ng-class="{disabled: !cr_DrawFactory.selected}">
+                <a>
+                    <span class="badge bg-light pull-right">Ctrl+C</span>
+                    <i class="fa fa-copy"></i>
+                    <span translate="header.navbar.edit.COPY">Copy</span>
+                </a>
+            </li>
+            <li data-ng-click="menu.event.edit.paste($event)" data-ng-class="{disabled: !cr_ClipboardFactory.object}">
+                <a>
+                    <span class="badge bg-light pull-right">Ctrl+V</span>
+                    <i class="fa fa-paste"></i>
+                    <span translate="header.navbar.edit.PASTE">Paste</span>
+                </a>
+            </li>
+            <li data-ng-click="menu.event.edit.delete($event)" data-ng-class="{disabled: !cr_DrawFactory.selected}">
+                <a>
+                    <span class="badge bg-light pull-right">delete</span>
+                    <i class="fa fa-eraser"></i>
+                    <span translate="header.navbar.edit.DELETE">Delete</span>
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li data-ng-click="menu.event.edit.selectAll($event)">
+                <a>
+                    <span class="badge bg-light pull-right">Ctrl+A</span>
+                    <i class="fa w-xxxxs"></i>
+                    <span translate="header.navbar.edit.SELECT_ALL">Select All</span>
+                </a>
+            </li>
+            <!--<li class="divider"></li>-->
+            <!--<li data-ng-click="menu.event.edit.findText($event)">-->
+            <!--<a>-->
+            <!--<span class="badge bg-light pull-right">Ctrl+F</span>-->
+            <!--<i class="fa w-xxxxs"></i>-->
+            <!--<span translate="header.navbar.edit.FIND_TEXT">Find Text</span>-->
+            <!--</a>-->
+            <!--</li>-->
+            <!--<li data-ng-click="menu.event.edit.replaceText($event)">-->
+            <!--<a>-->
+            <!--<span class="badge bg-light pull-right">Ctrl+R</span>-->
+            <!--<i class="fa w-xxxxs"></i>-->
+            <!--<span translate="header.navbar.edit.REPLACE_TEXT">Replace Text</span>-->
+            <!--</a>-->
+            <!--</li>-->
+        </ul>
+    </li>
+
+    <!--<li class="dropdown" dropdown="">-->
+    <!--<a class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">-->
+    <!--<i class="fa fa-fw fa-plus visible-xs-inline-block"></i>-->
+    <!--<span translate="header.navbar.format.FORMAT">Format</span> <span class="caret"></span>-->
+    <!--</a>-->
+    <!--<ul class="dropdown-menu w-md" role="menu">-->
+    <!--<li data-ng-click="menu.event.format.font($event)">-->
+    <!--<a>-->
+    <!--<span class="badge bg-light pull-right"></span>-->
+    <!--<i class="fa fa-font"></i>-->
+    <!--<span translate="header.navbar.format.FONT">Font</span>-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--<li data-ng-click="menu.event.format.paragraph($event)">-->
+    <!--<a>-->
+    <!--<span class="badge bg-light pull-right"></span>-->
+    <!--<i class="fa fa-file-text"></i>-->
+    <!--<span translate="header.navbar.format.PARAGRAPH">Paragraph</span>-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</li>-->
+
+    <li class="dropdown" dropdown="">
+        <a class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
+            <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+            <span translate="header.navbar.view.VIEW">View</span> <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu w-md" role="menu">
+
+            <li data-ng-click="Layers()">
+                <a>
+                    <span class="badge bg-light pull-right"></span>
+                    <i class="fa fa-clone"></i>
+                    <span translate="header.navbar.view.LAYERS">Layers</span>
+                </a>
+            </li>
+
+            <li data-ng-click="History()">
+                <a>
+                    <span class="badge bg-light pull-right"></span>
+                    <i class="fa fa-globe"></i>
+                    <span translate="header.navbar.view.HISTORY">History</span>
+                </a>
+            </li>
+
+            <li data-ng-click="editor.useMousePoint = !editor.useMousePoint">
+                <a>
+                    <span class="badge bg-light pull-right"></span>
+                    <i ng-show="editor.useMousePoint" class="fa fa-check-square-o ddc-icon"></i>
+                    <i ng-show="!editor.useMousePoint" class="fa fa-square-o ddc-icon"></i>
+                    <span translate="header.navbar.view.MOUSE_POINT">Mouse Point</span>
+                </a>
+            </li>
+
+            <li class="divider"></li>
+
+            <li class="dropdown-submenu">
+                <a>
+                    <span class="badge bg-light pull-right"></span>
+                    <i class="fa fa-caret-right w-xxxxs"></i>
+                    <span translate="header.navbar.view.RULER">Ruler</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li data-ng-click="editor.useRulerV = !editor.useRulerV">
+                        <a>
+                            <span class="badge bg-light pull-right"></span>
+                            <i ng-show="editor.useRulerV" class="fa fa-check-square-o ddc-icon"></i>
+                            <i ng-show="!editor.useRulerV" class="fa fa-square-o ddc-icon"></i>
+                            <span translate="header.navbar.view.VERTICAL_RULER">Vertical</span>
+                        </a>
+                    </li>
+
+                    <li data-ng-click="editor.useRulerH = !editor.useRulerH">
+                        <a>
+                            <span class="badge bg-light pull-right"></span>
+                            <i ng-show="editor.useRulerH" class="fa fa-check-square-o ddc-icon"></i>
+                            <i ng-show="!editor.useRulerH" class="fa fa-square-o ddc-icon"></i>
+                            <span translate="header.navbar.view.HORIZONTAL_RULER">Horizontal</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="dropdown-submenu">
+                <a>
+                    <span class="badge bg-light pull-right"></span>
+                    <i class="fa fa-caret-right w-xxxxs"></i>
+                    <span translate="header.navbar.view.GUIDES">Guides</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li data-ng-click="editor.useGuidesV = !editor.useGuidesV">
+                        <a>
+                            <span class="badge bg-light pull-right"></span>
+                            <i ng-show="editor.useGuidesV" class="fa fa-check-square-o ddc-icon"></i>
+                            <i ng-show="!editor.useGuidesV" class="fa fa-square-o ddc-icon"></i>
+                            <span translate="header.navbar.view.VERTICAL_GUIDES">Vertical</span>
+                        </a>
+                    </li>
+
+                    <li data-ng-click="editor.useGuidesH = !editor.useGuidesH">
+                        <a>
+                            <span class="badge bg-light pull-right"></span>
+                            <i ng-show="editor.useGuidesH" class="fa fa-check-square-o ddc-icon"></i>
+                            <i ng-show="!editor.useGuidesH" class="fa fa-square-o ddc-icon"></i>
+                            <span translate="header.navbar.view.HORIZONTAL_GUIDES">Horizontal</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="divider"></li>
+
+            <li class="dropdown-submenu">
+                <a>
+                    <span class="badge bg-light pull-right"></span>
+                    <i class="fa fa-caret-right w-xxxxs"></i>
+                    <span translate="header.navbar.view.LAYOUT">Layout</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li ng-click="cr_LayoutFactory.useHeaderPanel = !cr_LayoutFactory.useHeaderPanel">
+                        <a class="cursor-pointer">
+                            <i ng-show="cr_LayoutFactory.useHeaderPanel" class="fa fa-check-square-o ddc-icon"></i>
+                            <i ng-show="!cr_LayoutFactory.useHeaderPanel" class="fa fa-square-o ddc-icon"></i>
+                            <span class="ddc-option">Header</span>
+                            <span class="ddc-key"></span>
+                        </a>
+                    </li>
+                    <li ng-click="cr_LayoutFactory.useLeftSidebarPanel = !cr_LayoutFactory.useLeftSidebarPanel">
+                        <a class="cursor-pointer">
+                            <i ng-show="cr_LayoutFactory.useLeftSidebarPanel" class="fa fa-check-square-o ddc-icon"></i>
+                            <i ng-show="!cr_LayoutFactory.useLeftSidebarPanel" class="fa fa-square-o ddc-icon"></i>
+                            <span class="ddc-option">Left Sidebar</span>
+                            <span class="ddc-key"></span>
+                        </a>
+                    </li>
+                    <li ng-click="cr_LayoutFactory.useRightSidebarPanel = !cr_LayoutFactory.useRightSidebarPanel">
+                        <a class="cursor-pointer" data-lock-screen="true">
+                            <i ng-show="cr_LayoutFactory.useRightSidebarPanel"
+                               class="fa fa-check-square-o ddc-icon"></i>
+                            <i ng-show="!cr_LayoutFactory.useRightSidebarPanel" class="fa fa-square-o ddc-icon"></i>
+                            <span class="ddc-option">Right Sidebar</span>
+                            <span class="ddc-key"></span>
+                        </a>
+                    </li>
+                    <li ng-click="cr_LayoutFactory.useFooterPanel = !cr_LayoutFactory.useFooterPanel">
+                        <a class="cursor-pointer">
+                            <i ng-show="cr_LayoutFactory.useFooterPanel" class="fa fa-check-square-o ddc-icon"></i>
+                            <i ng-show="!cr_LayoutFactory.useFooterPanel" class="fa fa-square-o ddc-icon"></i>
+                            <span class="ddc-option">Footer</span>
+                            <span class="ddc-key"></span>
+                        </a>
+                    </li>
+
+                    <li class="divider"></li>
+
+                    <li ng-click="cr_LayoutFactory.useWorkareaHeaderPanel = !cr_LayoutFactory.useWorkareaHeaderPanel">
+                        <a class="cursor-pointer">
+                            <i ng-show="cr_LayoutFactory.useWorkareaHeaderPanel"
+                               class="fa fa-check-square-o ddc-icon"></i>
+                            <i ng-show="!cr_LayoutFactory.useWorkareaHeaderPanel" class="fa fa-square-o ddc-icon"></i>
+                            <span class="ddc-option">Workarea Header</span>
+                            <span class="ddc-key"></span>
+                        </a>
+                    </li>
+                    <li ng-click="cr_LayoutFactory.useWorkareaLeftSidebarPanel = !cr_LayoutFactory.useWorkareaLeftSidebarPanel">
+                        <a class="cursor-pointer">
+                            <i ng-show="cr_LayoutFactory.useWorkareaLeftSidebarPanel"
+                               class="fa fa-check-square-o ddc-icon"></i>
+                            <i ng-show="!cr_LayoutFactory.useWorkareaLeftSidebarPanel"
+                               class="fa fa-square-o ddc-icon"></i>
+                            <span class="ddc-option">Workarea Left Sidebar</span>
+                            <span class="ddc-key"></span>
+                        </a>
+                    </li>
+                    <li ng-click="cr_LayoutFactory.useWorkareaRightSidebarPanel = !cr_LayoutFactory.useWorkareaRightSidebarPanel">
+                        <a class="cursor-pointer" data-lock-screen="true">
+                            <i ng-show="cr_LayoutFactory.useWorkareaRightSidebarPanel"
+                               class="fa fa-check-square-o ddc-icon"></i>
+                            <i ng-show="!cr_LayoutFactory.useWorkareaRightSidebarPanel"
+                               class="fa fa-square-o ddc-icon"></i>
+                            <span class="ddc-option">Workarea Right Sidebar</span>
+                            <span class="ddc-key"></span>
+                        </a>
+                    </li>
+                    <li ng-click="cr_LayoutFactory.useWorkareaFooterPanel = !cr_LayoutFactory.useWorkareaFooterPanel">
+                        <a class="cursor-pointer">
+                            <i ng-show="cr_LayoutFactory.useWorkareaFooterPanel"
+                               class="fa fa-check-square-o ddc-icon"></i>
+                            <i ng-show="!cr_LayoutFactory.useWorkareaFooterPanel" class="fa fa-square-o ddc-icon"></i>
+                            <span class="ddc-option">Workarea Footer</span>
+                            <span class="ddc-key"></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+
+    <li class="dropdown" dropdown="">
+        <a class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
+            <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+            <span translate="header.navbar.tool.TOOL">Tool</span> <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu w-md" role="menu">
+            <li data-ng-click="editor.useGrid = !editor.useGrid">
+                <a>
+                    <span class="badge bg-light pull-right"></span>
+                    <i ng-show="editor.useGrid" class="fa fa-check-square-o ddc-icon"></i>
+                    <i ng-show="!editor.useGrid" class="fa fa-square-o ddc-icon"></i>
+                    <span translate="header.navbar.view.GRID">Grid</span>
+                </a>
+            </li>
+
+            <li data-ng-click="editor.useSnap = !editor.useSnap">
+                <a>
+                    <span class="badge bg-light pull-right"></span>
+                    <i ng-show="editor.useSnap" class="fa fa-check-square-o ddc-icon"></i>
+                    <i ng-show="!editor.useSnap" class="fa fa-square-o ddc-icon"></i>
+                    <span translate="header.navbar.view.SNAP">Snap</span>
+                </a>
+            </li>
+
+            <li class="divider"></li>
+
+            <li data-ng-click="editor.overflowViewport = !editor.overflowViewport">
+                <a>
+                    <span class="badge bg-light pull-right"></span>
+                    <i ng-show="editor.overflowViewport" class="fa fa-check-square-o ddc-icon"></i>
+                    <i ng-show="!editor.overflowViewport" class="fa fa-square-o ddc-icon"></i>
+                    <span translate="header.navbar.view.OVERFLOW_VIEWPORT">Overflow Viewport</span>
+                </a>
+            </li>
+
+            <li data-ng-click="editor.overflowWorkspace = !editor.overflowWorkspace">
+                <a>
+                    <span class="badge bg-light pull-right"></span>
+                    <i ng-show="editor.overflowWorkspace" class="fa fa-check-square-o ddc-icon"></i>
+                    <i ng-show="!editor.overflowWorkspace" class="fa fa-square-o ddc-icon"></i>
+                    <span translate="header.navbar.view.OVERFLOW_WORKSPACE">Overflow Workspace</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+
+    <li class="dropdown" dropdown="">
+        <a class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="true">
+            <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
+            <span translate="header.navbar.help.HELP">Help</span> <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu w-md" role="menu">
+            <li>
+                <a ng-click="Info()">
+                    <span class="badge bg-light pull-right"></span>
+                    <i class="fa w-xxxxs"></i>
+                    <span translate="header.navbar.help.MANUAL">Manual</span>
+                </a>
+            </li>
+            <li>
+                <a ng-click="Video()">
+                    <span class="badge bg-light pull-right"></span>
+                    <i class="fa w-xxxxs"></i>
+                    <span>Video Manual</span>
+                </a>
+            </li>
+            <li>
+                <a ng-click="FAQ()">
+                    <span class="badge bg-light pull-right"></span>
+                    <i class="fa w-xxxxs"></i>
+                    <span>FAQ</span>
+                </a>
+            </li>
+            <li>
+                <a ng-click="ContactUs()">
+                    <span class="badge bg-light pull-right"></span>
+                    <i class="fa w-xxxxs"></i>
+                    <span>Contact us</span>
+                </a>
+            </li>
+            <li>
+                <a ng-click="AboutUs()">
+                    <span class="badge bg-light pull-right"></span>
+                    <i class="fa w-xxxxs"></i>
+                    <span translate="header.navbar.help.ABOUT">About us</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+</ul>
+
+<div class="wrap_extra" ng-click="Products()">
+    <a>Product</a>
+</div>
+<div ng-if="cr_LoginFactory.login_status" class="wrap_extra" ng-click="MMarket()">
+    <a>Market</a>
+</div>
+<div class="wrap_extra" ng-click="Detail()">
+    <a>Product detail</a>
+</div>
+
+<ul class="nav navbar-nav navbar-right pull-right">
+    <li class="dropdown hidden-sm basket_head" dropdown="" ng-show="cr_LoginFactory.login_status">
+        <a class="dropdown-toggle ng-binding" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="false">
+            <i class="fa fa-shopping-cart"></i><span> Basket</span><span class="caret"></span>
+            <span class="badge badge-sm up bg-danger pull-right-xs">{{cr_LoginFactory.user.basket.items.length}}</span>
+        </a>
+        <ul class="dropdown-menu animated fadeInRight w">
+            <li class="panel bg-white">
+                <div class="panel-heading b-light bg-light">
+                    <strong>Shopping cart</strong>
+                </div>
+                <div class="list-group content">
+                    <div class="basket_scroll_wrap">
+                        <div class="basket_scroll scrollbar-light" data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                            <div class="basket_scroll-content">
+                                <div class="basket_content-item item" ng-mouseover="show_size_info($event)"
+                                     ng-repeat="main_item in cr_LoginFactory.user.basket.items">
+                                    <a class="media list-group-item">
+                                        <span class="wrap_text block m-b-none">
+                                            <!--<img src="{{main_item.mini_img}}" alt="">-->
+                                            <span class="text">{{main_item.title}}</span>
+                                            <div class="hover_menu">
+                                                <span ng-click="Confirm('', 'Do you want edit the  template, save the old?', '', '', '')"><i
+                                                        class="fa fa-2x fa-pencil"></i></span>
+                                                <span ng-click="Confirm('', 'Do you want edit the  template, save the old?', '', '', RemoveBasketItem(main_item.id))"><i
+                                                        class="fa fa-2x fa-trash"></i></span>
+                                            </div>
+                                            <br>
+                                        </span>
+                                    </a>
+
+                                    <div class="detail_item">
+                                        <div class="head">
+                                            <span class="col-sm-3 col-sm-offset-2">Size</span><span
+                                                class="col-sm-3 col-sm-offset-2">Count</span>
+                                        </div>
+                                        <div class="footer" ng-repeat="item in main_item.sizes">
+                                            <span class="col-sm-3 col-sm-offset-2">{{item.size}}</span><span
+                                                class="col-sm-3 col-sm-offset-2">{{item.count}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer text-sm text-center checkout" ng-click="Basket()">
+                    <a data-toggle="class:show animated fadeInRight"><i class="fa fa-shopping-cart"></i> Checkout</a>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li class="dropdown hidden-sm" dropdown="">
+        <a class="dropdown-toggle ng-binding" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{cr_LanguageFactory.selectedLanguage}} <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu animated fadeInRight w">
+            <li ng-repeat="(langKey, label) in cr_LanguageFactory.languages">
+                <a ng-click="cr_LanguageFactory.setLanguage(langKey, $event)">{{label}}</a>
+            </li>
+        </ul>
+    </li>
+    <li class="hidden-xs">
+        <a data-ng-click="doFullscreen();" ng-switch on="cr_FullscreenFactory.fullscreen" class="">
+            <i ng-switch-when="false" class="fa fa-expand fa-fw text"></i>
+            <i ng-switch-when="true" class="fa fa-compress fa-fw text"></i>
+        </a>
+    </li>
+    <li class="dropdown hidden-sm notification_head" dropdown="">
+        <a class="dropdown-toggle ng-binding" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="false">
+            <i class="icon-bell fa-fw"></i>
+            <span class="visible-xs-inline">Notifications</span>
+            <span class="badge badge-sm up bg-danger pull-right-xs">{{cr_LoginFactory.user.notifications.count}}</span>
+        </a>
+        <ul class="dropdown-menu animated fadeInRight w">
+            <li class="panel bg-white">
+                <div class="panel-heading b-light bg-light">
+                    <strong>You have <span>2</span> notifications</strong>
+                </div>
+                <div class="list-group content">
+                    <div class="notification_scroll_wrap">
+                        <div class="notification_scroll scrollbar-light"
+                             data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                            <div class="notification_scroll-content">
+                                <div class="notification_content-item item"
+                                     ng-repeat="item in cr_LoginFactory.user.notifications.items">
+                                    <a class="media list-group-item">
+                                        <span class="media-body block m-b-none">
+                                            1.0 initial released<br>
+                                            <small class="text-muted">1 hour ago</small>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer text-sm notificationsAll">
+                    <a class="pull-right" ng-click="Profile()"><i class="fa fa-cog"></i></a>
+                    <a href="" data-toggle="class:show animated fadeInRight notificationsAll" ng-click="Notification()">See
+                        all the notifications</a>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li class="dropdown p-r-sm" dropdown="" ng-click="!cr_LoginFactory.login_status ? Login(): ''">
+        <a class="dropdown-toggle m-r-sm clear login_btn" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="false">
+                <span ng-if="cr_LoginFactory.login_status">
+                    <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                            <img ng-src="{{cr_LoginFactory.user.avatar}}" alt="...">
+                            <i class="on md b-white bottom"></i>
+                        </span>
+                </span>
+
+            <span ng-if="cr_LoginFactory.login_status"><span
+                    class="hidden-sm hidden-md">{{cr_LoginFactory.user.name}}</span> <b class="caret"></b></span>
+            <span ng-if="!cr_LoginFactory.login_status"><span class="hidden-sm hidden-md p-r-sm">Sign in</span></span>
+
+        </a>
+        <ul ng-if="cr_LoginFactory.login_status" class="dropdown-menu animated fadeInRight w">
+            <li>
+                <a ng-click="Profile()">Profile</a>
+            </li>
+            <li>
+                <a ng-click="Info()">
+                    <span class="label bg-success pull-right">new</span>Help
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a ng-click="logout(); cr_LoginFactory.login_status=false;">Logout</a>
+            </li>
+        </ul>
+    </li>
+</ul>

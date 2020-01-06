@@ -1,0 +1,90 @@
+<div data-target="layout-context" context-menu="">
+    <div class="full-absolute" cr-fullscreen="cr_FullscreenFactory.fullscreen">
+        <div cr-layout="" class="full-absolute"
+             layout-use-header-panel="cr_LayoutFactory.useHeaderPanel"
+             layout-use-left-sidebar-panel="cr_LayoutFactory.useLeftSidebarPanel"
+             layout-use-right-sidebar-panel="cr_LayoutFactory.useRightSidebarPanel"
+             layout-use-footer-panel="cr_LayoutFactory.useFooterPanel"
+
+             layout-header-panel-options="cr_LayoutFactory.headerPanelOptions"
+             layout-left-sidebar-panel-options="cr_LayoutFactory.leftSidebarPanelOptions"
+             layout-center-panel-options="cr_LayoutFactory.centerPanelOptions"
+             layout-right-sidebar-panel-options="cr_LayoutFactory.rightSidebarPanelOptions"
+             layout-footer-panel-options="cr_LayoutFactory.footerPanelOptions"
+
+             layout-header-panel-resize="headerPanelResize"
+             layout-left-sidebar-panel-resize="leftSidebarPanelResize"
+             layout-right-sidebar-panel-resize="rightSidebarPanelResize"
+             layout-footer-panel-resize="footerPanelResize"
+             layout-center-panel-resize="centerPanelResize">
+
+            <div class="ui-layout-north layout-header">
+                <div id="layout-header" class="box-shadow">
+                    <div ng-include="'tpl/layout-blocks/layout-header.html'"></div>
+                </div>
+            </div>
+
+            <div class="ui-layout-west layout-leftsidebar" data-target="tree-context" context-menu="">
+                <div id="layout-leftsidebar">
+                    <div ng-include="'tpl/layout-blocks/layout-leftsidebar.html'"></div>
+                </div>
+            </div>
+
+            <div cr-layout="" class="ui-layout-center full-absolute layout-center"
+                 layout-use-header-panel="cr_LayoutFactory.useWorkareaHeaderPanel"
+                 layout-use-left-sidebar-panel="cr_LayoutFactory.useWorkareaLeftSidebarPanel"
+                 layout-use-right-sidebar-panel="cr_LayoutFactory.useWorkareaRightSidebarPanel"
+
+                 layout-use-footer-panel="cr_LayoutFactory.useWorkareaFooterPanel"
+                 layout-header-panel-options="cr_LayoutFactory.workareaHeaderPanelOptions"
+                 layout-left-sidebar-panel-options="cr_LayoutFactory.workareaLeftSidebarPanelOptions"
+                 layout-center-panel-options="cr_LayoutFactory.workareaCenterPanelOptions"
+                 layout-right-sidebar-panel-options="cr_LayoutFactory.workareaRightSidebarPanelOptions"
+                 layout-footer-panel-options="cr_LayoutFactory.workareaFooterPanelOptions"
+
+                 layout-header-panel-resize="workareaHeaderPanelResize"
+                 layout-left-sidebar-panel-resize="workareaLeftSidebarPanelResize"
+                 layout-right-sidebar-panel-resize="workareaRightSidebarPanelResize"
+                 layout-footer-panel-resize="workareaFooterPanelResize"
+                 layout-center-panel-resize="workareaCenterPanelResize">
+                <div class="ui-layout-north layout-workarea-header">
+                    <div id="layout-workarea-header">
+                        <div ng-include="'tpl/layout-blocks/layout-workarea-header.html'"></div>
+                    </div>
+                </div>
+                <div class="ui-layout-west layout-workarea-leftsidebar">
+                    <div id="layout-workarea-leftsidebar">
+                        <div ng-include="'tpl/layout-blocks/layout-workarea-leftsidebar.html'"></div>
+                    </div>
+                </div>
+                <div class="ui-layout-center layout-workarea-center">
+                    <div id="layout-workarea-center">
+                        <div ng-include="'tpl/layout-blocks/layout-workarea-center.html'" onload="init()"></div>
+                    </div>
+                </div>
+                <div class="ui-layout-east layout-workarea-rightsidebar">
+                    <div id="layout-workarea-rightsidebar">
+                        <div ng-include="'tpl/layout-blocks/layout-workarea-rightsidebar.html'"></div>
+                    </div>
+                </div>
+                <div class="ui-layout-south layout-workarea-footer">
+                    <div id="layout-workarea-footer">
+                        <div ng-include="'tpl/layout-blocks/layout-workarea-footer.html'"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-layout-east layout-rightsidebar">
+                <div id="layout-rightsidebar">
+                    <div ng-include="'tpl/layout-blocks/layout-rightsidebar.html'"></div>
+                </div>
+            </div>
+
+            <div class="ui-layout-south layout-footer">
+                <div id="layout-footer">
+                    <div ng-include="'tpl/layout-blocks/layout-footer.html'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

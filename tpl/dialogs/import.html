@@ -1,0 +1,180 @@
+<div class="products import"
+     ng-init="category='Show all'; category_filter=''; size='Show all'; size_filter=''; material='Show all'; material_filter=''; gender_filter=''">
+    <!--<div class="modal-header">-->
+    <!--<h3 class="modal-title">{{ctrl.modal_title}}</h3>-->
+    <!--</div>-->
+    <div class="modal-body p-none">
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div class="creatorBox">
+            <div id="creator" class="shirtinator-creator standard shrcProductMenuCursor">
+                <div class="shrcDisabler"></div>
+                <div class="product_details active" id="product_details">
+                    <a class="close" ng-click="ctrl.cancel()"></a>
+
+                    <div class="left_part">
+                        <span class="title">{{local.brand}}</span><span class="desc">{{local.title}}</span>
+                        <!--<ul class="gender">-->
+                        <!--<li ng-click="ctrl.detail_tab('gender_item_{{item}}', 'gender_items')"-->
+                        <!--class="gender_items gender_item_{{item}}" ng-repeat="item in local.available_gender">-->
+                        <!--{{item}}-->
+                        <!--</li>-->
+                        <!--</ul>-->
+                        <div class="image_wrap">
+                            <div class="image">
+                                <img ng-src="{{local.image}}" alt="">
+                            </div>
+                            <div class="color_pallete">
+                                <div class="arrow"></div>
+                                <div class="shrcProductDetailColorBox">
+                                    <div ng-repeat="item in local.colors" style="background-color: {{item}}"></div>
+                                </div>
+                            </div>
+                            <div class="sizes">
+                                <div class="shrcProductDetailSizeBox">
+                                    <span ng-repeat="item in local.sizes">{{item.size}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info" ng-bind-html="local.description"></div>
+                        <div class="price">{{local.currency_symbol}} {{local.price}}*</div>
+                        <a class="button">
+                            <span class="button_left"></span>
+                            <span class="button_content" translate="dialogs.import.USE">Use</span>
+                            <span class="button_right"></span>
+                        </a>
+                    </div>
+                    <div class="right_part">
+                        <div class="head shadow">
+                            <ul class="filter_gender">
+                                <li themeid="0" style="display: list-item;"><a class="gender_item gender_item0 active"
+                                                                               ng-click="ctrl.detail_tab('gender_item0', 'gender_item'); gender_filter=''"
+                                                                               translate="dialogs.import.ALL">All</a>
+                                </li>
+                                <li themeid="1" style="display: list-item;"><a class="gender_item gender_item1"
+                                                                               ng-click="ctrl.detail_tab('gender_item1', 'gender_item'); gender_filter='Man'"
+                                                                               translate="dialogs.import.MAN">Man</a>
+                                </li>
+                                <li themeid="2" style="display: list-item;"><a class="gender_item gender_item2"
+                                                                               ng-click="ctrl.detail_tab('gender_item2', 'gender_item'); gender_filter='Women'"
+                                                                               translate="dialogs.import.WOMEN">Women</a>
+                                </li>
+                                <li themeid="3" style="display: list-item;"><a class="gender_item gender_item3"
+                                                                               ng-click="ctrl.detail_tab('gender_item3', 'gender_item'); gender_filter='Kids'"
+                                                                               translate="dialogs.import.KIDS">Kids
+                                    and Babies</a></li>
+                                <li themeid="4" style="display: list-item;"><a class="gender_item gender_item4"
+                                                                               ng-click="ctrl.detail_tab('gender_item4', 'gender_item'); gender_filter='Accessories'"
+                                                                               translate="dialogs.import.ACCESSORIES">Accessories</a>
+                                </li>
+                            </ul>
+                            <div class="filter">
+                                <div class="box box_01" ng-click="ctrl.showMenuList('shadow_01')">
+                                    <span class="title" translate="dialogs.import.CATEGORY">Select Category</span><span
+                                        class="value">{{category}}</span><span class="icon_arrow"></span>
+
+                                    <div class="dropdown shadow_01" style="display: none;">
+                                        <div class="overlay_top_shadow"></div>
+                                        <div class="shrscrollbarWrapper"
+                                             style="width: 100%; height: 100%; position: relative; overflow: hidden;">
+                                            <ul class="shrscrollbar scrollbar-light"
+                                                data-jquery-scrollbar="cr_ScrollbarFactory.options"
+                                                style="float: none;">
+                                                <li ng-click="category='Show all'; category_filter='';"><a>Show all</a>
+                                                </li>
+                                                <li ng-click="category='T-Shirts'; category_filter='T-Shirts';"><a>T-Shirts</a>
+                                                </li>
+                                                <li ng-click="category='Polo Shirts'; category_filter='Polo Shirts';">
+                                                    <a>Polo Shirts</a></li>
+                                                <li ng-click="category='Jumpers and Hoodies'; category_filter='Jumpers and Hoodies';">
+                                                    <a>Jumpers and Hoodies</a></li>
+                                                <li ng-click="category='Long Sleeves'; category_filter='Long Sleeves';">
+                                                    <a>Long Sleeves</a></li>
+                                                <li ng-click="category='Jackets'; category_filter='Jackets';">
+                                                    <a>Jackets</a></li>
+                                                <li ng-click="category='Sport'; category_filter='Sport';"><a>Sport</a>
+                                                </li>
+                                                <li ng-click="category='Underwear'; category_filter='Underwear';"><a>Underwear</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box box_04" ng-click="ctrl.showMenuList('shadow_03')">
+                                    <span class="title" translate="dialogs.import.MATERIAL">Material</span><span
+                                        class="value">{{material}}</span><span
+                                        class="icon_arrow"></span>
+
+                                    <div class="dropdown shadow_03" style="display: none;">
+                                        <div class="overlay_top_shadow"></div>
+                                        <div class="shrscrollbarWrapper"
+                                             style="width: 100%; height: 100%; position: relative; overflow: hidden;">
+                                            <ul class="shrscrollbar scrollbar-light"
+                                                data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                                                <li ng-click="material='Show all'; material_filter='';"><a>Show all</a>
+                                                </li>
+                                                <li ng-click="material='Nylon'; material_filter='Nylon';"><a>Nylon</a>
+                                                </li>
+                                                <li ng-click="material='Polyester'; material_filter='Polyester';"><a>Polyester</a>
+                                                </li>
+                                                <li ng-click="material='Polyester Shirt'; material_filter='Polyester Shirt';">
+                                                    <a>Polyester Shirt</a></li>
+                                                <li ng-click="material='Stretch Material Type'; material_filter='Stretch Material Type';">
+                                                    <a>Stretch Material Type</a></li>
+                                                <li ng-click="material='Cotton'; material_filter='Cotton';">
+                                                    <a>Cotton</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box box_05">
+                                    <span class="title" translate="dialogs.import.ZOOM">Zoom</span>
+                                    <a class="icon_zoom minus" ng-click="ctrl.zoom_minus()"></a>
+                                    <a class="icon_zoom plus" ng-click="ctrl.zoom_plus()"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="products_content-row">
+                            <div class="products_wrap-content">
+                                <div class="products_scroll scrollbar-light"
+                                     data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                                    <div class="products_scroll-content">
+                                        <div class="products_dateGroup" ng-repeat="date in import_data_list">
+                                            <div class="products_date active" ng-show="date_show">
+                                                {{date}}
+                                            </div>
+                                            <div class="products_content-listItem">
+                                                <div class="products_content-item item import_item import_item_{{item.id}}"
+                                                     ng-repeat="item in (((import | filter : {category : category_filter}) | filter : {material : material_filter}) | filter : {available_gender : gender_filter})| filter : {date : date} "
+                                                     ng-click="ctrl.detail_tab('import_item_'+item.id, 'import_item'); ctrl.updateData(item)">
+                                                    <img ng-src='{{item.image}}' alt=""/>
+                                                    <a class="button" ng-click="ctrl.ConfirmFunction()">
+                                                        <span class="button_left"></span>
+                                                        <span class="button_content"
+                                                              translate="dialogs.import.USE">Use</span>
+                                                        <span class="button_right"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart">
+                </div>
+                <div class="pimp_container"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--<div class="modal-footer">-->
+<!--</div>-->
+</div>

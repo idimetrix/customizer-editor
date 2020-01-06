@@ -1,0 +1,45 @@
+<div class="page_signin_up">
+    <div class="login-outer">
+        <div class="login-wrap">
+            <div class="login-left striped-bg text-center"><a ui-sref="app.home" class="logo-lg">
+                <i class="fa fa-paper-plane"></i> IDCreator </a>
+
+                <div class="slogan">Always a step ahead</div>
+            </div>
+            <div class="login-right striped-bg"> <!-- uiView:  -->
+                <div ui-view="" class="ng-scope">
+                    <div class="heading ng-scope">Login to your Account</div>
+                    <div class="input ng-scope">
+                        <form class="form-horizontal ng-pristine ng-valid" role="form" ng-submit="submit()" autocomplete="off">
+                            <input type="hidden" name="_token" value="">
+                            <div class="login-input-group"><span class="login-input-group-addon">
+                                <i class="fa fa-at fa-fw"></i></span>
+                                <input type="email" class="form-control"  ng-model="ctrl.user.login" name="email" placeholder="email" autocomplete="off">
+                            </div>
+                            <div class="login-input-group"><span class="login-input-group-addon">
+                                <i class="fa fa-key fa-fw"></i></span>
+                                <input type="password" class="form-control" ng-model="ctrl.user.password" placeholder="password" name="password" autocomplete="off">
+                            </div>
+                            <button type="submit" class="btn btn-default btn-lg submit" ng-click="ctrl.signin()">Login</button>
+                        </form>
+                        <div class="login-other text-right">Or Login with
+                            <a href="javascript:;" class="m-l-sm">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="javascript:;" class="m-l-sm">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="javascript:;" class="m-l-sm">
+                                <i class="fa fa-google-plus gplus"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="rightFooter ng-scope">
+                        <a ui-sref="access.signup">Don't have an Account?</a>
+                        <a class="m-l" ui-sref="access.forgotpwd">Forgot Password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

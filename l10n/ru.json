@@ -1,0 +1,272 @@
+﻿{
+  "header": {
+    "navbar": {
+      "file": {
+        "FILE": "Файл",
+        "NEW": "Новый",
+        "OPEN": "Открыть",
+        "SAVE": "Сохранить",
+        "OPEN_AS": "Открыть как ...",
+        "SAVE_AS": "Сохранить как ...",
+        "DOWNLOAD_AS": "Скачать как ...",
+        "RECENT_DOCUMENTS": "Последние документы...",
+        "PRINT": "Печать",
+        "NOTIFICATIONS": "Уведомления",
+        "EXIT": "Выход"
+      },
+      "edit": {
+        "EDIT": "Редактировать",
+        "UNDO": "Отменить",
+        "REDO": "Повторить",
+        "CUT": "Вырезать",
+        "COPY": "Копировать",
+        "PASTE": "Вставить",
+        "DELETE": "Удалить",
+        "SELECT_ALL": "Выбрать все",
+        "FIND_TEXT": "Найти текст",
+        "REPLACE_TEXT": "Заменить текст"
+      },
+      "format": {
+        "FORMAT": "Формат",
+        "FONT": "Шрифт",
+        "PARAGRAPH": "Параграф"
+      },
+      "view": {
+        "VIEW": "Вид",
+        "GRID": "Сетка",
+        "SNAP": "Щелчок",
+        "VERTICAL_RULER": "Вертикальная линейка",
+        "HORIZONTAL_RULER": "Горизонтальная линейка",
+        "VERTICAL_GUIDES": "Вертикальные направляющие",
+        "HORIZONTAL_GUIDES": "Горизонтальных направляющих",
+        "OVERFLOW_VIEWPORT": "Переполнение Viewport",
+        "OVERFLOW_WORKSPACE": "Переполнение Workspace",
+        "MOUSE_POINT": "Указатель мыши",
+        "LAYOUT": "Расположение"
+      },
+      "help": {
+        "HELP": "Помощь",
+        "MANUAL": "Руководство",
+        "TUTORIAL": "Краткое руководство",
+        "ABOUT": "О продукте"
+      },
+      "PROJECT": "Проекты",
+      "TASK": "Задачи",
+      "USER": "Пользователь",
+      "EMAIL": "Почта Email",
+      "UPLOAD": "Загрузить"
+    }
+  },
+  "aside": {
+    "nav": {
+      "HEADER": "Navigation",
+      "DASHBOARD": "Dashboard",
+      "CALENDAR": "Calendar",
+      "EMAIL": "Email",
+      "WIDGETS": "Widgets",
+      "components": {
+        "COMPONENTS": "Components",
+        "ui_kits": {
+          "UI_KITS": "UI Kits",
+          "BUTTONS": "Buttons",
+          "ICONS": "Icons",
+          "GRID": "Grid",
+          "BOOTSTRAP": "Bootstrap",
+          "SORTABLE": "Sortable",
+          "PORTLET": "Portlet",
+          "TIMELINE": "Timeline",
+          "VECTOR_MAP": "Vector Map"
+        },
+        "table": {
+          "TABLE": "Table",
+          "TABLE_STATIC": "Table static",
+          "DATATABLE": "Datatable",
+          "FOOTABLE": "Footable"
+        },
+        "form": {
+          "FORM": "Form",
+          "FORM_ELEMENTS": "Form elements",
+          "FORM_VALIDATION": "Form validation",
+          "FORM_WIZARD": "Form wizard"
+        },
+        "CHART": "Chart",
+        "pages": {
+          "PAGES": "Pages",
+          "PROFILE": "Profile",
+          "POST": "Post",
+          "SEARCH": "Search",
+          "INVOICE": "Invoice",
+          "LOCK_SCREEN": "Lock screen",
+          "SIGNIN": "Signin",
+          "SIGNUP": "Signup",
+          "FORGOT_PASSWORD": "Forgot password",
+          "404": "404"
+        }
+      },
+      "your_stuff": {
+        "YOUR_STUFF": "Your Stuff",
+        "PROFILE": "Profile",
+        "DOCUMENTS": "Documents"
+      }
+    },
+    "MILESTONE": "Milestone",
+    "RELEASE": "Release"
+  },
+  "rightsidebar": {
+    "navbar": {
+      "tabs": {
+        "LIBRARY": "Библиотека",
+        "MOTIFS": "Принты",
+        "TEXT": "Текст",
+        "OBJECTS": "Объекты",
+        "UPLOAD": "Загрузка"
+      }
+    },
+    "tabs": {
+      "upload": {
+        "SELECT": "Выберите файл или перетащите",
+        "EMPTY": "Лист пуст.. Загрузите файл!",
+        "MOTIFS": "ваши принты:"
+      },
+      "objects": {
+        "BASIC": "Базавые",
+        "GEOMETRY": "Геометрические"
+      },
+      "text": {
+        "CREATE": "Create a new text object",
+        "GEOMETRY": "Geometry",
+        "WRITE": "Напишите ваш текст",
+        "TEXT": "Текст",
+        "FONT": "Шрифт:",
+        "EFFECTS": "Эффекты:",
+        "EDITABLE": "Редактируемый текст",
+        "GRAPHIC": "Графические шрифты"
+      }
+    }
+  },
+  "leftsidebar": {
+    "PROPERTY": "Свойства",
+    "SELECT": "Выберите файл",
+    "LAYERS": "Слои",
+    "HISTORY": "История"
+  },
+  "center": {
+    "actions": {
+      "FULLSCREEN": "Полный экран",
+      "EXITFULLSCREEN": "Оконный режим",
+      "UNDO": "Отменить",
+      "REDO": "Повторить",
+      "RESET": "Сброс",
+      "SAVE&SHARE": "Сохранить и поделиться",
+      "DETAIL": "Детали продукта"
+    }
+  },
+  "footer": {
+    "SIZE&QUANTITY": "Размер и кол.",
+    "BASKET": "Добавить в корзину",
+    "VAT": "Без учета НДС"
+  },
+  "dialogs": {
+    "addbasket": {
+      "SIZE": "Size",
+      "LENGTH": "Length / cm",
+      "WIDTH": "Width / cm",
+      "QUANTITY": "Quantity",
+      "ADD": "Add to basket and:",
+      "DESIGNING": "Continue designing",
+      "CHECK": "Check out"
+    },
+    "detail": {
+      "DETAIL": "Product details",
+      "SIZE": "Size table",
+      "STYLE": "Print styles",
+      "MATERIAL": "Material:",
+      "GENDER": "Gender:",
+      "STARTING": "Starting at",
+      "AVAILABLE": "Available Printed in 1-2 days.",
+      "FLOCK": "Flock Printing",
+      "FLEX": "Flex Printing",
+      "DYE": "Dye Sublimation",
+      "DIGITAL": "Digital Printing",
+      "EMBROIDERY": "Embroidery",
+      "TITLE": "Measurement table",
+      "SIZES": "Size",
+      "LENGTH": "Length / cm",
+      "WIDTH": "Width / cm",
+      "PERSON": "Dressed on a person"
+    },
+    "FAQ": {
+      "USEFUL": "Was this question useful?",
+      "REPORT": "Report this question",
+      "STYLE": "Print styles",
+      "YES": "Yes",
+      "NO": "No"
+    },
+    "join": {
+      "OTHERACC": "Use other account",
+      "SIGNUP": "Sign UP",
+      "RPASSWORD": "Repeat password",
+      "PASSWORD": "Password",
+      "EMAIL": "Email",
+      "LOGIN": "Login"
+    },
+    "import": {
+      "USE": "Use",
+      "ZOOM": "Zoom",
+      "MATERIAL": "Material",
+      "CATEGORY": "Select Category",
+      "ALL": "All",
+      "MAN": "Man",
+      "WOMEN": "Women",
+      "KIDS": "Kids",
+      "ACCESSORIES": "Accessories"
+    },
+    "login": {
+      "FORGOT": "Forgot your password?",
+      "SIGNIN": "Sign In",
+      "REMEMBER": "Remember me",
+      "USEFUL": "Using your account",
+      "TWITTER": "Save in with Twitter",
+      "GOOGLE": "Save in with Google",
+      "FACEBOOK": "Save in with Facebook",
+      "ALSO": "You can also sign in using your Facebook Account or Google Account",
+      "OTHERACC": "Use other account"
+    },
+    "saveas": {
+      "SAVE": "Save"
+    },
+    "save": {
+      "LINK": "Link to your design",
+      "PDF": "Export as PDF",
+      "JPG": "Export as JPG",
+      "PNG": "Export as PNG",
+      "FACEBOOK": "Share in with Facebook",
+      "GOOGLE": "Share in with Google",
+      "TWITTER": "Share in with Twitter"
+    },
+    "restore": {
+      "PASS": "Enter new password."
+    },
+    "restoration": {
+      "PASS": "Enter new password."
+    },
+    "products": {
+      "CREATE": "Create",
+      "ZOOM": "Zoom",
+      "MATERIAL": "Material",
+      "SIZE": "Sizes",
+      "CATEGORY": "Select Category",
+      "MEN": "Men",
+      "WOMEN": "Women",
+      "KIDS": "Kids and Babies",
+      "ACCESSORIES": "Accessories"
+    },
+    "market": {
+      "SORT": "Sort by",
+      "ADD": "ADD TO CART",
+      "ANY": "Any",
+      "FREE": "Free",
+      "PREMIUM": "Premium"
+    }
+  }
+}

@@ -1,0 +1,162 @@
+<div class="font">
+    <h5>Font</h5>
+
+    <div class="font_body">
+        <div class="row p-b-sm">
+            <div class="col-sm-8">
+                <select class="form-control input-sm" ng-model="current_font">
+                    <option ng-repeat="item in fonts" value="{{item.family}}">
+                        {{item.family}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-sm-4 p-l-none">
+                <input type="number" class="input-sm p-r-none form-control" data-ng-model="size_font">
+            </div>
+        </div>
+        <div class="row">
+            <div class="button_style btn-group col-sm-7" data-toggle="buttons">
+                <label ng-click="style_button_click($event)" ng-class="disabled_button_bold ? 'disabled' :  active_button_bold ? 'active' : ''" class="btn btn-default btn-sm col-sm-3">
+                    <input type="checkbox" name="weight" value="" checked="checked"> <i class="fa fa-bold"></i>
+                </label>
+                <label ng-click="style_button_click($event)" ng-class="disabled_button_italic ? 'disabled' : active_button_italic ? 'active' : ''" class="btn btn-default btn-sm col-sm-3">
+                    <input type="checkbox" name="weight"> <i class="fa fa-italic"></i>
+                </label>
+                <label ng-click="style_button_click($event)" ng-class="disabled_button_underline ? 'disabled' : active_button_underline ? 'active' : ''" class="btn btn-default btn-sm col-sm-3">
+                    <input type="checkbox" name="weight"> <i class="fa fa-underline"></i>
+                </label>
+                <label ng-click="style_button_click($event)" ng-class="disabled_button_strikethrough ? 'disabled' :  active_button_strikethrough ? 'active' : ''" class="btn btn-default btn-sm col-sm-3">
+                    <input type="checkbox" name="weight"> <i class="fa fa-strikethrough"></i>
+                </label>
+            </div>
+            <div class="form-group col-sm-5 p-l-none">
+                <input type="text" id="hue-demo" class="input-sm form-control font_color_tab-text" data-control="hue" data-ng-model="color_font">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="border_line"></div>
+
+<div class="effects">
+    <h5>Effects</h5>
+
+    <ul class="nav" id="effect-menu">
+        <li class="active head_effect_menu">
+            <a href="#">Effect 1<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <div class="form-group p-b-sm">
+                        <span> slider_1</span>
+
+                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                            <div class="slider_1"></div>
+                        </div>
+                    </div>
+                    <div class="form-group p-b-sm">
+                        <span> slider_2</span>
+
+                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                            <div class="slider_2"></div>
+                        </div>
+                    </div>
+                    <div class="form-group p-b-sm">
+                        <span> slider_3</span>
+
+                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                            <div class="slider_3"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="head_effect_menu">
+            <a href="#">Effect 2<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <div class="form-group p-b-sm">
+                        <span> slider_4</span>
+
+                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                            <div class="slider_4"></div>
+                        </div>
+                    </div>
+                    <div class="form-group p-b-sm">
+                        <span> slider_5</span>
+
+                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                            <div class="slider_5"></div>
+                        </div>
+                    </div>
+                    <div class="form-group p-b-sm">
+                        <span> slider_6</span>
+
+                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                            <div class="slider_6"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="head_effect_menu">
+            <a href="#">Effect 3<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <div class="form-group p-b-sm">
+                        <span> slider_7</span>
+
+                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                            <div class="slider_7"></div>
+                        </div>
+                    </div>
+                    <div class="form-group p-b-sm">
+                        <span> slider_8</span>
+
+                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                            <div class="slider_8"></div>
+                        </div>
+                    </div>
+                    <div class="form-group p-b-sm">
+                        <span> slider_9</span>
+
+                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                            <div class="slider_9"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="head_effect_menu">
+            <a href="#">Effect 4<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <div class="form-group p-b-sm">
+                        <span> slider_10</span>
+
+                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                            <div class="slider_10"></div>
+                        </div>
+                    </div>
+                    <div class="form-group p-b-sm">
+                        <span> slider_11</span>
+
+                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                            <div class="slider_11"></div>
+                        </div>
+                    </div>
+                    <div class="form-group p-b-sm">
+                        <span> slider_12</span>
+
+                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                            <div class="slider_12"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+

@@ -1,0 +1,83 @@
+<div class="layer">
+
+    <div class="font">
+        <h5>Layers</h5>
+
+        <div class="font_body">
+            <div class="row p-b-sm">
+                <div class="col-sm-12">
+
+
+                    <div class="layer_item" ng-init="show1 = true; blocking1 = true; index1 = 0; length = 2">
+                        <div class="head">
+                            <div class="visibility" ng-click="show1 ? show1 = false: show1 = true">
+                                <div ng-if="show1"><i class="fa fa-eye"></i></div>
+                                <div ng-if="!show1"><i class="fa fa-eye-slash"></i></div>
+                            </div>
+                            <div class="blocking">
+                                <div ng-if="!blocking1"><i class="fa fa-unlock"></i></div>
+                                <div ng-if="blocking1"><i class="fa fa-unlock-alt"></i></div>
+                            </div>
+                            <div class=""></div>
+                        </div>
+                        <div class="body">
+                            <span class="title">Layer 1</span>
+
+                            <div class="navigation">
+                                <span ng-class="index1>0 ? '' : 'disabled'" class="up"><i class="fa fa-chevron-up"></i></span>
+                                <span ng-class="index1<length ? '' : 'disabled'" class="down"><i
+                                        class="fa fa-chevron-down"></i></span></div>
+                        </div>
+                    </div>
+
+                    <div class="layer_item" ng-init="show2 = true; blocking2 = false; index2 = 1; length = 2">
+                        <div class="head">
+                            <div class="visibility" ng-click="show2 ? show2 = false: show2 = true">
+                                <div ng-if="show2"><i class="fa fa-eye"></i></div>
+                                <div ng-if="!show2"><i class="fa fa-eye-slash"></i></div>
+                            </div>
+                            <div class=" blocking" ng-click="blocking2 ? blocking2 = false: blocking2 = true">
+                                <div ng-if="!blocking2"><i class="fa fa-unlock"></i></div>
+                                <div ng-if="blocking2"><i class="fa fa-unlock-alt"></i></div>
+                            </div>
+                            <div class=""></div>
+                        </div>
+                        <div class="body">
+                            <span class="title">Layer 2</span>
+
+                            <div class="navigation">
+                                <span ng-class="index2>0 ? '' : 'disabled'" class="up"><i class="fa fa-chevron-up"></i></span>
+                                <span ng-class="index2<length ? '' : 'disabled'" class="down"><i
+                                        class="fa fa-chevron-down"></i></span></div>
+                        </div>
+                    </div>
+
+                    <div class="layer_item" ng-init="show3 = true; blocking3 = false; index3 = 2; length = 2">
+                        <div class="head">
+                            <div class="visibility" ng-click="show3 ? show3 = false: show3 = true">
+                                <div ng-if="show3"><i class="fa fa-eye"></i></div>
+                                <div ng-if="!show3"><i class="fa fa-eye-slash"></i></div>
+                            </div>
+                            <div class=" blocking" ng-click="blocking3 ? blocking3 = false: blocking3 = true">
+                                <div ng-if="!blocking3"><i class="fa fa-unlock"></i></div>
+                                <div ng-if="blocking3"><i class="fa fa-unlock-alt"></i></div>
+                            </div>
+                            <div class=""></div>
+                        </div>
+                        <div class="body">
+                            <span class="title">Layer 3</span>
+
+                            <div class="navigation">
+                                <span ng-class="index3>0 ? '' : 'disabled'" class="up"><i class="fa fa-chevron-up"></i></span>
+                                <span ng-class="index3<length ? '' : 'disabled'" class="down"><i
+                                        class="fa fa-chevron-down"></i></span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,55 @@
+<div class="login">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" ng-click="ctrl.cancel()"
+                aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Sign in</h4>
+    </div>
+    <div class="modal-body">
+        <div class="box">
+            <div class="content">
+                <div class="social">
+                    <a class="circle github" href="">
+                        <i class="fa fa-github fa-fw"></i>
+                    </a>
+                    <a id="google_login" class="circle google" href="">
+                        <i class="fa fa-google-plus fa-fw"></i>
+                    </a>
+                    <a id="facebook_login" class="circle facebook" href="">
+                        <i class="fa fa-facebook fa-fw"></i>
+                    </a>
+                </div>
+                <div class="division">
+                    <div class="line l"></div>
+                    <span>or</span>
+
+                    <div class="line r"></div>
+                </div>
+                <div class="error"></div>
+                <div class="form loginBox">
+                    <form name="userForm" class="login_form">
+
+                        <div class="form-group">
+                            <input placeholder="Email" type="email" name="Email" class="form-control login_email">
+                        </div>
+
+                        <div class="form-group">
+                            <input placeholder="Password" type="password" class="form-control login_password"
+                                   name="Password"/>
+                        </div>
+
+                        <button name="commit" type="button" ng-click="ctrl.login();"
+                                class="btn btn-block p-sm btn-primary">Login
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="forgot login-footer">
+            <span>Looking to <a ng-click="ctrl.Join(); ctrl.cancel()">create</a> or <a
+                    ng-click="ctrl.Restoration(); ctrl.cancel()">restore</a> an account?</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="dropdown dropdown-context pos-fix" id="layout-context">
+    <ul class="dropdown-menu" role="menu">
+        <li ng-click="cr_LayoutFactory.useHeaderPanel = !cr_LayoutFactory.useHeaderPanel">
+            <a class="cursor-pointer">
+                <i ng-show="cr_LayoutFactory.useHeaderPanel" class="fa fa-check-square-o ddc-icon"></i>
+                <i ng-show="!cr_LayoutFactory.useHeaderPanel" class="fa fa-square-o ddc-icon"></i>
+                <span class="ddc-option">Header</span>
+                <span class="ddc-key"></span>
+            </a>
+        </li>
+        <li ng-click="cr_LayoutFactory.useLeftSidebarPanel = !cr_LayoutFactory.useLeftSidebarPanel">
+            <a class="cursor-pointer">
+                <i ng-show="cr_LayoutFactory.useLeftSidebarPanel" class="fa fa-check-square-o ddc-icon"></i>
+                <i ng-show="!cr_LayoutFactory.useLeftSidebarPanel" class="fa fa-square-o ddc-icon"></i>
+                <span class="ddc-option">Left Sidebar</span>
+                <span class="ddc-key"></span>
+            </a>
+        </li>
+        <li ng-click="cr_LayoutFactory.useRightSidebarPanel = !cr_LayoutFactory.useRightSidebarPanel">
+            <a class="cursor-pointer" data-lock-screen="true">
+                <i ng-show="cr_LayoutFactory.useRightSidebarPanel" class="fa fa-check-square-o ddc-icon"></i>
+                <i ng-show="!cr_LayoutFactory.useRightSidebarPanel" class="fa fa-square-o ddc-icon"></i>
+                <span class="ddc-option">Right Sidebar</span>
+                <span class="ddc-key"></span>
+            </a>
+        </li>
+        <li ng-click="cr_LayoutFactory.useFooterPanel = !cr_LayoutFactory.useFooterPanel">
+            <a class="cursor-pointer">
+                <i ng-show="cr_LayoutFactory.useFooterPanel" class="fa fa-check-square-o ddc-icon"></i>
+                <i ng-show="!cr_LayoutFactory.useFooterPanel" class="fa fa-square-o ddc-icon"></i>
+                <span class="ddc-option">Footer</span>
+                <span class="ddc-key"></span>
+            </a>
+        </li>
+
+        <li class="divider"></li>
+
+        <li ng-click="cr_LayoutFactory.useWorkareaHeaderPanel = !cr_LayoutFactory.useWorkareaHeaderPanel">
+            <a class="cursor-pointer">
+                <i ng-show="cr_LayoutFactory.useWorkareaHeaderPanel" class="fa fa-check-square-o ddc-icon"></i>
+                <i ng-show="!cr_LayoutFactory.useWorkareaHeaderPanel" class="fa fa-square-o ddc-icon"></i>
+                <span class="ddc-option">Workarea Header</span>
+                <span class="ddc-key"></span>
+            </a>
+        </li>
+        <li ng-click="cr_LayoutFactory.useWorkareaLeftSidebarPanel = !cr_LayoutFactory.useWorkareaLeftSidebarPanel">
+            <a class="cursor-pointer">
+                <i ng-show="cr_LayoutFactory.useWorkareaLeftSidebarPanel" class="fa fa-check-square-o ddc-icon"></i>
+                <i ng-show="!cr_LayoutFactory.useWorkareaLeftSidebarPanel" class="fa fa-square-o ddc-icon"></i>
+                <span class="ddc-option">Workarea Left Sidebar</span>
+                <span class="ddc-key"></span>
+            </a>
+        </li>
+        <li ng-click="cr_LayoutFactory.useWorkareaRightSidebarPanel = !cr_LayoutFactory.useWorkareaRightSidebarPanel">
+            <a class="cursor-pointer" data-lock-screen="true">
+                <i ng-show="cr_LayoutFactory.useWorkareaRightSidebarPanel" class="fa fa-check-square-o ddc-icon"></i>
+                <i ng-show="!cr_LayoutFactory.useWorkareaRightSidebarPanel" class="fa fa-square-o ddc-icon"></i>
+                <span class="ddc-option">Workarea Right Sidebar</span>
+                <span class="ddc-key"></span>
+            </a>
+        </li>
+        <li ng-click="cr_LayoutFactory.useWorkareaFooterPanel = !cr_LayoutFactory.useWorkareaFooterPanel">
+            <a class="cursor-pointer">
+                <i ng-show="cr_LayoutFactory.useWorkareaFooterPanel" class="fa fa-check-square-o ddc-icon"></i>
+                <i ng-show="!cr_LayoutFactory.useWorkareaFooterPanel" class="fa fa-square-o ddc-icon"></i>
+                <span class="ddc-option">Workarea Footer</span>
+                <span class="ddc-key"></span>
+            </a>
+        </li>
+    </ul>
+</div>

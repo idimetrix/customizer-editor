@@ -1,0 +1,15 @@
+vendor
+node_modules
+Homestead.yaml
+Homestead.json
+.idea
+composer.phar
+.env
+*.log
+/public/build
+/public/node_modules
+/public/vendor
+/storage/upload
+/storage/lib
+/storage/phplog
+/storage/fonts

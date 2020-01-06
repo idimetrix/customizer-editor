@@ -1,0 +1,45 @@
+<div class="detail">
+    <!--<div class="modal-header">-->
+    <!--<h3 class="modal-title">{{ctrl.modal_title}}</h3>-->
+    <!--</div>-->
+    <div class="modal-body">
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div class="product_detail" ng-init="path='tpl/dialogs/Detail/detail.html'">
+            <div class="vertical_nav">
+                <ul>
+                    <li class="detail_tabs item_01 active"
+                        ng-click="path='tpl/dialogs/Detail/detail.html'; ctrl.detail_tab('item_01', 'detail_tabs'); ctrl.reload_fotorama();">
+                        <span class="button"><span class="icon"></span><span translate="dialogs.detail.DETAIL">Product details</span></span>
+                    </li>
+                    <!--<li class="detail_tabs item_02" ng-click="path='tpl/dialogs/Detail/promo_video.html'; ctrl.detail_tab('item_02', 'detail_tabs')"><span class="button"><span class="icon"></span>Product video</span></li>-->
+                    <li class="detail_tabs item_03"
+                        ng-click="path='tpl/dialogs/Detail/size.html'; ctrl.detail_tab('item_03', 'detail_tabs')"><span
+                            class="button"><span class="icon"></span><span
+                            translate="dialogs.detail.SIZE">Size table</span></span></li>
+                    <li class="detail_tabs item_04"
+                        ng-click="path='tpl/dialogs/Detail/printStyle.html'; ctrl.detail_tab('item_04', 'detail_tabs')">
+                        <span class="button"><span class="icon"></span><span translate="dialogs.detail.STYLE">Print styles</span></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="wrap-body">
+                <div ng-include="path"></div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="modal-footer">-->
+    <!--<button ng-disabled="loading" class="btn btn-default" ng-click="ctrl.cancel()">{{ctrl.modal_button_cancel ||-->
+    <!--'Cancel'}}-->
+    <!--</button>-->
+    <!--<button ng-disabled="ctrl.loading" class="btn btn-primary" ng-click="ctrl.ok()">-->
+    <!--<i ng-class="{hidden: !ctrl.loading}"-->
+    <!--class="rotation fa fa-spinner m-r-sm"></i>-->
+    <!--{{modal_button_ok || 'OK'}}-->
+    <!--</button>-->
+    <!--</div>-->
+</div>

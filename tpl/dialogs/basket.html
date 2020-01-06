@@ -1,0 +1,95 @@
+<div class="add_basket basket_tab">
+    <div class="modal-header header">
+        <span class="title">{{ctrl.modal_title || 'Choose size and amount'}}</span>
+        <span class="close" ng-disabled="loading" ng-click="ctrl.cancel()">{{ctrl.modal_button_cancel || 'CLOSE'}}<div
+                class="cross"></div></span>
+    </div>
+    <div class="modal-body content">
+
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div class="header_table">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-3">Quantity</div>
+            <div class="col-sm-3">Total</div>
+        </div>
+        <div class="basket_tab_scroll scrollbar-light" data-jquery-scrollbar="cr_ScrollbarFactory.options"
+             ng-init="sum_price=0">
+            <div class="basket_tab_scroll-content">
+                <div class="basket_tab_content-item item" ng-repeat="item in cr_LoginFactory.user.basket.items">
+                    <div class="col-sm-2">
+                        <a class="pad-left">
+                            <img src="{{item.mini_img}}" alt=""></a>
+                    </div>
+                    <div class="col-sm-4">
+                        <h2 class="nomarg"><a class="prod__name">{{item.title}}</a></h2>
+
+                        <div class="prod__details">
+                            <span class="prod__sku">Brand: {{item.brand}}</span>
+                            <br>
+                            <span>Price: {{cr_LoginFactory.user.currency_symbol}}{{item.price}}</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 count" ng-init="counter=0">
+                        <div>
+                            <a class="detail_title"
+                               ng-click="ctrl.showMenuList('detail_body'+$index, $index); ctrl.show_size_info($event)">Show
+                                detail</a>
+
+                            <div class="detail_body detail_body{{$index}}">
+                                <ul class="sizeAmount_hover">
+                                    <li class="row" ng-repeat="item in item.sizes"
+                                        ng-init="counter = item.count+counter">
+                                        <div class="title">{{item.size}}<span class="discontinued"></span></div>
+                                        <div class="count">
+                                            <div class="wrapper">
+                                                <div class="wrap"
+                                                     ng-click="item.count = item.count == 0 ? 0 : item.count-1; cr_DataFactory.allCountItem = cr_DataFactory.allCountItem == 0 ? 0 : cr_DataFactory.allCountItem-1;">
+                                                    <div class="icon l arrow"></div>
+                                                </div>
+                                                <input class="num" type="text" pattern="" ng-pattern-restrict
+                                                       ng-model="item.count"/>
+
+                                                <div class="wrap"
+                                                     ng-click="item.count = (item.count-0)+1; cr_DataFactory.allCountItem=(cr_DataFactory.allCountItem-0)+1;">
+                                                    <div class="icon r arrow"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 text-center price" ng-init="item.total=((item.count-0) * (item.price-0))">
+                        {{cr_LoginFactory.user.currency_symbol}}{{(counter * (item.price-0)).toFixed(2)}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer footer">
+        <div class="footer_cell-wrap footer_right">
+            <div class="footer_price">
+                <div class="footer_buy-top"></div>
+                <div class="footer_main-price ng-binding">
+                    <span ng-bind-html="product.currency_symbol" class="ng-binding"><i class="fa fa-eur"></i></span>
+                    {{cr_LoginFactory.user.currency_symbol}}{{(cr_LoginFactory.user.basket.all_price).toFixed(2)}}
+                </div>
+                <div class="footer_buy">
+                    <div class="footer_wrap">
+                        <div class="footer_icon"></div>
+                    </div>
+                    <div class="footer_title ng-scope" ng-click="ctrl.Checkout(); ctrl.CreditCard(); ctrl.ok()">
+                        Checkout
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

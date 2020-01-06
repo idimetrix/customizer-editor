@@ -1,0 +1,725 @@
+<div class="add_basket info">
+    <div class="modal-header header">
+        <span class="title">{{ctrl.modal_title || 'Choose size and amount'}}</span>
+        <span class="close" ng-disabled="loading" ng-click="ctrl.cancel()">{{ctrl.modal_button_cancel || 'CLOSE'}}<div
+                class="cross"></div></span>
+    </div>
+    <div class="modal-body content">
+
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+        <div class="motifs_content-row">
+            <div class="motifs_wrap-content">
+                <div class="motifs_scroll scrollbar-light" data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                    <div class="motifs_scroll-content">
+                        <p class="info_content-item"><strong>ENGLISH<br>
+                            iOS SOFTWARE LICENSE AGREEMENT<br>
+                            Single Use License<br>
+                            PLEASE READ THIS SOFTWARE LICENSE AGREEMENT ("LICENSE") CAREFULLY BEFORE USING<br>
+                            YOUR iOS DEVICE OR DOWNLOADING THE SOFTWARE UPDATE ACCOMPANYING THIS<br>
+                            LICENSE. BY USING YOUR iOS DEVICE OR DOWNLOADING A SOFTWARE UPDATE, AS<br>
+                            APPLICABLE, YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS LICENSE. IF YOU DO<br>
+                            NOT AGREE TO THE TERMS OF THIS LICENSE, DO NOT USE THE iOS DEVICE OR DOWNLOAD<br>
+                            THE SOFTWARE UPDATE.<br>
+                            IF YOU HAVE RECENTLY PURCHASED AN iOS DEVICE AND YOU DO NOT AGREE TO THE TERMS<br>
+                            OF THE LICENSE, YOU MAY RETURN THE iOS DEVICE WITHIN THE RETURN PERIOD TO THE<br>
+                            APPLE STORE OR AUTHORIZED DISTRIBUTOR WHERE YOU OBTAINED IT FOR A REFUND,<br>
+                            SUBJECT TO APPLE'S RETURN POLICY FOUND AT
+                            http://www.apple.com/legal/sales_policies/.<br></strong>
+                            1. General.<br>
+                            (a) The software (including Boot ROM code and other embedded software), documentation,
+                            interfaces,
+                            content, fonts and any data that came with your iOS Device ("Original iOS Software"), as may
+                            be
+                            updated or replaced by feature enhancements, software updates or system restore software
+                            provided by
+                            Apple ("iOS Software Updates"), whether in read only memory, on any other media or in any
+                            other form
+                            (the Original iOS Software and iOS Software Updates are collectively referred to as the “iOS
+                            Software")
+                            are licensed, not sold, to you by Apple Inc. ("Apple") for use only under the terms of this
+                            License. Apple
+                            and its licensors retain ownership of the iOS Software itself and reserve all rights not
+                            expressly granted
+                            to you.
+                            (b) Apple, at its discretion, may make available future iOS Software Updates for your iOS
+                            Device. The
+                            iOS Software Updates, if any, may not necessarily include all existing software features or
+                            new features
+                            that Apple releases for newer or other models of iOS Devices. The terms of this License will
+                            govern any
+                            iOS Software Updates provided by Apple that replace and/or supplement the Original iOS
+                            Software product, unless such iOS Software Update is accompanied by a separate license in
+                            which case
+                            the terms of that license will govern.
+                            2. Permitted License Uses and Restrictions.
+                            (a) Subject to the terms and conditions of this License, you are granted a limited
+                            non-exclusive license to
+                            use the iOS Software on a single Apple-branded iOS Device. Except as permitted in Section
+                            2(b) below,
+                            and unless as provided in a separate agreement between you and Apple, this License does not
+                            allow the
+                            iOS Software to exist on more than one Apple-branded iOS Device at a time, and you may not
+                            distribute
+                            or make the iOS Software available over a network where it could be used by multiple devices
+                            at the
+                            same time. This License does not grant you any rights to use Apple proprietary interfaces
+                            and other
+                            intellectual property in the design, development, manufacture, licensing or distribution of
+                            third party
+                            devices and accessories, or third party software applications, for use with iOS Devices.
+                            Some of those
+                            rights are available under separate licenses from Apple. For more information on developing
+                            third party
+                            devices and accessories for iOS Devices, please email madeforipod@apple.com. For more
+                            information
+                            on developing software applications for iOS Devices, please email devprograms@apple.com.
+                            (b) Subject to the terms and conditions of this License, you are granted a limited
+                            non-exclusive license to
+                            download iOS Software Updates that may be made available by Apple for your model of the iOS
+                            Device
+                            to update or restore the software on any such iOS Device that you own or control. This
+                            License does not
+                            allow you to update or restore any iOS Device that you do not control or own, and you may
+                            not distribute
+                            or make the iOS Software Updates available over a network where they could be used by
+                            multiple
+                            devices or multiple computers at the same time. If you download an iOS Software Update to
+                            your
+                            computer, you may make one copy of the iOS Software Updates stored on your computer in
+                            machinereadable
+                            form for backup purposes only, provided that the backup copy must include all copyright or
+                            other proprietary notices contained on the original.
+                            (c) You may not, and you agree not to or enable others to, copy (except as expressly
+                            permitted by this
+                            License), decompile, reverse engineer, disassemble, attempt to derive the source code of,
+                            decrypt,
+                            modify, or create derivative works of the iOS Software or any services provided by the iOS
+                            Software or
+                            any part thereof (except as and only to the extent any foregoing restriction is prohibited
+                            by applicable
+                            law or by licensing terms governing use of open-source components that may be included with
+                            the iOS
+                            Software).
+                            (d) By storing content on your iOS Device you are making a digital copy. In some
+                            jurisdictions, it is
+                            unlawful to make digital copies without prior permission from the rights holder. The iOS
+                            Software may be
+                            used to reproduce materials so long as such use is limited to reproduction of
+                            non-copyrighted materials,
+                            materials in which you own the copyright, or materials you are authorized or legally
+                            permitted to
+                            reproduce.
+                            (e) You agree to use the iOS Software and the Services (as defined in Section 5 below) in
+                            compliance
+                            with all applicable laws, including local laws of the country or region in which you reside
+                            or in which you
+                            download or use the iOS Software and Services.
+                            (f) Use of and access to certain features of the iOS Software and certain Services (as
+                            defined in Section
+                            5) may require you to apply for a unique user name and password combination, known as an
+                            Apple ID.
+                            In addition, you acknowledge that many features and Services of the iOS Software transmit
+                            data and
+                            could impact charges to your data plan, and that you are responsible for any such charges.
+                            You can
+                            control which applications are permitted to use cellular data and view an estimate of how
+                            much data
+                            such applications have consumed under Cellular Data Settings. For more information, please
+                            consult the
+                            User Guide for your iOS Device.
+                            3. Transfer. You may not rent, lease, lend, sell, redistribute, or sublicense the iOS
+                            Software. You may,
+                            however, make a one-time permanent transfer of all of your license rights to the iOS
+                            Software to another
+                            party in connection with the transfer of ownership of your iOS Device, provided that: (a)
+                            the transfer must
+                            include your iOS Device and all of the iOS Software, including all its component parts,
+                            original media,
+                            printed materials and this License; (b) you do not retain any copies of the iOS Software,
+                            full or partial,
+                            including copies stored on a computer or other storage device; and (c) the party receiving
+                            the iOS
+                            Software reads and agrees to accept the terms and conditions of this License.
+                            4. Consent to Use of Data.
+                            (a) Diagnostic and Usage Data. If you opt in to diagnostic and usage collection, you agree
+                            that Apple and
+                            its subsidiaries and agents may collect, maintain, process and use diagnostic, technical,
+                            usage and
+                            related information, including but not limited to unique system or hardware identifiers,
+                            information about
+                            your iOS Device, computer, system and application software, and peripherals, that is
+                            gathered
+                            periodically to provide and improve Apple’s products and services, facilitate the provision
+                            of software
+                            updates, product support and other services to you (if any) related to the iOS Software, and
+                            to verify
+                            compliance with the terms of this License. Apple may use this information, as long as it is
+                            collected in a
+                            form that does not personally identify you, for the purposes described above. If you have
+                            opted in and
+                            have Location Services turned on, the location of your device may also be sent to help Apple
+                            analyze
+                            wireless or cellular performance issues (e.g. the strength or weakness of a cellular signal
+                            in a particular
+                            location). To enable Apple’s partners and third party developers to improve their software,
+                            hardware and
+                            services designed for use with Apple products, Apple may also provide any such partner or
+                            third party
+                            developer with a subset of diagnostic information that is relevant to that partner’s or
+                            developer’s
+                            software, hardware and/or services, as long as the diagnostic information is in a form that
+                            does not
+                            personally identify you.
+                            (b) Location Data. Apple and its partners, licensees and third party developers may provide
+                            certain
+                            services through your iOS Device that rely upon location information. To provide and improve
+                            these
+                            services, where available, Apple and its partners, licensees and third party developers may
+                            transmit,
+                            collect, maintain, process and use your location data, including the real-time geographic
+                            location of your
+                            iOS Device, road travel speed information, location search queries, and location of where
+                            you purchase
+                            and launch applications. The location data and queries collected by Apple are collected in a
+                            form that
+                            does not personally identify you and may be used by Apple and its partners, licensees and
+                            third party
+                            developers to provide and improve location-based products and services. By using any
+                            location-based
+                            services on your iOS Device, you agree and consent to Apple's and its partners', licensees'
+                            and
+                            third party developers’ transmission, collection, maintenance, processing and use of your
+                            location
+                            data and queries to provide and improve such products and services. You may withdraw this
+                            consent at any time by going to the Location Services setting on your iOS Device and either
+                            turning off
+                            the global Location Services setting or turning off the individual location settings of each
+                            location-aware
+                            item on your iOS Device. When using third party applications or services on the iOS Device
+                            that use or
+                            provide location data, you are subject to and should review such third party's terms and
+                            privacy policy
+                            on use of location data by such third party applications or services.
+                            (c) Siri and Dictation. The Siri and Dictation features of the iOS Software may not be
+                            available in all
+                            languages or regions and features may vary by region. If your iOS Device supports Siri and
+                            Dictation,
+                            these features may allow you to make requests, give commands and dictate text to your device
+                            using
+                            your voice. When you use Siri or Dictation, the things you say will be recorded and sent to
+                            Apple in order
+                            to convert what you say into text and to process your requests. Your device will also send
+                            Apple other
+                            information, such as your name and nickname; the names, nicknames, and relationship with you
+                            (e.g.,
+                            “my dad”) of your address book contacts; and song names in your collection (collectively,
+                            your “User
+                            Data”). All of this data is used to help Siri and Dictation understand you better and
+                            recognize what you
+                            say. It is not linked to other data that Apple may have from your use of other Apple
+                            services. By using
+                            Siri or Dictation, you agree and consent to Apple’s and its subsidiaries’ and agents’
+                            transmission,
+                            collection, maintenance, processing, and use of this information, including your voice input
+                            and
+                            User Data, to provide and improve Siri, Dictation, and dictation functionality in other
+                            Apple
+                            products and services.
+                            If you have Location Services turned on, the location of your iOS Device at the time you
+                            make a request
+                            to Siri may also be sent to Apple to help Siri improve the accuracy of its response to your
+                            location-based
+                            requests. You may disable the location-based functionality of Siri by going to the Location
+                            Services
+                            setting on your iOS Device and turning off the individual location setting for Siri.
+                            Siri can allow you to interact with your iOS Device without needing to unlock it. If you
+                            have enabled a
+                            passcode on your iOS Device and would like to prevent Siri from being used from the lock
+                            screen, you
+                            can tap Settings, tap General, tap Passcode Lock and turn the Siri option to “off”.
+                            You can also turn off Siri and Dictation altogether at any time. To do so, open Settings,
+                            tap General, tap
+                            Siri, and slide the Siri switch to “off”.
+                            (d) FaceTime. The FaceTime calling feature of the iOS Software (“FaceTime”) requires a Wi-Fi
+                            or cellular
+                            data connection and may not be available in all regions and may be restricted or unavailable
+                            from your
+                            service provider. Your use of FaceTime is subject to your compliance with Section 2(e)
+                            above. In order to
+                            set up FaceTime, and to initiate and receive FaceTime calls between you and other FaceTime
+                            users,
+                            certain unique identifiers for your iOS Device and account are needed. These unique
+                            identifiers may
+                            include your email address(es), the Apple ID information you provide, a hardware identifier
+                            for your iOS
+                            Device, and your iPhone’s telephone number. By using the iOS Software, you agree that Apple
+                            may
+                            transmit, collect, maintain, process and use these identifiers for the purpose of providing
+                            and
+                            improving the FaceTime feature. You understand that your iPhone’s telephone number will be
+                            displayed to the other party on the call (even if you have a blocked number) or your email
+                            address will be
+                            shown, depending on what setting you choose. You may turn off the FaceTime feature by going
+                            to the
+                            FaceTime setting on your iOS Device or by going to the Restrictions setting and enabling the
+                            FaceTime
+                            restriction. You may also restrict FaceTime to Wi-Fi only, by going to the FaceTime setting
+                            on your iOS
+                            Device and sliding the “Use Cellular Data” switch to “Off”.
+                            (e) iMessage. The messaging feature of the iOS Software (“iMessage”) may not be available in
+                            all
+                            countries or regions. Your use of iMessage is subject to your compliance with Section 2(e)
+                            above. In
+                            order to set up iMessage, and to initiate and receive iMessages between you and other iOS
+                            Device
+                            users, certain unique identifiers for your iOS Device and account are needed. These unique
+                            identifiers
+                            may include your email address(es), the Apple ID information you provide, a hardware
+                            identifier for your
+                            iOS Device, and your iPhone’s telephone number. By using the iOS Software, you agree that
+                            Apple
+                            may transmit, collect, maintain, process and use these identifiers for the purpose of
+                            providing and
+                            improving the iMessage service. The iMessage service requires a Wi-Fi or cellular data
+                            connection. To
+                            facilitate delivery of your iMessages and to enable you to maintain conversations across
+                            your devices,
+                            Apple may hold your iMessages in encrypted form for a limited period of time. If your
+                            message cannot
+                            be sent as an iMessage, your message may be sent as an SMS or MMS message, for which carrier
+                            messaging rates may apply. You understand that your iPhone’s telephone number will be
+                            displayed to
+                            the other party (even if you have a blocked number) or your email address will be shown,
+                            depending on
+                            what setting you choose. You may turn off the iMessage service by going to the Messages
+                            setting on
+                            your iOS Device.
+                            (f) My Photo Stream. By using the My Photo Stream feature of iCloud, you agree that Apple
+                            may
+                            store photos taken on your iOS Device or uploaded from your computer for a limited period of
+                            time and automatically send the photos to your other Apple iOS Devices or computers that
+                            have
+                            My Photo Stream enabled. Please note that a limited number of photos may be stored in the
+                            cloud or
+                            on your devices at any one time, and older photos will be automatically deleted from My
+                            Photo Stream
+                            over time. Any photos you want to keep on a particular device permanently must be saved to
+                            the
+                            camera roll or the photo library on your computer. Photo resolution may vary depending on
+                            the device to
+                            which the photos are downloaded. If you do not wish to use My Photo Stream, you can turn My
+                            Photo
+                            Stream off on all of your iOS Devices or computers that have My Photo Stream enabled. All
+                            use of the
+                            My Photo Stream feature is subject to the terms and conditions of this agreement and the
+                            iCloud Terms
+                            and Conditions located at: http://www.apple.com/legal/icloud/ww/.
+                            (g) iCloud Photo Sharing. By using the iCloud Photo Sharing feature, you agree that Apple
+                            may
+                            store the photos and videos you share continuously until you delete them, send those photos
+                            and
+                            videos to your other Apple iOS devices and computers that have iCloud Photo Sharing enabled,
+                            and send them to the iOS devices and computers of the people you choose to share them
+                            with. When you use iCloud Photo Sharing, you are allowing your recipients to view, save,
+                            copy, and
+                            share your photos and videos, as well as contribute photos and videos, and leave comments.
+                            You can
+                            delete individual photos, videos, comments, or entire shared photo streams at any time to
+                            stop sharing
+                            them immediately, however, photos and videos that the viewer has previously saved to their
+                            device or
+                            computer will not be deleted. All use of the iCloud Photo Sharing feature is subject to the
+                            terms and
+                            conditions of this agreement and the iCloud Terms and Conditions located at:
+                            http://www.apple.com/
+                            legal/icloud/ww/.
+                            (h) Maps. The maps service and features of the iOS Software (“Maps”) may not be available in
+                            all
+                            languages or regions, and features and map data coverage may vary by region. Use of the Maps
+                            service
+                            requires a Wi-Fi or cellular data connection. When you use any location-based features
+                            within Maps,
+                            such as turn-by-turn navigation, traffic and local search, various location-related and
+                            usage information
+                            may be sent to Apple, including the real-time geographic location of your iOS Device, in
+                            order to process
+                            your request and help improve Maps. Such location and usage data is collected by Apple in a
+                            form that
+                            does not personally identify you. By using Maps, you agree and consent to Apple’s and its
+                            subsidiaries’ and agents’ transmission, collection, maintenance, processing, and use of this
+                            information, to provide and improve the Maps features and service, and other Apple products
+                            and
+                            services.
+                            If you have Location Services turned on, the location of your iOS Device at the time you
+                            make a request
+                            to Maps may also be sent to Apple if required to process the request, such as turn-by-turn
+                            navigation.
+                            You may disable the location-based functionality of Maps by going to the Location Services
+                            setting on
+                            your iOS Device and turning off the individual location setting for Maps. Certain Maps
+                            features will
+                            however be unavailable if you disable the Location Services setting, such as turn-by-turn
+                            navigation.
+                            (i) Interest-Based Advertising from iAd. Apple may provide mobile, interest-based
+                            advertising to you. If
+                            you do not want to receive relevant ads on your iOS Device, you can opt out by going to the
+                            Limit Ad
+                            Tracking setting on your iOS Device. If you opt out, you will continue to receive the same
+                            number of
+                            mobile ads, but they may be less relevant because they will not be based on your interests.
+                            You may still
+                            see ads related to the content on a web page or in an application or based on other
+                            non-personal
+                            information.
+                            (j) Privacy Policy. At all times your information will be treated in accordance with Apple’s
+                            Privacy Policy,
+                            which is incorporated by reference into this License and can be viewed at:
+                            http://www.apple.com/
+                            privacy/.
+                            5. Services and Third Party Materials.
+                            (a) The iOS Software may enable access to Apple's iTunes Store, App Store, Game Center,
+                            iCloud, Maps
+                            and other Apple and third party services and web sites (collectively and individually,
+                            "Services"). Such
+                            Services may not be available in all languages or in all countries. Use of these Services
+                            requires Internet
+                            access and use of certain Services may require an Apple ID, may require you to accept
+                            additional terms
+                            and may be subject to additional fees. By using this software in connection with an Apple
+                            ID, or other
+                            Apple Service, you agree to the applicable terms of service for that Service, such as the
+                            latest iTunes
+                            Store Terms and Conditions or Game Center Terms and Conditions, which you may access and
+                            review
+                            at http://www.apple.com/legal/itunes/ww/, or the iCloud Terms and Conditions which can be
+                            found at
+                            http://www.apple.com/legal/icloud/ww/, respectively.
+                            (b) If you sign up for iCloud, certain iCloud features like “Back Up” and “Find My iPhone”
+                            may be
+                            accessed directly from the iOS Software. You acknowledge and agree that your use of iCloud
+                            and these
+                            features is subject to the latest terms and conditions of the iCloud service, which you may
+                            access and
+                            review at: http://www.apple.com/legal/icloud/ww/.
+                            (c) You understand that by using any of the Services, you may encounter content that may be
+                            deemed
+                            offensive, indecent, or objectionable, which content may or may not be identified as having
+                            explicit
+                            language, and that the results of any search or entering of a particular URL may
+                            automatically and
+                            unintentionally generate links or references to objectionable material. Nevertheless, you
+                            agree to use the
+                            Services at your sole risk and that Apple shall have no liability to you for content that
+                            may be found to be
+                            offensive, indecent, or objectionable.
+                            (d) Certain Services may display, include or make available content, data, information,
+                            applications or
+                            materials from third parties (“Third Party Materials”) or provide links to certain third
+                            party web sites. By
+                            using the Services, you acknowledge and agree that Apple is not responsible for examining or
+                            evaluating
+                            the content, accuracy, completeness, timeliness, validity, copyright compliance, legality,
+                            decency, quality
+                            or any other aspect of such Third Party Materials or web sites. Apple, its officers,
+                            affiliates and
+                            subsidiaries do not warrant or endorse and do not assume and will not have any liability or
+                            responsibility
+                            to you or any other person for any third-party Services, Third Party Materials or web sites,
+                            or for any
+                            other materials, products, or services of third parties. Third Party Materials and links to
+                            other web sites
+                            are provided solely as a convenience to you.
+                            (e) Neither Apple nor any of its content providers guarantees the availability, accuracy,
+                            completeness,
+                            reliability, or timeliness of stock information, location data or any other data displayed
+                            by any Services.
+                            Financial information displayed by any Services is for general informational purposes only
+                            and should
+                            not be relied upon as investment advice. Before executing any securities transaction based
+                            upon
+                            information obtained through the Services, you should consult with a financial or securities
+                            professional
+                            who is legally qualified to give financial or securities advice in your country or region.
+                            Location data
+                            provided by any Services, including the Apple Maps service, is provided for basic
+                            navigational and/or
+                            planning purposes only and is not intended to be relied upon in situations where precise
+                            location
+                            information is needed or where erroneous, inaccurate, time-delayed or incomplete location
+                            data may
+                            lead to death, personal injury, property or environmental damage. You agree that, the
+                            results you receive
+                            from the Maps service may vary from actual road or terrain conditions due to factors that
+                            can affect the
+                            accuracy of the Maps data, such as, but not limited to, weather, road and traffic
+                            conditions, and
+                            geopolitical events. For your safety when using the navigation feature, always pay attention
+                            to posted
+                            road signs and current road conditions. Follow safe driving practices and traffic
+                            regulations, and note
+                            that walking directions may not include sidewalks or pedestrian paths.
+                            (f) To the extent that you upload any content through the use of the Services, you represent
+                            that you own
+                            all rights in, or have authorization or are otherwise legally permitted to upload, such
+                            content and that
+                            such content does not violate any terms of service applicable to the Services. You agree
+                            that the
+                            Services contain proprietary content, information and material that is owned by Apple, the
+                            site owner
+                            and/or their licensors, and is protected by applicable intellectual property and other laws,
+                            including but
+                            not limited to copyright. You agree that you will not use such proprietary content,
+                            information or
+                            materials other than for permitted use of the Services or in any manner that is inconsistent
+                            with the
+                            terms of this License or that infringes any intellectual property rights of a third party or
+                            Apple. No portion
+                            of the Services may be reproduced in any form or by any means. You agree not to modify,
+                            rent, lease,
+                            loan, sell, distribute, or create derivative works based on the Services, in any manner, and
+                            you shall not
+                            exploit the Services in any unauthorized way whatsoever, including but not limited to, using
+                            the Services
+                            to transmit any computer viruses, worms, trojan horses or other malware, or by trespass or
+                            burdening
+                            network capacity. You further agree not to use the Services in any manner to harass, abuse,
+                            stalk,
+                            threaten, defame or otherwise infringe or violate the rights of any other party, and that
+                            Apple is not in any
+                            way responsible for any such use by you, nor for any harassing, threatening, defamatory,
+                            offensive,
+                            infringing or illegal messages or transmissions that you may receive as a result of using
+                            any of the
+                            Services.
+                            (g) In addition, Services and Third Party Materials that may be accessed, linked to or
+                            displayed on the
+                            iOS Device are not available in all languages or in all countries or regions. Apple makes no
+                            representation that such Services and Third Party Materials are appropriate or available for
+                            use in any
+                            particular location. To the extent you choose to use or access such Services and Third Party
+                            Materials,
+                            you do so at your own initiative and are responsible for compliance with any applicable
+                            laws, including
+                            but not limited to applicable local laws and privacy and data collection laws. Apple and its
+                            licensors
+                            reserve the right to change, suspend, remove, or disable access to any Services at any time
+                            without
+                            notice. In no event will Apple be liable for the removal of or disabling of access to any
+                            such Services.
+                            Apple may also impose limits on the use of or access to certain Services, in any case and
+                            without notice
+                            or liability.
+                            6. Termination. This License is effective until terminated. Your rights under this License
+                            will terminate
+                            automatically or otherwise cease to be effective without notice from Apple if you fail to
+                            comply with any
+                            term(s) of this License. Upon the termination of this License, you shall cease all use of
+                            the iOS Software.
+                            Sections 4, 5, 6, 7, 8, 9, 12 and 13 of this License shall survive any such termination.
+                            7. Disclaimer of Warranties.
+                            7.1 If you are a customer who is a consumer (someone who uses the iOS Software outside of
+                            your
+                            trade, business or profession), you may have legal rights in your country of residence which
+                            would
+                            prohibit the following limitations from applying to you, and where prohibited they will not
+                            apply to you. To
+                            find out more about rights, you should contact a local consumer advice organization.
+                            7.2 YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT, TO THE EXTENT PERMITTED BY<br>
+                            APPLICABLE LAW, USE OF THE iOS SOFTWARE AND ANY SERVICES PERFORMED BY OR<br>
+                            ACCESSED THROUGH THE iOS SOFTWARE IS AT YOUR SOLE RISK AND THAT THE ENTIRE RISK AS<br>
+                            TO SATISFACTORY QUALITY, PERFORMANCE, ACCURACY AND EFFORT IS WITH YOU.<br>
+                            7.3 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE iOS SOFTWARE AND<br>
+                            SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE", WITH ALL FAULTS AND WITHOUT<br>
+                            WARRANTY OF ANY KIND, AND APPLE AND APPLE'S LICENSORS (COLLECTIVELY REFERRED TO<br>
+                            AS "APPLE" FOR THE PURPOSES OF SECTIONS 7 AND 8) HEREBY DISCLAIM ALL WARRANTIES<br>
+                            AND CONDITIONS WITH RESPECT TO THE iOS SOFTWARE AND SERVICES, EITHER EXPRESS,<br>
+                            IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES AND/OR<br>
+                            CONDITIONS OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR<br>
+                            PURPOSE, ACCURACY, QUIET ENJOYMENT, AND NON-INFRINGEMENT OF THIRD PARTY RIGHTS.<br>
+                            7.4 APPLE DOES NOT WARRANT AGAINST INTERFERENCE WITH YOUR ENJOYMENT OF THE iOS<br>
+                            SOFTWARE AND SERVICES, THAT THE FUNCTIONS CONTAINED IN, OR SERVICES PERFORMED OR<br>
+                            PROVIDED BY, THE iOS SOFTWARE WILL MEET YOUR REQUIREMENTS, THAT THE OPERATION OF<br>
+                            THE iOS SOFTWARE AND SERVICES WILL BE UNINTERRUPTED OR ERROR-FREE, THAT ANY<br>
+                            SERVICE WILL CONTINUE TO BE MADE AVAILABLE, THAT DEFECTS IN THE iOS SOFTWARE OR<br>
+                            SERVICES WILL BE CORRECTED, OR THAT THE iOS SOFTWARE WILL BE COMPATIBLE OR WORK<br>
+                            WITH ANY THIRD PARTY SOFTWARE, APPLICATIONS OR THIRD PARTY SERVICES. INSTALLATION<br>
+                            OF THIS iOS SOFTWARE MAY AFFECT THE USABILITY OF THIRD PARTY SOFTWARE, APPLICATIONS<br>
+                            OR THIRD PARTY SERVICES.<br>
+                            7.5 YOU FURTHER ACKNOWLEDGE THAT THE iOS SOFTWARE AND SERVICES ARE NOT<br>
+                            INTENDED OR SUITABLE FOR USE IN SITUATIONS OR ENVIRONMENTS WHERE THE FAILURE OR<br>
+                            TIME DELAYS OF, OR ERRORS OR INACCURACIES IN, THE CONTENT, DATA OR INFORMATION<br>
+                            PROVIDED BY THE iOS SOFTWARE OR SERVICES COULD LEAD TO DEATH, PERSONAL INJURY, OR<br>
+                            SEVERE PHYSICAL OR ENVIRONMENTAL DAMAGE, INCLUDING WITHOUT LIMITATION THE<br>
+                            OPERATION OF NUCLEAR FACILITIES, AIRCRAFT NAVIGATION OR COMMUNICATION SYSTEMS, AIR<br>
+                            TRAFFIC CONTROL, LIFE SUPPORT OR WEAPONS SYSTEMS.<br>
+                            7.6 NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY APPLE OR AN APPLE<br>
+                            AUTHORIZED REPRESENTATIVE SHALL CREATE A WARRANTY. SHOULD THE iOS SOFTWARE OR<br>
+                            SERVICES PROVE DEFECTIVE, YOU ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING,<br>
+                            REPAIR OR CORRECTION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED<br>
+                            WARRANTIES OR LIMITATIONS ON APPLICABLE STATUTORY RIGHTS OF A CONSUMER, SO THE<br>
+                            ABOVE EXCLUSION AND LIMITATIONS MAY NOT APPLY TO YOU.<br>
+                            8. Limitation of Liability. TO THE EXTENT NOT PROHIBITED BY APPLICABLE LAW, IN NO EVENT<br>
+                            SHALL APPLE BE LIABLE FOR PERSONAL INJURY, OR ANY INCIDENTAL, SPECIAL, INDIRECT OR<br>
+                            CONSEQUENTIAL DAMAGES WHATSOEVER, INCLUDING, WITHOUT LIMITATION, DAMAGES FOR<br>
+                            LOSS OF PROFITS, CORRUPTION OR LOSS OF DATA, FAILURE TO TRANSMIT OR RECEIVE ANY<br>
+                            DATA, BUSINESS INTERRUPTION OR ANY OTHER COMMERCIAL DAMAGES OR LOSSES, ARISING<br>
+                            OUT OF OR RELATED TO YOUR USE OR INABILITY TO USE THE iOS SOFTWARE AND SERVICES OR<br>
+                            ANY THIRD PARTY SOFTWARE OR APPLICATIONS IN CONJUNCTION WITH THE iOS SOFTWARE OR<br>
+                            SERVICES, HOWEVER CAUSED, REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, TORT OR<br>
+                            OTHERWISE) AND EVEN IF APPLE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.<br>
+                            SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR<br>
+                            PERSONAL INJURY, OR OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY<br>
+                            NOT APPLY TO YOU. In no event shall Apple's total liability to you for all damages (other
+                            than as may be
+                            required by applicable law in cases involving personal injury) exceed the amount of two
+                            hundred and fifty
+                            dollars (U.S.$250.00). The foregoing limitations will apply even if the above stated remedy
+                            fails of its
+                            essential purpose.
+                            9. Digital Certificates. The iOS Software contains functionality that allows it to accept
+                            digital certificates
+                            either issued from Apple or from third parties. YOU ARE SOLELY RESPONSIBLE FOR DECIDING
+                            WHETHER OR NOT TO RELY ON A CERTIFICATE WHETHER ISSUED BY APPLE OR A THIRD PARTY.
+                            YOUR USE OF DIGITAL CERTIFICATES IS AT YOUR SOLE RISK. TO THE MAXIMUM EXTENT
+                            PERMITTED BY APPLICABLE LAW, APPLE MAKES NO WARRANTIES OR REPRESENTATIONS,
+                            EXPRESS OR IMPLIED, AS TO MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE,
+                            ACCURACY, SECURITY, OR NON-INFRINGEMENT OF THIRD PARTY RIGHTS WITH RESPECT TO
+                            DIGITAL CERTIFICATES.
+                            10. Export Control. You may not use or otherwise export or re-export the iOS Software except
+                            as
+                            authorized by United States law and the laws of the jurisdiction(s) in which the iOS
+                            Software was
+                            obtained. In particular, but without limitation, the iOS Software may not be exported or
+                            re-exported (a)
+                            into any U.S. embargoed countries or (b) to anyone on the U.S. Treasury Department's list of
+                            Specially
+                            Designated Nationals or the U.S. Department of Commerce Denied Person’s List or Entity List.
+                            By using
+                            the iOS Software, you represent and warrant that you are not located in any such country or
+                            on any such
+                            list. You also agree that you will not use the iOS Software for any purposes prohibited by
+                            United States
+                            law, including, without limitation, the development, design, manufacture or production of
+                            missiles,
+                            nuclear, chemical or biological weapons.
+                            11. Government End Users. The iOS Software and related documentation are "Commercial Items",
+                            as
+                            that term is defined at 48 C.F.R. §2.101, consisting of "Commercial Computer Software" and
+                            "Commercial Computer Software Documentation", as such terms are used in 48 C.F.R. §12.212 or
+                            48
+                            C.F.R. §227.7202, as applicable. Consistent with 48 C.F.R. §12.212 or 48 C.F.R. §227.7202-1
+                            through
+                            227.7202-4, as applicable, the Commercial Computer Software and Commercial Computer Software
+                            Documentation are being licensed to U.S. Government end users (a) only as Commercial Items
+                            and (b)
+                            with only those rights as are granted to all other end users pursuant to the terms and
+                            conditions herein.
+                            Unpublished-rights reserved under the copyright laws of the United States.
+                            12. Controlling Law and Severability. This License will be governed by and construed in
+                            accordance
+                            with the laws of the State of California, excluding its conflict of law principles. This
+                            License shall not be
+                            governed by the United Nations Convention on Contracts for the International Sale of Goods,
+                            the
+                            application of which is expressly excluded. If you are a consumer based in the United
+                            Kingdom, this
+                            License will be governed by the laws of the jurisdiction of your residence. If for any
+                            reason a court of
+                            competent jurisdiction finds any provision, or portion thereof, to be unenforceable, the
+                            remainder of this
+                            License shall continue in full force and effect.
+                            13. Complete Agreement; Governing Language. This License constitutes the entire agreement
+                            between you and Apple relating to the iOS Software and supersedes all prior or
+                            contemporaneous
+                            understandings regarding such subject matter. No amendment to or modification of this
+                            License will be
+                            binding unless in writing and signed by Apple. Any translation of this License is done for
+                            local
+                            requirements and in the event of a dispute between the English and any non-English versions,
+                            the
+                            English version of this License shall govern, to the extent not prohibited by local law in
+                            your jurisdiction.
+                            14. Third Party Acknowledgements. Portions of the iOS Software may utilize or include third
+                            party
+                            software and other copyrighted material. Acknowledgements, licensing terms and disclaimers
+                            for such
+                            material are contained in the electronic documentation for the iOS Software, and your use of
+                            such
+                            material is governed by their respective terms. Use of the Google Safe Browsing Service is
+                            subject to the
+                            Google Terms of Service (http://www.google.com/terms_of_service.html) and to Google's
+                            Privacy Policy
+                            (http://www.google.com/privacypolicy.html).
+                            15. Use of MPEG-4; H.264/AVC Notice.
+                            (a) The iOS Software contains MPEG-4 video encoding and/or decoding functionality. The iOS
+                            Software
+                            is licensed under the MPEG-4 Visual Patent Portfolio License for the personal and
+                            non-commercial use
+                            of a consumer for (i) encoding video in compliance with the MPEG-4 Visual Standard (“MPEG-4
+                            Video”)
+                            and/or (ii) decoding MPEG-4 video that was encoded by a consumer engaged in a personal and
+                            noncommercial
+                            activity and/or was obtained from a video provider licensed by MPEG LA to provide MPEG-4
+                            video. No license is granted or shall be implied for any other use. Additional information
+                            including that
+                            relating to promotional, internal and commercial uses and licensing may be obtained from
+                            MPEG LA,
+                            LLC. See http://www.mpegla.com.
+                            (b) The iOS Software contains AVC encoding and/or decoding functionality, commercial use of
+                            H.264/
+                            AVC requires additional licensing and the following provision applies: THE AVC FUNCTIONALITY
+                            IN THE
+                            iOS SOFTWARE IS LICENSED HEREIN ONLY FOR THE PERSONAL AND NON-COMMERCIAL USE OF
+                            A CONSUMER TO (i) ENCODE VIDEO IN COMPLIANCE WITH THE AVC STANDARD ("AVC VIDEO")
+                            AND/OR (ii) DECODE AVC VIDEO THAT WAS ENCODED BY A CONSUMER ENGAGED IN A PERSONAL
+                            AND NON-COMMERCIAL ACTIVITY AND/OR AVC VIDEO THAT WAS OBTAINED FROM A VIDEO
+                            PROVIDER LICENSED TO PROVIDE AVC VIDEO. INFORMATION REGARDING OTHER USES AND
+                            LICENSES MAY BE OBTAINED FROM MPEG LA L.L.C. SEE HTTP://WWW.MPEGLA.COM.
+                            16. Yahoo Search Service Restrictions. The Yahoo Search Service available through Safari is
+                            licensed
+                            for use only in the following countries and regions: Argentina, Aruba, Australia, Austria,
+                            Barbados,
+                            Belgium, Bermuda, Brazil, Bulgaria, Canada, Cayman Islands, Chile, China, Colombia, Cyprus,
+                            Czech
+                            Republic, Denmark, Dominican Republic, Ecuador, El Salvador, Finland, France, Germany,
+                            Greece,
+                            Grenada, Guatemala, Hong Kong, Hungary, Iceland, India, Indonesia, Ireland, Italy, Jamaica,
+                            Japan,
+                            Latvia, Lithuania, Luxembourg, Malaysia, Malta, Mexico, Netherlands, New Zealand, Nicaragua,
+                            Norway,
+                            Panama, Peru, Philippines, Poland, Portugal, Puerto Rico, Romania, Singapore, Slovakia,
+                            Slovenia,
+                            South Korea, Spain, St. Lucia, St. Vincent, Sweden, Switzerland, Taiwan, Thailand, The
+                            Bahamas,
+                            Trinidad and Tobago, Turkey, UK, Uruguay, US and Venezuela.
+                            17. Microsoft Exchange Notice. The Microsoft Exchange mail setting in the iOS Software is
+                            licensed
+                            only for over-the-air synchronization of information, such as email, contacts, calendar and
+                            tasks,
+                            between your iOS and Microsoft Exchange Server or other server software licensed by
+                            Microsoft to
+                            implement the Microsoft Exchange ActiveSync protocol.
+                            EA1040
+                            7/24/2013
+                            --------------------------------------------------------------
+                            NOTICES FROM APPLE
+                            If Apple needs to contact you about your product or account, you consent to receive the
+                            notices by
+                            email. You agree that any such notices that we send you electronically will satisfy any
+                            legal
+                            communication requirements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer footer">
+        <button type="submit" ng-click="ctrl.ok()" class="btn btn-primary">Ok</button>
+    </div>
+</div>

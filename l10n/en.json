@@ -1,0 +1,280 @@
+{
+  "header": {
+    "navbar": {
+      "file": {
+        "FILE": "File",
+        "NEW": "New",
+        "OPEN": "Open",
+        "SAVE": "Save",
+        "CLEAN": "Clean",
+        "OPEN_AS": "Open as ...",
+        "SAVE_AS": "Save as ...",
+        "DOWNLOAD_AS": "Download as ...",
+        "RECENT_DOCUMENTS": "Recent documents...",
+        "PRINT": "Print",
+        "NOTIFICATIONS": "Notifications",
+        "EXIT": "Exit"
+      },
+      "edit": {
+        "EDIT": "Edit",
+        "UNDO": "Undo",
+        "REDO": "Redo",
+        "CUT": "Cut",
+        "COPY": "Copy",
+        "PASTE": "Paste",
+        "DELETE": "Delete",
+        "SELECT_ALL": "Select All",
+        "FIND_TEXT": "Find Text",
+        "REPLACE_TEXT": "Replace Text"
+      },
+      "format": {
+        "FORMAT": "Format",
+        "FONT": "Font",
+        "PARAGRAPH": "Paragraph"
+      },
+      "view": {
+        "VIEW": "View",
+        "GRID": "Grid",
+        "SNAP": "Snap",
+        "RULER": "Ruler",
+        "VERTICAL_RULER": "Vertical Ruler",
+        "HORIZONTAL_RULER": "Horizontal Ruler",
+        "GUIDES": "Guides",
+        "VERTICAL_GUIDES": "Vertical Guides",
+        "HORIZONTAL_GUIDES": "Horizontal Guides",
+        "OVERFLOW_VIEWPORT": "Overflow Viewport",
+        "OVERFLOW_WORKSPACE": "Overflow Workspace",
+        "MOUSE_POINT": "Mouse Point",
+        "LAYOUT": "Layout",
+        "LAYERS": "Layers",
+        "HISTORY": "History"
+      },
+      "tool": {
+        "TOOL": "Tool"
+      },
+      "help": {
+        "HELP": "Help",
+        "MANUAL": "Manual",
+        "TUTORIAL": "5 minute tutorial",
+        "ABOUT": "About"
+      },
+      "PROJECT": "Projects",
+      "TASK": "Task",
+      "USER": "User",
+      "EMAIL": "Email",
+      "UPLOAD": "Upload"
+    }
+  },
+  "aside": {
+    "nav": {
+      "HEADER": "Navigation",
+      "DASHBOARD": "Dashboard",
+      "CALENDAR": "Calendar",
+      "EMAIL": "Email",
+      "WIDGETS": "Widgets",
+      "components": {
+        "COMPONENTS": "Components",
+        "ui_kits": {
+          "UI_KITS": "UI Kits",
+          "BUTTONS": "Buttons",
+          "ICONS": "Icons",
+          "GRID": "Grid",
+          "BOOTSTRAP": "Bootstrap",
+          "SORTABLE": "Sortable",
+          "PORTLET": "Portlet",
+          "TIMELINE": "Timeline",
+          "VECTOR_MAP": "Vector Map"
+        },
+        "table": {
+          "TABLE": "Table",
+          "TABLE_STATIC": "Table static",
+          "DATATABLE": "Datatable",
+          "FOOTABLE": "Footable"
+        },
+        "form": {
+          "FORM": "Form",
+          "FORM_ELEMENTS": "Form elements",
+          "FORM_VALIDATION": "Form validation",
+          "FORM_WIZARD": "Form wizard"
+        },
+        "CHART": "Chart",
+        "pages": {
+          "PAGES": "Pages",
+          "PROFILE": "Profile",
+          "POST": "Post",
+          "SEARCH": "Search",
+          "INVOICE": "Invoice",
+          "LOCK_SCREEN": "Lock screen",
+          "SIGNIN": "Signin",
+          "SIGNUP": "Signup",
+          "FORGOT_PASSWORD": "Forgot password",
+          "404": "404"
+        }
+      },
+      "your_stuff": {
+        "YOUR_STUFF": "Your Stuff",
+        "PROFILE": "Profile",
+        "DOCUMENTS": "Documents"
+      }
+    },
+    "MILESTONE": "Milestone",
+    "RELEASE": "Release"
+  },
+  "rightsidebar": {
+    "navbar": {
+      "tabs": {
+        "LIBRARY": "Library",
+        "MOTIFS": "Motifs",
+        "TEXT": "Text",
+        "OBJECTS": "Objects",
+        "UPLOAD": "Upload"
+      }
+    },
+    "tabs": {
+      "upload": {
+        "SELECT": "Select File or Drop File",
+        "EMPTY": "List is empty.. Load file!",
+        "MOTIFS": "Your Motifs:"
+      },
+      "objects": {
+        "BASIC": "Basic",
+        "GEOMETRY": "Geometry"
+      },
+      "text": {
+        "CREATE": "Create a new text object",
+        "GEOMETRY": "Geometry",
+        "WRITE": "Write your text",
+        "TEXT": "Text",
+        "FONT": "Font:",
+        "EFFECTS": "Text effects:",
+        "EDITABLE": "Editable Text",
+        "GRAPHIC": "Graphic font"
+      }
+    }
+  },
+  "leftsidebar": {
+    "PROPERTY": "Property",
+    "SELECT": "Select",
+    "LAYERS": "Layers",
+    "HISTORY": "History"
+  },
+  "center": {
+    "actions": {
+      "FULLSCREEN": "Fullscreen",
+      "EXITFULLSCREEN": "Exit fullscreen",
+      "UNDO": "Undo",
+      "REDO": "Redo",
+      "RESET": "Reset",
+      "SAVE&SHARE": "Save & Share",
+      "DETAIL": "Product detail"
+    }
+  },
+  "footer": {
+    "SIZE&QUANTITY": "Size & Quantity",
+    "BASKET": "Add to basket",
+    "VAT": "VAT, excl. shipping costs"
+  },
+  "dialogs": {
+    "addbasket": {
+      "SIZE": "Size",
+      "LENGTH": "Length / cm",
+      "WIDTH": "Width / cm",
+      "QUANTITY": "Quantity",
+      "ADD": "Add to basket and:",
+      "DESIGNING": "Continue designing",
+      "CHECK": "Check out"
+    },
+    "detail": {
+      "DETAIL": "Product details",
+      "SIZE": "Size table",
+      "STYLE": "Print styles",
+      "MATERIAL": "Material:",
+      "GENDER": "Gender:",
+      "STARTING": "Starting at",
+      "AVAILABLE": "Available Printed in 1-2 days.",
+      "FLOCK": "Flock Printing",
+      "FLEX": "Flex Printing",
+      "DYE": "Dye Sublimation",
+      "DIGITAL": "Digital Printing",
+      "EMBROIDERY": "Embroidery",
+      "TITLE": "Measurement table",
+      "SIZES": "Size",
+      "LENGTH": "Length / cm",
+      "WIDTH": "Width / cm",
+      "PERSON": "Dressed on a person"
+    },
+    "FAQ": {
+      "USEFUL": "Was this question useful?",
+      "REPORT": "Report this question",
+      "STYLE": "Print styles",
+      "YES": "Yes",
+      "NO": "No"
+    },
+    "join": {
+      "OTHERACC": "Use other account",
+      "SIGNUP": "Sign UP",
+      "RPASSWORD": "Repeat password",
+      "PASSWORD": "Password",
+      "EMAIL": "Email",
+      "LOGIN": "Login"
+    },
+    "import": {
+      "USE": "Use",
+      "ZOOM": "Zoom",
+      "MATERIAL": "Material",
+      "CATEGORY": "Select Category",
+      "ALL": "All",
+      "MAN": "Man",
+      "WOMEN": "Women",
+      "KIDS": "Kids",
+      "ACCESSORIES": "Accessories"
+    },
+    "login": {
+      "FORGOT": "Forgot your password?",
+      "SIGNIN": "Sign In",
+      "REMEMBER": "Remember me",
+      "USEFUL": "Using your account",
+      "TWITTER": "Save in with Twitter",
+      "GOOGLE": "Save in with Google",
+      "FACEBOOK": "Save in with Facebook",
+      "ALSO": "You can also sign in using your Facebook Account or Google Account",
+      "OTHERACC": "Use other account"
+    },
+    "saveas": {
+      "SAVE": "Save"
+    },
+    "save": {
+      "LINK": "Link to your design",
+      "PDF": "Export as PDF",
+      "JPG": "Export as JPG",
+      "PNG": "Export as PNG",
+      "FACEBOOK": "Share in with Facebook",
+      "GOOGLE": "Share in with Google",
+      "TWITTER": "Share in with Twitter"
+    },
+    "restore": {
+      "PASS": "Enter new password."
+    },
+    "restoration": {
+      "PASS": "Enter new password."
+    },
+    "products": {
+      "CREATE": "Create",
+      "ZOOM": "Zoom",
+      "MATERIAL": "Material",
+      "SIZE": "Sizes",
+      "CATEGORY": "Select Category",
+      "MEN": "Men",
+      "WOMEN": "Women",
+      "KIDS": "Kids and Babies",
+      "ACCESSORIES": "Accessories"
+    },
+    "market": {
+      "SORT": "Sort by",
+      "ADD": "ADD TO CART",
+      "ANY": "Any",
+      "FREE": "Free",
+      "PREMIUM": "Premium"
+    }
+  }
+}

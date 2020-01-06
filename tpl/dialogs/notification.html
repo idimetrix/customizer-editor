@@ -1,0 +1,88 @@
+<div class="products notification">
+    <!--<div class="modal-header">-->
+    <!--<h3 class="modal-title">{{ctrl.modal_title}}</h3>-->
+    <!--</div>-->
+    <div class="modal-body p-none">
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div class="creatorBox">
+            <div id="creator" class="shirtinator-creator standard shrcProductMenuCursor">
+                <div class="shrcDisabler"></div>
+                <div class="product_details active" id="product_details">
+                    <a class="close" ng-click="ctrl.cancel()"></a>
+
+                    <div class="left_part">
+                        <div class="navbar-default sidebar" role="navigation">
+                            <div class="sidebar-nav navbar-collapse">
+                                <div class="nav" id="side-menu">
+                                    <div class="sidebar-search">
+                                        <div class="input-group custom-search-form">
+                                            <input type="text" class="form-control" placeholder="Search...">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="notification_scroll scrollbar-light"
+                                         data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                                        <div class="motifs_scroll-content">
+                                            <div class="notification_content-item item"
+                                                 ng-repeat="item in cr_LoginFactory.user.notifications.items"
+                                                 ng-click="ctrl.show_text(item.text)">
+                                                <div>
+                                                    <a>{{item.title}}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right_part">
+                        <div class="head shadow">
+                            <div class="filter">
+                                <h2 class="p-l-md">Notifications</h2>
+                            </div>
+                        </div>
+                        <div class="head">
+                            <ul class="filter_gender">
+                                <li themeid="1" style="display: list-item;"><a class="gender_item gender_item1 active"
+                                                                               ng-click="ctrl.detail_tab('gender_item1', 'gender_item')">News</a>
+                                </li>
+                                <li themeid="2" style="display: list-item;"><a class="gender_item gender_item2"
+                                                                               ng-click="ctrl.detail_tab('gender_item2', 'gender_item')">Share</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="products_content-row">
+                            <div class="products_wrap-content">
+                                <div class="products_scroll scrollbar-light"
+                                     data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                                    <div class="products_scroll-content">
+                                        <div class="notification_content-item item">
+                                            <p class="text_notification"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart">
+                </div>
+                <div class="pimp_container"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--<div class="modal-footer">-->
+<!--</div>-->
+</div>

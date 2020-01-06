@@ -1,0 +1,240 @@
+<div class="products editor_pro" ng-init="ctrl.init()">
+    <!--<div class="modal-header">-->
+    <!--<h3 class="modal-title">{{ctrl.modal_title}}</h3>-->
+    <!--</div>-->
+    <div class="modal-body p-none">
+        <div class="creatorBox">
+            <div id="creator" class="shirtinator-creator standard shrcProductMenuCursor">
+                <div class="shrcDisabler"></div>
+                <div class="product_details active" id="product_details">
+                    <a class="close" ng-click="ctrl.cancel()"></a>
+
+                    <div class="left_part">
+                        <div class="navbar-default sidebar" role="navigation">
+                            <div class="sidebar-nav navbar-collapse">
+                                <tabset justified="true" class="tab_editor">
+                                    <tab select="resizeItem()" active="true">
+                                        <tab-heading>General</tab-heading>
+                                        <div>
+                                            <div class="motifs_scroll scrollbar-light" data-jquery-scrollbar="cr_ScrollbarFactory.options"
+                                                 infinite-scroll="addItems()" can-load="canLoad" threshold="100">
+                                                <div class="motifs_scroll-content">
+                                                    <div class="demo_editor_item motifs_content-item item demo_editor_item_{{$index}}" ng-repeat="item in ctrl.demo_items"  ng-class="item.class" ng-click="ctrl.activate('demo_editor_item_{{$index}}', 'demo_editor_item')">
+                                                        <img src="{{item.url}}" alt="">
+                                                        <p>{{item.text}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </tab>
+                                    <tab select="resizeItem()" >
+                                        <tab-heading>Extended</tab-heading>
+                                        <div class="p-md">
+                                            <div class="effects">
+                                                <h5>Effects</h5>
+                                                <!--<div>-->
+                                                    <!--<div class="form-group p-b-sm">-->
+                                                        <!--<span> Hue</span>-->
+                                                        <!--<div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">-->
+                                                            <!--<div cr-slider="hueSettings" data-ng-model="ctrl.hue" class="hue sliders"></div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="form-group p-b-sm">-->
+                                                        <!--<span> Contrast</span>-->
+                                                        <!--<div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">-->
+                                                            <!--<div cr-slider="contrastSettings" data-ng-model="ctrl.contrast" class="contrast sliders"></div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="form-group p-b-sm">-->
+                                                        <!--<span> Vibrance</span>-->
+                                                        <!--<div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">-->
+                                                            <!--<div cr-slider="vibranceSettings" data-ng-model="ctrl.vibrance" class="vibrance sliders"></div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                    <!--<div class="form-group p-b-sm">-->
+                                                        <!--<span> Sepia</span>-->
+                                                        <!--<div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">-->
+                                                            <!--<div cr-slider="sepiaSettings" data-ng-model="ctrl.sepia" class="sepia sliders"></div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                                <div class="col-lg-6">
+                                                    <label for="hue">Hue</label>
+                                                    <input id="hue" name="hue" type="range" min="0" max="300" value="0">
+                                                    <label for="contrast">Contrast</label>
+                                                    <input id="contrast" name="contrast" type="range" min="-20" max="20" value="0">
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <label for="vibrance">Vibrance</label>
+                                                    <input id="vibrance" name="vibrance" type="range" min="0" max="400" value="0">
+                                                    <label for="sepia">Sepia</label>
+                                                    <input id="sepia" name="sepia" type="range" min="0" max="100" value="0">
+                                                </div>
+                                            </div>
+                                            <div class="effects p-t-md">
+                                                <h5>Effects</h5>
+                                                <div>
+                                                    <div class="form-group p-b-sm">
+                                                        <span> Hue</span>
+
+                                                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                                                            <!--<div class="hue"></div>-->
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </tab>
+                                </tabset>
+                                <div class="footer_right_panel">
+                                    <button type="button" ng-click="ctrl.saveEditorImage()" class="btn btn-primary">Save and exit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right_part"
+                         ng-init="category='Show all'; category_filter=''; size='Show all'; size_filter=''; material='Show all'; material_filter='';">
+                        <div class="docs-actions">
+                            <div class="docs-buttons">
+                                <!-- <h3 class="page-header">Toolbar:</h3> -->
+                                <div class="btn-group">
+                                    <button type="button" class="btn focus" data-method="setDragMode" data-option="move" title="Move">
+                                        <span>
+                                          <span class="fa fa-arrows"></span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="btn focus" data-method="setDragMode" data-option="crop" title="Crop">
+                                        <span>
+                                          <span class="fa fa-crop"></span>
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="btn-group">
+                                    <button type="button" class="btn" data-method="zoom" data-option="0.1" title="Zoom In">
+                                        <span>
+                                          <span class="fa fa-search-plus"></span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="btn" data-method="zoom" data-option="-0.1" title="Zoom Out">
+                                        <span>
+                                          <span class="fa fa-search-minus"></span>
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="btn-group">
+                                    <button type="button" class="btn" data-method="move" data-option="-10" data-second-option="0" title="Move Left">
+                                        <span>
+                                          <span class="fa fa-arrow-left"></span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="btn" data-method="move" data-option="10" data-second-option="0" title="Move Right">
+                                        <span>
+                                          <span class="fa fa-arrow-right"></span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="btn" data-method="move" data-option="0" data-second-option="-10" title="Move Up">
+                                        <span>
+                                          <span class="fa fa-arrow-up"></span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="btn" data-method="move" data-option="0" data-second-option="10" title="Move Down">
+                                        <span>
+                                          <span class="fa fa-arrow-down"></span>
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="btn-group">
+                                    <div class="rotate form-group p-b-sm">
+                                        <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                                            <input id="rotate" name="sepia" type="range" min="0" max="360" value="0">
+                                        </div>
+                                    </div>
+                                    <!--<button type="button" class="btn" ng-class="ctrl.disabled_btn ? 'disabled' : ''" data-method="rotate" data-option="-45" title="Rotate Left">-->
+                                        <!--<span>-->
+                                          <!--<span class="fa fa-rotate-left"></span>-->
+                                        <!--</span>-->
+                                    <!--</button>-->
+                                    <!--<button type="button" class="btn" ng-class="ctrl.disabled_btn ? 'disabled' : ''" data-method="rotate" data-option="45" title="Rotate Right">-->
+                                        <!--<span>-->
+                                          <!--<span class="fa fa-rotate-right"></span>-->
+                                        <!--</span>-->
+                                    <!--</button>-->
+                                </div>
+
+                                <div class="btn-group">
+                                    <button type="button" class="btn" data-flip="horizontal" data-method="scale" data-option="-1" data-second-option="1" title="Flip Horizontal">
+                                        <span>
+                                          <span class="fa fa-arrows-h"></span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="btn" data-flip="vertical" data-method="scale" data-option="1" data-second-option="-1" title="Flip Vertical">
+                                        <span>
+                                          <span class="fa fa-arrows-v"></span>
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <div class="btn-group">
+                                    <button type="button" class="btn" data-method="crop" title="Crop">
+                                        <span>
+                                          <span class="fa fa-check"></span>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="btn" data-method="clear" title="Clear">
+                                        <span>
+                                          <span class="fa fa-remove"></span>
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <!--<div class="modal fade docs-cropped" id="getCroppedCanvasModal" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" role="dialog" tabindex="-1">-->
+                                    <!--<div class="modal-dialog">-->
+                                        <!--<div class="modal-content">-->
+                                            <!--<div class="modal-header">-->
+                                                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">?</button>-->
+                                                <!--<h4 class="modal-title" id="getCroppedCanvasTitle">Cropped</h4>-->
+                                            <!--</div>-->
+                                            <!--<div class="modal-body"></div>-->
+                                            <!--<div class="modal-footer">-->
+                                                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                                                <!--<a class="btn btn-primary" id="download" ng-click="ctrl.saveEditorImage()" data-dismiss="modal" data-method="destroy">Save</a>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<button type="button" class="btn" data-method="getCroppedCanvas">-->
+                                    <!--<span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="$().cropper(&quot;getCroppedCanvas&quot;)">-->
+                                      <!--Save-->
+                                    <!--</span>-->
+                                <!--</button>-->
+                                <!-- Show the cropped image in modal -->
+
+                            </div>
+                        </div>
+                        <div class="products_content-row">
+                            <div class="wrap_image_editor">
+
+                                <div class="img-container">
+                                    <img id="image124" src="{{ctrl.modal_image}}">
+                                    <!--<img id="image" src="{{ctrl.modal_image}}">-->
+                                    <canvas id="canvas_editor"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart">
+                </div>
+                <div class="pimp_container"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--<div class="modal-footer">-->
+<!--</div>-->
+</div>

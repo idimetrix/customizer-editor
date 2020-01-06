@@ -1,0 +1,48 @@
+<div class="add_basket save">
+    <div class="modal-header header">
+        <span class="title">{{ctrl.modal_title || 'Save and share'}}</span>
+        <span class="close" ng-disabled="loading" ng-click="ctrl.cancel()">{{ctrl.modal_button_cancel || 'CLOSE'}}<div
+                class="cross"></div></span>
+    </div>
+    <div class="modal-body content">
+
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div>
+            <div class="final_product">
+                <img ng-src="{{product.image}}" alt="">
+
+                <div class="sharePanel">
+                    <span class="desc" translate="dialogs.save.LINK">Link to your design</span>
+                    <!--<span class="copy glyphicon glyphicon-copy">Copy</span>-->
+                    <div class="share-box"><textarea readonly>http://www.shirtinator.eu/design/personalised-t-shirts/?userdesign=45125259</textarea>
+                    </div>
+                    <button class="button_save btn" data-ng-click="ctrl.exportAsPDF()" translate="dialogs.save.PDF">
+                        Export as PDF
+                    </button>
+                    <button class="button_save btn" data-ng-click="ctrl.exportAsJPG()" translate="dialogs.save.JPG">
+                        Export as JPG
+                    </button>
+                    <button class="button_save btn" data-ng-click="ctrl.exportAsPNG()" translate="dialogs.save.PNG">
+                        Export as PNG
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer footer">
+        <a class="btn btn-sm btn-social btn-facebook">
+            <i class="fa fa-facebook"></i> <span translate="dialogs.save.FACEBOOK">Share in with Facebook</span>
+        </a>
+        <a class="btn btn-sm btn-social btn-google">
+            <i class="fa fa-google"></i> <span translate="dialogs.save.GOOGLE">Share in with Google</span>
+        </a>
+        <a class="btn btn-sm btn-social btn-twitter">
+            <i class="fa fa-twitter"></i> <span translate="dialogs.save.TWITTER">Share in with Twitter</span>
+        </a>
+    </div>
+</div>

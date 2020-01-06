@@ -1,0 +1,20 @@
+<div class="product_detail_tab product_print_styles_tab active" style="display: block;">
+    <ul class="top_nav" ng-init="printStyle_path='tpl/dialogs/Detail/printStyle/Digital.html'">
+        <li class="printStyle_tabs printStyle_01 active" class="active"
+            ng-click="printStyle_path='tpl/dialogs/Detail/printStyle/Digital.html'; ctrl.detail_tab('printStyle_01', 'printStyle_tabs')">
+            <span translate="dialogs.detail.FLOCK">Flock Printing</span></li>
+        <li class="printStyle_tabs printStyle_02"
+            ng-click="printStyle_path='tpl/dialogs/Detail/printStyle/Dye.html'; ctrl.detail_tab('printStyle_02', 'printStyle_tabs')">
+            <span translate="dialogs.detail.FLEX">Flex Printing</span></li>
+        <li class="printStyle_tabs printStyle_03"
+            ng-click="printStyle_path='tpl/dialogs/Detail/printStyle/Embroidery.html'; ctrl.detail_tab('printStyle_03', 'printStyle_tabs')">
+            <span translate="dialogs.detail.DYE">Dye Sublimation</span></li>
+        <li class="printStyle_tabs printStyle_04"
+            ng-click="printStyle_path='tpl/dialogs/Detail/printStyle/Flex.html'; ctrl.detail_tab('printStyle_04', 'printStyle_tabs')">
+            <span translate="dialogs.detail.DIGITAL">Digital Printing</span></li>
+        <li class="printStyle_tabs printStyle_05"
+            ng-click="printStyle_path='tpl/dialogs/Detail/printStyle/Flock.html'; ctrl.detail_tab('printStyle_05', 'printStyle_tabs')">
+            <span translate="dialogs.detail.EMBROIDERY">Embroidery</span></li>
+    </ul>
+    <div ng-include="printStyle_path"></div>
+</div>

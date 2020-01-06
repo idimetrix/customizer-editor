@@ -1,0 +1,81 @@
+<div class="tab_text" data-ng-controller="cr_TextCtrl">
+    <div class="wrap_scroll">
+        <div class="motifs_scroll scrollbar-light" data-jquery-scrollbar="cr_ScrollbarFactory.options">
+            <div class="motifs_scroll-content">
+                <div class="objects_content-item item">
+                    <div class="font font_overflow">
+                        <h5> Text</h5>
+
+                        <div class="font_body">
+                            <div class="p-b-sm row">
+                                <div class="col-sm-12">
+                                    <textarea placeholder="Enter Text" class="form-control" name="" id="" cols="30"
+                                              rows="3" ng-model="user_text"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="btn-group col-sm-12" data-toggle="buttons">
+                                    <label class="btn btn-default btn-info col-sm-12" data-ng-click="objectClick(cr_Enums.OBJECT_TYPE.ITEXT)">
+                                        <i class="fa fa-font m-r-xs"></i> Add new text
+                                        object
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border_line"></div>
+
+                    <div class="alignment">
+                        <h5>Alignment</h5>
+
+                        <div class="row p-b-sm">
+                            <div class="button_style btn-group col-sm-12" data-toggle="buttons">
+                                <label ng-click="align_button_click($event)" ng-class="disabled_button_left ? 'disabled' :  active_button_left ? 'active' : ''" class="btn btn-default col-sm-3 btn-sm">
+                                    <input type="radio" name="align"> <i class="fa fa-align-left"></i>
+                                </label>
+                                <label ng-click="align_button_click($event)" ng-class="disabled_button_center ? 'disabled' :  active_button_center ? 'active' : ''" class="btn btn-default col-sm-3 btn-sm">
+                                    <input type="radio" name="align"> <i class="fa fa-align-center"></i>
+                                </label>
+                                <label ng-click="align_button_click($event)" ng-class="disabled_button_right ? 'disabled' :  active_button_right ? 'active' : ''" class="btn btn-default col-sm-3 btn-sm">
+                                    <input type="radio" name="align"> <i class="fa fa-align-right"></i>
+                                </label>
+                                <label ng-click="align_button_click($event)" ng-class="disabled_button_justify ? 'disabled' :  active_button_justify ? 'active' : ''" class="btn btn-default col-sm-3 btn-sm">
+                                    <input type="radio" name="align"> <i class="fa fa-align-justify"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border_line"></div>
+
+                    <div class="alignment">
+                        <h5>Type</h5>
+
+                        <div class="row">
+                            <div class="button_style btn-group col-sm-12" data-toggle="buttons">
+                                <label class="btn btn-default col-sm-6 btn-sm" ng-class="disabled_button_editable ? 'disabled' :  active_button_editable ? 'active' : ''" ng-click="tabs[0].active = true">
+                                    <input type="radio" name="align"> Editable Text
+                                </label>
+                                <label class="btn btn-default col-sm-6 btn-sm" ng-class="disabled_button_graphic ? 'disabled' :  active_button_graphic ? 'active' : ''" ng-click="tabs[1].active = true">
+                                    <input type="radio" name="align"> Graphic Font
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <tabset justified="true" class="text_tabs_none">
+                            <tab select="resizeItem()" ng-repeat="tab in tabs" active="tab.active">
+                                <div class="" ng-include="tab.tpl"></div>
+                            </tab>
+                        </tabset>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

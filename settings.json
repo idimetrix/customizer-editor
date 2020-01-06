@@ -1,0 +1,111 @@
+[
+  {
+    "name": "Update Profile Informations",
+    "button": "Update Profile",
+    "settings": [
+      {
+        "name": "Name",
+        "placeholder": "Name",
+        "value": "",
+        "description": "",
+        "type": "text"
+      },
+      {
+        "name": "Email",
+        "placeholder": "Email",
+        "value": "",
+        "description": "",
+        "type": "email"
+      },
+      {
+        "name": "About me",
+        "placeholder": "",
+        "value": "",
+        "description": "",
+        "type": "text"
+      },
+      {
+        "name": "Upload Profile Picture",
+        "placeholder": "",
+        "value": "",
+        "description": "",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "name": "Change Password",
+    "button": "Update Password",
+    "settings": [
+      {
+        "name": "Previous Password",
+        "placeholder": "Enter previous password",
+        "value": "",
+        "description": "",
+        "type": "password"
+      },
+      {
+        "name": "New Password",
+        "placeholder": "Enter new password",
+        "value": "",
+        "description": "",
+        "type": "password"
+      },
+      {
+        "name": "Confirm Password",
+        "placeholder": "Confirm new password",
+        "value": "",
+        "description": "",
+        "type": "password"
+      }
+    ]
+  },
+  {
+    "name": "Shipping Information",
+    "button": "Update Information",
+    "settings": [
+      {
+        "name": "Country",
+        "placeholder": "Select country",
+        "value": "",
+        "description": "",
+        "type": "text"
+      },
+      {
+        "name": "State",
+        "placeholder": "Select state",
+        "value": "",
+        "description": "",
+        "type": "text"
+      },
+      {
+        "name": "City",
+        "placeholder": "Select city",
+        "value": "",
+        "description": "",
+        "type": "text"
+      },
+      {
+        "name": "Address",
+        "placeholder": "Select city",
+        "value": "",
+        "description": "",
+        "type": "text"
+      },
+      {
+        "name": "Phone number",
+        "placeholder": "Select city",
+        "value": "",
+        "description": "",
+        "type": "phone"
+      },
+      {
+        "name": "ZIP code",
+        "placeholder": "Enter ZIP code",
+        "value": "",
+        "description": "",
+        "type": "text"
+      }
+    ]
+  }
+]

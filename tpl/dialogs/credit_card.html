@@ -1,0 +1,62 @@
+<div class="add_basket card">
+    <div class="modal-header header">
+        <span class="title">{{ctrl.modal_title || 'Choose size and amount'}}</span>
+        <span class="close" ng-disabled="loading" ng-click="ctrl.cancel()">{{ctrl.modal_button_cancel || 'CLOSE'}}<div
+                class="cross"></div></span>
+    </div>
+    <div class="modal-body content">
+
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div>
+            <div class="card_front">
+                <div class="form-group">
+                    <div class="">
+                        <input id="name" name="name" type="text" placeholder="Name on card" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group date">
+                    <div class="form-group">
+                        <div class="">
+                            <div class="field_date">
+                                <input type="text" class="form-control input-sm" placeholder="Month"
+                                       data-stripe="exp-month"/>
+                            </div>
+                            <div class="field_date">
+                                <input type="text" class="form-control input-sm" placeholder="Year"
+                                       data-stripe="exp-year"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group name">
+                    <div class="">
+                        <input id="number" name="number" type="text" placeholder="Credit card number"
+                               class="form-control">
+                    </div>
+                </div>
+                <img src="./img/card.png" alt="">
+            </div>
+            <div class="card_back">
+                <div class="black_line"></div>
+                <div class="form-group">
+                    <div class="">
+                        <label for="CVV">CVC/CVV</label>
+                        <input id="CVV" name="name" type="text" placeholder="" class="form-control">
+
+                        <p>The last 3 or 4 digits on back of the card</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer footer">
+        <button type="submit" ng-click="ctrl.ok()" class="btn btn-primary">Pay</button>
+    </div>
+</div>

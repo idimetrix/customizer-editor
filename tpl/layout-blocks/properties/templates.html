@@ -1,0 +1,27 @@
+<div class="text template" data-ng-controller="cr_TemplateCtrl">
+    <div class="font" ng-repeat="item in template">
+        <h5>Field {{$index+1}}</h5>
+
+        <div class="font_body">
+            <div class="row">
+                <div class="col-sm-12" ng-if="item.text!=''">
+                    <input palceholder="Enter text" class="form-control input-sm m-t-xs m-b-xs" type="text"
+                           ng-model="item.text">
+                </div>
+                <div class="col-sm-12" ng-if="item.image!=''">
+                    <div class="template_image">
+                        <img src="{{item.image}}" alt="">
+                    </div>
+                    <!--<input class="form-control input-sm m-t-xs m-b-xs" type="file" ng-model="{{item.image}}">-->
+                    <div class="button_style btn-group" data-toggle="buttons">
+                        <label class="btn btn-default btn-sm">
+                            <i class="fa fa-cloud-upload"></i> Upload an image
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

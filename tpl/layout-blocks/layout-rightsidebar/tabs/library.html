@@ -1,0 +1,22 @@
+<div class="library_content-row" data-ng-controller="cr_LibraryCtrl">
+    <div class="library_wrap-content">
+        <div class="library_scroll scrollbar-light" data-jquery-scrollbar="cr_ScrollbarFactory.options">
+            <div class="library_scroll-content">
+                <div class="library_content-item item" ng-click="Confirm_library(item.id)"
+                     ng-repeat="item in products_favorite_library">
+                    <img class="library_content-img " ng-src='{{item.url}}' alt=""/>
+
+                    <div class="zoom"
+                         data-ng-click="cr_PopoverFactory.data = item;"
+                         ns-popover
+                         ns-popover-template="image-popover"
+                         ns-popover-trigger="click"
+                         ns-popover-placement="left|bottom"
+                         ns-popover-theme="ns-popover-tooltip-theme"
+                         ns-popover-hide-on-click="false"
+                         ns-popover-timeout="1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

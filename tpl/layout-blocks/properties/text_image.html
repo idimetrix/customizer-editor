@@ -1,0 +1,105 @@
+<div class="text_image" data-ng-controller="cr_TextImageCtrl">
+
+    <div class="font">
+        <h5>Text</h5>
+
+        <div class="font_body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="text" placeholder="Enter text" class="form-control input-sm">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="border_line"></div>
+
+    <div class="font">
+        <h5>Fill</h5>
+
+        <div class="icons_body">
+            <div class="image_scroll scrollbar-light" data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                <div class="image_scroll-content">
+                    <div class="image_content-item item" ng-repeat="item in images">
+                        <img ng-src='{{item.url}}' alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="border_line"></div>
+
+    <div class="alignment">
+        <h5>Fonts</h5>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <select class="form-control input-sm">
+                    <option ng-repeat="item in fonts_text" value="item.family">{{item.family}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="border_line"></div>
+
+    <div class="effects">
+        <h5>Effects</h5>
+
+        <div class="form-group">
+            <span> Shape Opacity</span>
+
+            <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                <div class="opacity_TextImage"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="effects">
+        <h5>Position</h5>
+
+        <div class="form-group p-b-md">
+            <span> Rotate</span>
+
+            <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                <div class="rotate_TextImage"></div>
+            </div>
+        </div>
+        <div>
+            <div class="row p-b-xs">
+                <div class="form-group col-sm-6">
+                    <span> The X coordinate</span>
+
+                    <div class="p-t-xs">
+                        <input type="text" placeholder="Enter X" class="form-control input-sm" ng-model="x_TextImage">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <span> The Y coordinate</span>
+
+                    <div class="p-t-xs">
+                        <input type="text" placeholder="Enter Y" class="form-control input-sm" ng-model="y_TextImage">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row p-b-sm">
+                <div class="form-group col-sm-6">
+                    <span> Height</span>
+
+                    <div class="p-t-xs">
+                        <input type="text" placeholder="Enter height" class="form-control input-sm" ng-model="height_TextImage">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <span> Width</span>
+
+                    <div class="p-t-xs">
+                        <input type="text" placeholder="Enter width" class="form-control input-sm" ng-model="width_TextImage">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

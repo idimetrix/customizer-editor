@@ -1,0 +1,59 @@
+<div class="add_basket">
+    <div class="modal-header header">
+        <span class="title">{{ctrl.modal_title || 'Choose size and amount'}}</span>
+        <span class="close" ng-disabled="loading" ng-click="ctrl.cancel()">{{ctrl.modal_button_cancel || 'CLOSE'}}<div
+                class="cross"></div></span>
+    </div>
+    <div class="modal-body content">
+
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div class="shirt">
+            <img src="./img/1302.jpg" alt="">
+        </div>
+        <div class="products">
+            <div class="row head">
+                <div class="cell cell_01" translate="dialogs.addbasket.SIZE">Size</div>
+                <div class="cell cell_02" translate="dialogs.addbasket.LENGTH">Length / cm</div>
+                <div class="cell cell_03" translate="dialogs.addbasket.WIDTH">Width / cm</div>
+                <div class="cell cell_04" translate="dialogs.addbasket.QUANTITY">Quantity</div>
+            </div>
+            <div class="row" ng-repeat="item in product.sizes">
+                <div class="cell cell_01">{{item.size}}<span class="discontinued"></span></div>
+                <div class="cell cell_02">{{item.length}}</div>
+                <div class="cell cell_03">{{item.width}}</div>
+                <div class="cell cell_04">
+                    <div class="box">
+                        <span class="minus"
+                              ng-click="item.count = item.count == 0 ? 0 : item.count-1; cr_DataFactory.allCountItem = cr_DataFactory.allCountItem == 0 ? 0 : cr_DataFactory.allCountItem-1;"></span>
+                        <input class="" type="text" ng-pattern-restrict="^[0-9]*$" ng-model="item.count"/>
+                        <span class="plus"
+                              ng-click="item.count = (item.count-0)+1; cr_DataFactory.allCountItem=(cr_DataFactory.allCountItem-0)+1;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="arrow_red"></div>
+    </div>
+    <div class="modal-footer footer">
+        <div class="button_submit">
+            <div class="wrap">
+                <div class="icon"></div>
+            </div>
+            <div class="title" translate="dialogs.addbasket.CHECK" ng-click="ctrl.add_basket()">Check out</div>
+        </div>
+        <div class="button_back" translate="dialogs.addbasket.DESIGNING" data-ng-click="ctrl.cancel()">Continue
+            designing
+        </div>
+        <span class="steps" translate="dialogs.addbasket.ADD">Add to basket and:</span>
+
+        <div class="desc">
+            <span class="brand">{{product.brand}}</span>
+            <span class="info">{{product.title}}</span>
+        </div>
+    </div>
+</div>

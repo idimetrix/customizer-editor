@@ -1,0 +1,212 @@
+<div class="qr_code" data-ng-controller="cr_QrCodeCtrl">
+
+    <div class="font">
+        <h5>Text</h5>
+
+        <div class="font_body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="text" placeholder="Enter text" class="form-control input-sm" ng-model="text_qr_code">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="border_line"></div>-->
+
+    <!--<div class="font">-->
+        <!--<h5>Fill</h5>-->
+
+        <!--<div class="font_body">-->
+            <!--<div class="row">-->
+                <!--<div class="col-sm-7">-->
+                    <!--<select class="form-control input-sm" ng-model="fill_qr_code">-->
+                        <!--<option value="nonzero">Nonzero</option>-->
+                        <!--<option value="evenodd">Evenodd</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+                <!--<div class="form-group col-sm-5 p-l-none m-n">-->
+                    <!--<input type="text" class="input-sm form-control color_qr_code" data-control="hue" ng-model="color_qr_code">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="border_line"></div>
+
+    <!--<div class="alignment">-->
+        <!--<h5>Border</h5>-->
+
+        <!--<div class="row m-b-sm">-->
+            <!--<div class="col-sm-12">-->
+                <!--<select class="form-control input-sm" ng-model="type_border_qr_code">-->
+                    <!--<option value="None">None</option>-->
+                    <!--<option value="Solid">Solid</option>-->
+                    <!--<option value="Dashed">Dashed</option>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<div class="form-group col-sm-8 p-r-none m-n">-->
+                <!--<input type="text" class="input-sm form-control color_border_qr_code" data-control="hue" ng-model="color_border_qr_code">-->
+            <!--</div>-->
+            <!--<div class="col-sm-4">-->
+                <!--<input type="number" class="input-sm p-r-none form-control" ng-model="border_size_qr_code">-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="border_line"></div>-->
+
+    <div class="effects m-b-xs">
+        <h5>Effects</h5>
+
+        <div class="form-group p-b-sm">
+            <span> Text Opacity</span>
+            <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                <div cr-slider="opacityTextSettings" data-ng-model="opacity" class="opacity_text"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap_option_box">
+
+    <div class="border_line m-b-sm"></div>
+
+    <div class="font">
+        <h5>Flip</h5>
+
+        <div class="row">
+            <div class="button_style btn-group col-sm-12" data-toggle="buttons">
+                <label class="btn btn-default col-sm-6 btn-sm" ng-click="flipX == false ? flipX = true : flipX = false"
+                       ng-class="disabled_button_FlipX ? 'disabled' :  active_button_FlipX ? 'active' : ''">
+                    <input type="checkbox" name="align"> FlipX
+                </label>
+                <label class="btn btn-default col-sm-6 btn-sm" ng-click="flipY == false ? flipY = true : flipY = false"
+                       ng-class="disabled_button_FlipY ? 'disabled' :  active_button_FlipY ? 'active' : ''">
+                    <input type="checkbox" name="align"> FlipY
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="border_line m-b-sm"></div>
+
+    <div class="font">
+        <h5>Background</h5>
+
+        <div class="font_body">
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <div>
+                        <input type="text" class="input-sm form-control color_text"
+                               ng-model="colorLight" data-format="rgb" cr-minicolors="fillColorSettings">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <div>
+                        <input type="text" class="input-sm form-control color_text"
+                               ng-model="colorDark" data-format="rgb" cr-minicolors="fillColorSettings">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="border_line"></div>
+
+    <div class="effects">
+        <h5>Position</h5>
+
+        <div class="form-group p-b-sm">
+            <span> Rotate</span>
+            <div class="wrap_slider col-sm-12 p-r-none p-l-none p-t-xs">
+                <div cr-slider="angleTextSettings" data-ng-model="angle" class="opacity_text"></div>
+            </div>
+        </div>
+        <div>
+            <div class="row p-b-xs">
+                <div class="form-group col-sm-6 m-n">
+                    <span> The X coordinate</span>
+
+                    <div class="p-t-xs">
+                        <input type="text" placeholder="Enter X" class="form-control input-sm" ng-model="x_qr_code">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6 m-n">
+                    <span> The Y coordinate</span>
+
+                    <div class="p-t-xs">
+                        <input type="text" placeholder="Enter Y" class="form-control input-sm" ng-model="y_qr_code">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row p-b-sm">
+                <div class="form-group col-sm-6 m-n">
+                    <span> Height</span>
+
+                    <div class="p-t-xs">
+                        <input type="text" placeholder="Enter height" class="form-control input-sm" ng-model="height_qr_code">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6 m-n">
+                    <span> Width</span>
+
+                    <div class="p-t-xs">
+                        <input type="text" placeholder="Enter width" class="form-control input-sm" ng-model="width_qr_code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="border_line m-b-sm"></div>
+
+    <div class="footer row m-b-sm">
+        <div class="button_style btn-group col-sm-8" data-toggle="buttons">
+            <label ng-click="back($event)" class="btn btn-default btn-sm col-sm-6"
+                   ng-class="disabled_button_back ? 'disabled' : ''">
+                <i class="fa fa-long-arrow-down"></i> <span>Back</span>
+            </label>
+            <label ng-click="forward($event)" class="btn btn-default btn-sm col-sm-6"
+                   ng-class="disabled_button_forward ? 'disabled' : ''">
+                <i class="fa fa-long-arrow-up"></i> <span>Forward</span>
+            </label>
+        </div>
+        <div ng-click="visible_qr_code == false ? visible_qr_code = true : visible_qr_code = false" class="col-sm-2 p-l-none btn-group button_style" data-toggle="buttons"
+             ng-class="disabled_button_remove ? 'disabled' : ''">
+            <label class="remove btn btn-default btn-sm">
+                <i ng-show="!visible" class="fa fa-eye"></i>
+                <i ng-show="visible" class="fa fa-eye-slash"></i>
+            </label>
+        </div>
+        <div ng-click="remove($event)" class="col-sm-2 p-l-none btn-group" data-toggle="buttons"
+             ng-class="disabled_button_remove ? 'disabled' : ''">
+            <label class="remove btn btn-danger btn-sm">
+                <i class="fa fa-trash-o"></i>
+            </label>
+        </div>
+    </div>
+
+
+    <div class="footer row">
+        <div class="button_style btn-group col-sm-12" data-toggle="buttons">
+            <button ng-click="restore($event)" class="btn btn-default btn-sm col-sm-6"
+                    ng-disabled="diffSize() == 0">
+                <i class="fa fa-times"></i> <span>Restore</span>
+            </button>
+            <button ng-click="apply($event)" class="btn btn-default btn-sm col-sm-6"
+                    ng-disabled="diffSize() == 0">
+                <i class="fa fa-check"></i> <span>Apply</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="toggle_option" data-ng-click="toggle_option()">
+        <i class="fa fa-cog"></i> <span>Show advanced options</span>
+    </div>
+</div>

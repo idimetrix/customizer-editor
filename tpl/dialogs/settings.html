@@ -1,0 +1,62 @@
+<div class="add_basket settings_dialog">
+    <div class="modal-header header">
+        <span class="title">{{ctrl.modal_title || 'Choose size and amount'}}</span>
+    <span class="close" ng-disabled="loading" ng-click="ctrl.cancel()">{{ctrl.modal_button_cancel || 'CLOSE'}}<div
+            class="cross"></div></span>
+    </div>
+    <div class="modal-body content">
+
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div>
+            <tabset justified="true" class="tabs">
+                <tab>
+                    <tab-heading>Tab_1</tab-heading>
+                    <div class="">
+                        <div class="settings_scroll scrollbar-light"
+                             data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                            <div class="settings_scroll-content">
+                                <div class="settings_content-item item">
+                                    Text<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.Text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+                <tab active="true">
+                    <tab-heading>Tab_2</tab-heading>
+                    <div class="">
+                        <div class="settings_scroll scrollbar-light"
+                             data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                            <div class="settings_scroll-content">
+                                <div class="settings_content-item item">
+                                    Text<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.Text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+                <tab>
+                    <tab-heading>Tab_3</tab-heading>
+                    <div class="">
+                        <div class="settings_scroll scrollbar-light"
+                             data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                            <div class="settings_scroll-content">
+                                <div class="settings_content-item item">
+                                    Text<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.<br>.Text
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+    <div class="modal-footer footer">
+        <button type="submit" ng-click="ctrl.ok()" class="btn btn-primary">Ok</button>
+    </div>
+</div>

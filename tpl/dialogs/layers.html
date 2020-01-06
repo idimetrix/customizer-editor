@@ -1,0 +1,58 @@
+<div class="add_basket layers">
+    <div class="modal-header header">
+        <span class="title">{{ctrl.modal_title || 'Choose size and amount'}}</span>
+        <span class="close" ng-disabled="loading" ng-click="ctrl.cancel()">{{ctrl.modal_button_cancel || 'CLOSE'}}<div
+                class="cross"></div></span>
+    </div>
+    <div class="modal-body content">
+
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div>
+            <ul ng-model="cr_DrawFactory.fabric._layouts"
+                class="list-group">
+                <li ng-repeat="layout in cr_DrawFactory.fabric._layouts">
+                    <span>{{layout.name}}</span>
+
+                    <ul ui-sortable="sortableOptions" ng-model="layout._objects"
+                        class="list-group">
+                        <li ng-click="detail_tab('layers_item_'+$index, 'layers_item')"
+                            data-ng-click="layerClick(object)" ng-repeat="object in layout._objects"
+                            data-ng-class="{active: cr_DrawFactory.selected == object}"
+                            class="list-group-item layers_item layers_item_{{$index}}">
+                        <span data-ng-click="visibleClick(object)" class="glyphicon layers_eye"
+                              data-ng-class="{'glyphicon-eye-open': object.visible, 'glyphicon-eye-close': !object.visible}"> </span>
+                            <span data-ng-click="layerClick(object)" ng-init="object.name = object.name || ''">{{ object.name || object.type }}</span>
+                            <span class="glyphicon glyphicon-trash layers_trash"> </span>
+                        <span data-ng-click="lockClick(object)" class="fa layers_lock layers_lock"
+                              data-ng-class="{'fa-unlock': object.selectable, 'fa-lock': !object.selectable}"> </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!--
+            <ul ui-sortable="sortableOptions" ng-model="cr_DrawFactory.fabric._objects"
+                class="list-group">
+                <li ng-click="detail_tab('layers_item_'+$index, 'layers_item')" data-ng-click="layerClick(object)" ng-repeat="object in cr_DrawFactory.fabric._objects"
+                    data-ng-class="{active: cr_DrawFactory.selected == object}"
+                    class="list-group-item layers_item layers_item_{{$index}}">
+                    <span data-ng-click="visibleClick(object)" class="glyphicon layers_eye"
+                          data-ng-class="{'glyphicon-eye-open': object.visible, 'glyphicon-eye-close': !object.visible}"> </span>
+                    <span data-ng-click="layerClick(object)" ng-init="object.name = object.name || ''">{{ object.name || object.type }}</span>
+                    <span class="glyphicon glyphicon-trash layers_trash"> </span>
+                    <span data-ng-click="lockClick(object)" class="fa layers_lock layers_lock"
+                          data-ng-class="{'fa-unlock': object.selectable, 'fa-lock': !object.selectable}"> </span>
+                </li>
+            </ul>
+            -->
+        </div>
+    </div>
+    <div class="modal-footer footer">
+        <button type="submit" ng-click="ctrl.ok()" class="btn btn-primary">Ok</button>
+    </div>
+</div>

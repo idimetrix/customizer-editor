@@ -1,0 +1,19 @@
+<div class="add_basket confirm_dialog">
+    <div class="modal-header header">
+        <h2 class="title">{{ctrl.modal_title || 'Save or close'}}</h2>
+    </div>
+    <div class="modal-body content">
+        <div>
+            <span class="description">{{ctrl.modal_description || 'Do you want to download a new template, save the old?'}}</span>
+            <h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length"
+                data-ng-repeat="message in ctrl.messages"
+                ng-bind-html="message"></h5>
+            <h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"
+                ng-bind-html="error"></h5>
+        </div>
+    </div>
+    <div class="modal-footer footer">
+        <button class="btn" ng-click="ctrl.ok()">{{ctrl.modal_button_ok || 'Save and Continue'}}</button>
+        <button class="btn" ng-click="ctrl.cancel()">{{ctrl.modal_button_cancel || 'Don\'t save and continue'}}</button>
+    </div>
+</div>

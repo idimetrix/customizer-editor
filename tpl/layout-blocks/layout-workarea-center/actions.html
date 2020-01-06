@@ -1,0 +1,28 @@
+<div>
+    <div class="center_item center_undo" data-ng-click="cr_CommandsManager.undo()">
+        <div class="center_wrap">
+            <div class="center_undo-item glyphicon glyphicon-share-alt"
+                 data-ng-class="{center_deactivate: !cr_CommandsManager.canUndo()}"></div>
+        </div>
+        <div class="center_title" translate="center.actions.UNDO">Undo</div>
+    </div>
+    <div class="center_item center_redo" data-ng-click="cr_CommandsManager.redo()">
+        <div class="center_wrap">
+            <div class="center_redo-item glyphicon glyphicon-share-alt"
+                 data-ng-class="{center_deactivate: !cr_CommandsManager.canRedo()}"></div>
+        </div>
+        <div class="center_title" translate="center.actions.REDO">Redo</div>
+    </div>
+    <!--<div class="center_item center_reset">-->
+        <!--<div class="center_wrap">-->
+            <!--<div class="center_reset-item center_deactivate glyphicon glyphicon-repeat"></div>-->
+        <!--</div>-->
+        <!--<div class="center_title" translate="center.actions.RESET">Reset</div>-->
+    <!--</div>-->
+    <div class="center_item center_reset">
+        <div class="center_wrap">
+            <div class="center_reset-item center_remove glyphicon glyphicon-trash"></div>
+        </div>
+        <div class="center_title">Clear all</div>
+    </div>
+</div>

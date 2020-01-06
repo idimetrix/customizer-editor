@@ -1,0 +1,48 @@
+<div class="page_signin_up">
+    <div class="login-outer">
+        <div class="login-wrap">
+            <div class="login-left striped-bg text-center">
+                <a ui-sref="app.home" class="logo-lg">
+                <i class="fa fa-paper-plane"></i> IDCreator </a>
+                <div class="slogan">Always a step ahead</div>
+            </div>
+            <div class="login-right striped-bg"> <!-- uiView:  -->
+                <div ui-view="" class="ng-scope">
+                    <div class="heading ng-scope">Create your Account</div>
+                    <div class="input ng-scope">
+                        <form class="form-horizontal ng-pristine ng-valid" role="form" ng-submit="submit()">
+                            <input type="hidden" name="_token" value="">
+                            <div class="login-input-group">
+                                <span class="login-input-group-addon" id="basic-addon3">
+                                    <i class="fa fa-user fa-fw"></i>
+                                </span>
+                                <input type="text" class="here form-control" placeholder="name" aria-describedby="basic-addon2" name="name" ng-model="ctrl.user.login">
+                            </div>
+                            <div class="login-input-group">
+                                <span class="login-input-group-addon" id="basic-addon1">
+                                    <i class="fa fa-at fa-fw"></i>
+                                </span>
+                                <input type="email" class="here form-control" placeholder="email" aria-describedby="basic-addon1" name="email" ng-model="ctrl.user.email">
+                            </div>
+                            <div class="login-input-group">
+                                <span class="login-input-group-addon" id="basic-addon2">
+                                    <i class="fa fa-key fa-fw"></i>
+                                </span> <input type="password" class="here form-control" placeholder="password" aria-describedby="basic-addon2" name="password" ng-model="ctrl.user.password">
+                            </div>
+                            <!--<div class="login-input-group">-->
+                                <!--<span class="login-input-group-addon" id="basic-addon2">-->
+                                    <!--<i class="fa fa-key fa-fw"></i>-->
+                                <!--</span> -->
+                                <!--<input type="password" class="here form-control" placeholder="confirm password" aria-describedby="basic-addon2" name="password_confirmation">-->
+                            <!--</div>-->
+                            <button type="submit" class="btn btn-default btn-lg submit" ng-click="ctrl.signup()">Signup</button>
+                        </form>
+                    </div>
+                    <div class="rightFooter ng-scope">
+                        <a ui-sref="access.signin">Already have an Account?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

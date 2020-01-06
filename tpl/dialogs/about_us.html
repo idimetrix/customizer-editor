@@ -1,0 +1,36 @@
+<div class="add_basket aboutus">
+    <div class="modal-header header">
+        <span class="title">{{ctrl.modal_title || 'Choose size and amount'}}</span>
+        <span class="close" ng-disabled="loading" ng-click="ctrl.cancel()">{{ctrl.modal_button_cancel || 'CLOSE'}}<div
+                class="cross"></div></span>
+    </div>
+    <div class="modal-body content">
+
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div>
+            <img src="./img/about.png" alt="">
+
+            <p class="wrap_text">Here at Dashing Dish, we have no greater passion than to teach others how simple and
+                enjoyable it can be to live a healthy lifestyle. We like to think that the recipes are simply a
+                reflection of what we are all about; wholesome, uncomplicated, and balanced. We desire to help each
+                person live every day with passion, purpose, and freedom as they find nourishment for their body and
+                soul.
+
+                Along with nourishing the body and soul, we also feel equally as passionate about giving back. We truly
+                believe that God has bigger plans for Dashing Dish than we could have ever imagined, and one of them is
+                providing groceries for those who can't afford them.
+
+                Dashing Dish is 100% supported by its faithful readers. We don't display advertisements, nor do we have
+                any sponsors or investors.</p>
+
+        </div>
+    </div>
+    <div class="modal-footer footer">
+        <button type="submit" ng-click="ctrl.ok()" class="btn btn-primary">Ok</button>
+    </div>
+</div>

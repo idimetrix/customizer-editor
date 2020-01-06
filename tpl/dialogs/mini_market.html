@@ -1,0 +1,206 @@
+<div class="products market">
+    <!--<div class="modal-header">-->
+    <!--<h3 class="modal-title">{{ctrl.modal_title}}</h3>-->
+    <!--</div>-->
+    <div class="modal-body p-none">
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div class="creatorBox">
+            <div id="creator" class="shirtinator-creator standard shrcProductMenuCursor">
+                <div class="shrcDisabler"></div>
+                <div class="product_details active" id="product_details">
+                    <a class="close" ng-click="ctrl.cancel()"></a>
+
+                    <div class="left_part">
+                        <div class="navbar-default sidebar" role="navigation">
+                            <div class="sidebar-nav navbar-collapse">
+                                <ul class="nav" id="side-menu">
+                                    <li class="sidebar-search">
+                                        <div class="input-group custom-search-form">
+                                            <input type="text" class="form-control" placeholder="Search...">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-photo fa-fw"></i> <span></span>Prints</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-star fa-fw"></i> Ready-made
+                                            <span class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            <li>
+                                                <a>Item</a>
+                                            </li>
+                                            <li>
+                                                <a>Item</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-font fa-fw"></i> Extra fonts</a>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-edit fa-fw"></i> Fonts</a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span
+                                                class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            <li>
+                                                <a>Buttons</a>
+                                            </li>
+                                            <li>
+                                                <a>Forms</a>
+                                            </li>
+                                            <li>
+                                                <a>Colors</a>
+                                            </li>
+                                            <li>
+                                                <a>Menu</a>
+                                            </li>
+                                            <li>
+                                                <a>Item</a>
+                                            </li>
+                                            <li>
+                                                <a>Item</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Themes<span
+                                                class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            <li>
+                                                <a href="#">Second Level Item</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Second Level Item</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Third Level <span class="fa arrow"></span></a>
+                                                <ul class="nav nav-third-level">
+                                                    <li>
+                                                        <a href="#">Third Level Item</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Third Level Item</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Third Level Item</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Third Level Item</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-cogs fa-fw"></i> Instruments<span
+                                                class="fa arrow"></span></a>
+                                        <ul class="nav nav-second-level">
+                                            <li>
+                                                <a>Item</a>
+                                            </li>
+                                            <li>
+                                                <a>Item</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right_part"
+                         ng-init="category='Show all'; category_filter=''; size='Show all'; size_filter=''; material='Show all'; material_filter='';">
+                        <div class="head shadow">
+                            <ul class="filter_gender">
+                                <li themeid="1" style="display: list-item;"><a class="gender_item gender_item1 active"
+                                                                               ng-click="ctrl.detail_tab('gender_item1', 'gender_item')"
+                                                                               translate="dialogs.market.ANY">Any</a>
+                                </li>
+                                <li themeid="2" style="display: list-item;"><a class="gender_item gender_item2"
+                                                                               ng-click="ctrl.detail_tab('gender_item2', 'gender_item')"
+                                                                               translate="dialogs.market.FREE">Free</a>
+                                </li>
+                                <li themeid="3" style="display: list-item;"><a class="gender_item gender_item3"
+                                                                               ng-click="ctrl.detail_tab('gender_item3', 'gender_item')"
+                                                                               translate="dialogs.market.PREMIUM">Premium</a>
+                                </li>
+                            </ul>
+                            <div class="filter">
+                                <div class="box box_01" ng-click="ctrl.showMenuList('shadow_01')">
+                                    <span class="title" translate="dialogs.market.SORT">Sort by</span><span
+                                        class="value">{{category}}</span><span class="icon_arrow"></span>
+
+                                    <div class="dropdown shadow_01" style="display: none;">
+                                        <div class="overlay_top_shadow"></div>
+                                        <div class="shrscrollbarWrapper"
+                                             style="width: 100%; height: 100%; position: relative; overflow: hidden;">
+                                            <ul class="shrscrollbar scrollbar-light"
+                                                data-jquery-scrollbar="cr_ScrollbarFactory.options"
+                                                style="float: none;">
+                                                <li ng-click="category='Show all'; category_filter='';"><a>Show all</a>
+                                                </li>
+                                                <li ng-click="category='T-Shirts'; category_filter='T-Shirts';"><a>T-Shirts</a>
+                                                </li>
+                                                <li ng-click="category='Polo Shirts'; category_filter='Polo Shirts';">
+                                                    <a>Polo Shirts</a></li>
+                                                <li ng-click="category='Jumpers and Hoodies'; category_filter='Jumpers and Hoodies';">
+                                                    <a>Jumpers and Hoodies</a></li>
+                                                <li ng-click="category='Long Sleeves'; category_filter='Long Sleeves';">
+                                                    <a>Long Sleeves</a></li>
+                                                <li ng-click="category='Jackets'; category_filter='Jackets';">
+                                                    <a>Jackets</a></li>
+                                                <li ng-click="category='Sport'; category_filter='Sport';"><a>Sport</a>
+                                                </li>
+                                                <li ng-click="category='Underwear'; category_filter='Underwear';"><a>Underwear</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="products_content-row">
+                            <div class="products_wrap-content">
+                                <div class="products_scroll scrollbar-light"
+                                     data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                                    <div class="products_scroll-content">
+                                        <div class="products_content-item item" ng-repeat="item in market_items">
+                                            <img ng-src='{{item.url}}' alt=""/>
+
+                                            <div class="status" ng-style="{ 'background-color': item.status }">Sale
+                                            </div>
+                                            <div class="overview">
+                                            </div>
+                                            <a class="title">{{item.title}}</a>
+                                            <span class="price"><span
+                                                    class="current_symbol">{{item.current_symbol}}</span>{{item.price}}</span>
+                                            <a class="button" translate="dialogs.market.ADD">ADD TO CART</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart">
+                </div>
+                <div class="pimp_container"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--<div class="modal-footer">-->
+<!--</div>-->
+</div>

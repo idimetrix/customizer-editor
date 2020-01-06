@@ -1,0 +1,213 @@
+<div class="products profile">
+    <!--<div class="modal-header">-->
+    <!--<h3 class="modal-title">{{ctrl.modal_title}}</h3>-->
+    <!--</div>-->
+    <div class="modal-body p-none">
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div class="creatorBox">
+            <div id="creator" class="shirtinator-creator standard shrcProductMenuCursor">
+                <div class="shrcDisabler"></div>
+                <div class="product_details active" id="product_details">
+                    <a class="close" ng-click="ctrl.cancel()"></a>
+
+                    <div class="left_part">
+                        <div class="info_profile">
+                            <img ng-src="{{cr_LoginFactory.user.avatar}}" alt="">
+
+                            <div class="p-sm">
+                                <p class="name">{{cr_LoginFactory.user.name}}</p>
+
+                                <p class="position">{{cr_LoginFactory.user.city}}, {{cr_LoginFactory.user.state}},
+                                    {{cr_LoginFactory.user.country}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right_part"
+                         ng-init="category='Show all'; category_filter=''; size='Show all'; size_filter=''; material='Show all'; material_filter='';">
+                        <div class="head shadow p-sm">
+                            <h2 class="p-l-md">Your profile</h2>
+                        </div>
+                        <div class="profile_content-row">
+                            <div class="profile_scroll scrollbar-light"
+                                 data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                                <div class="profile_scroll-content">
+                                    <div class="profile_content-item item">
+                                        <div class="main_group_item" ng-repeat="main_item in ctrl.settings"
+                                             ng-init="type = (item.type == 'input')">
+                                            <div class="main_group_name">
+                                                <span>{{main_item.name}}</span>
+                                            </div>
+                                            <div class="group_item">
+                                                <div ng-repeat="item in main_item.settings"
+                                                     ng-init="type = (item.type == 'input')">
+                                                    <div ng-if="item.type == 'text'"
+                                                         class="settings_item settings_text">
+                                                        <span class="title col-sm-2">{{item.name}}</span>
+
+                                                        <div class="form-group">
+                                                            <div class="col-md-7">
+                                                                <input name="{{item.name}}" type="text"
+                                                                       placeholder="{{item.value}}"
+                                                                       value="{{item.value}}" class="form-control"
+                                                                       ng-model="item.value">
+                                                                <label>
+                                                                    <span class="description">{{item.description}}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-if="item.type == 'email'"
+                                                         class="settings_item settings_text">
+                                                        <span class="title col-sm-2">{{item.name}}</span>
+
+                                                        <div class="form-group">
+                                                            <div class="col-md-7">
+                                                                <input name="{{item.name}}" type="email"
+                                                                       placeholder="{{item.value}}"
+                                                                       value="{{item.value}}" class="form-control"
+                                                                       ng-model="item.value">
+                                                                <label>
+                                                                    <span class="description">{{item.description}}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-if="item.type == 'password'"
+                                                         class="settings_item settings_text">
+                                                        <span class="title col-sm-2">{{item.name}}</span>
+
+                                                        <div class="form-group">
+                                                            <div class="col-md-7">
+                                                                <input name="{{item.name}}" type="password"
+                                                                       placeholder="{{item.value}}"
+                                                                       value="{{item.value}}" class="form-control"
+                                                                       ng-model="item.value">
+                                                                <label>
+                                                                    <span class="description">{{item.description}}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-if="item.type == 'phone'"
+                                                         class="settings_item settings_text">
+                                                        <span class="title col-sm-2">{{item.name}}</span>
+
+                                                        <div class="form-group">
+                                                            <div class="col-md-7">
+                                                                <input name="{{item.name}}" type="text"
+                                                                       placeholder="{{item.value}}"
+                                                                       value="{{item.value}}" class="form-control"
+                                                                       ng-model="item.value">
+                                                                <label>
+                                                                    <span class="description">{{item.description}}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-if="item.type == 'checkbox'"
+                                                         class="settings_item settings_checkbox">
+                                                        <span class="title col-sm-2">{{item.name}}</span>
+
+                                                        <div class="col-sm-10">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" name="{{item.name}}"
+                                                                       value="{{item.value}}" ng-model="item.value">
+                                                                <label>
+                                                                </label>
+                                                            </div>
+                                                            <label>
+                                                                <span class="description">{{item.description}}</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-if="item.type == 'textarea'"
+                                                         class="settings_item settings_textarea">
+                                                        <span class="title col-sm-2">{{item.name}}</span>
+
+                                                        <div class="col-sm-10">
+                                                            <textarea name="{{item.name}}" rows="5" cols="50"
+                                                                      placeholder="{{item.value}}" ng-model="item.value"
+                                                                      value="{{item.value}}"></textarea>
+                                                            <label>
+                                                                <span class="description">{{item.description}}</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-if="item.type == 'select'"
+                                                         class="settings_item settings_select">
+                                                        <span class="title col-sm-2">{{item.name}}</span>
+
+                                                        <div class="col-sm-10">
+                                                            <select value="{{item.value}}" ng-model="item.value">
+                                                                <option value="{{option.value}}"
+                                                                        ng-repeat="option in item.option">
+                                                                    {{option.name}}
+                                                                </option>
+                                                            </select>
+                                                            <label>
+                                                                <span class="description">{{item.description}}</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-if="item.type == 'radio'"
+                                                         class="settings_item settings_radio">
+                                                        <span class="title col-sm-2">{{item.name}}</span>
+
+                                                        <div class="col-sm-10">
+                                                            <div class="radio" ng-repeat="radio in item.fields">
+                                                                <input type="radio" name="{{item.group_name}}"
+                                                                       ng-model="item.value" value="{{radio.value}}"
+                                                                       checked="checked">
+                                                                <label>{{radio.name}}
+                                                                </label>
+                                                            </div>
+                                                            <span class="description">{{item.description}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-if="item.type == 'color'"
+                                                         class="settings_item settings_color">
+                                                        <span class="title col-sm-2">{{item.name}}</span>
+
+                                                        <div class="col-sm-10">
+                                                            <input colorpicker ng-model="item.value" type="text"
+                                                                   ng-model="your_model"/>
+                                                            <label>
+                                                                <span class="description">{{item.description}}</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="local_footer">
+                            <button type="submit" ng-if="false" ng-click="ctrl.Restore(); ctrl.ok()"
+                                    class="btn btn-primary">Ok
+                            </button>
+                            <button type="submit" ng-if="true" ng-click="ctrl.Restore(); ctrl.ok()"
+                                    class="btn btn-primary">Update info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart">
+                </div>
+                <div class="pimp_container">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--<div class="modal-footer">-->
+<!--</div>-->
+</div>

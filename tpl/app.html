@@ -1,0 +1,24 @@
+<!-- content -->
+<div class="app-content full-absolute">
+
+    <div class="vbox h-full">
+        <div class="row-row">
+            <div class="cell">
+                <div ui-butterbar></div>
+            </div>
+        </div>
+        <div class="row-row h-full">
+            <div class="col h-full pos-rlt">
+                <div class="app-content-body full-absolute fade-in-up">
+                    <div class="full-absolute" ui-view>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /content -->
+
+<!-- toaster directive -->
+<toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+<!-- / toaster directive -->

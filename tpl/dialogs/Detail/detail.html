@@ -1,0 +1,32 @@
+<div class="product_detail_tab product_info_tab active">
+    <div class="gallery">
+        <div class="slides">
+            <div class="fotorama"
+                 data-auto="false"
+                 data-width="530"
+                 data-height="485"
+                 data-loop="true"
+                 data-nav="thumbs"
+                 data-autoplay="3000"></div>
+        </div>
+    </div>
+    <div class="galleryCover"></div>
+    <div class="info">
+        <span class="brand">{{product.brand}}</span>
+        <span class="title">{{product.title}}</span>
+
+        <div class="text" ng-bind-html="product.description"></div>
+        <div class="row">
+            <span translate="dialogs.detail.MATERIAL">Material:</span><strong>{{product.material}}</strong>
+        </div>
+        <div class="row">
+            <span translate="dialogs.detail.GENDER">Gender:</span><strong>{{product.gender}}</strong>
+        </div>
+        <div class="price">
+            <div class="small" translate="dialogs.detail.STARTING">Starting at</div>
+            <div class="large"><span ng-bind-html="product.currency_symbol"></span> {{product.price}}*</div>
+        </div>
+        <span class="delivery"
+              translate="dialogs.detail.AVAILABLE"><strong>Available</strong> Printed in 1-2 days.</span>
+    </div>
+</div>

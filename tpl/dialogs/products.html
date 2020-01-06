@@ -1,0 +1,254 @@
+<div class="products">
+    <!--<div class="modal-header">-->
+    <!--<h3 class="modal-title">{{ctrl.modal_title}}</h3>-->
+    <!--</div>-->
+    <div class="modal-body p-none">
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div class="creatorBox">
+            <div id="creator" class="shirtinator-creator standard shrcProductMenuCursor">
+                <div class="shrcDisabler"></div>
+                <div class="product_details active" id="product_details">
+                    <a class="close" ng-click="ctrl.cancel()"></a>
+
+                    <div class="left_part">
+                        <span class="title">{{product.brand}}</span><span class="desc">{{product.title}}</span>
+                        <ul class="gender">
+                            <li ng-click="ctrl.detail_tab('gender_item_{{item}}', 'gender_items')"
+                                class="gender_items gender_item_{{item}}" ng-repeat="item in product.available_gender"
+                                data-ng-class="{active: product.gender==item}">
+                                {{item}}
+                            </li>
+                        </ul>
+                        <div class="image_wrap">
+                            <div class="image">
+                                <img ng-src="{{product.image}}" alt="">
+                            </div>
+                            <div class="color_pallete">
+                                <div class="arrow"></div>
+                                <div class="shrcProductDetailColorBox">
+                                    <div ng-repeat="item in product.colors" style="background-color: {{item}}"></div>
+                                </div>
+                            </div>
+                            <div class="sizes">
+                                <div class="shrcProductDetailSizeBox">
+                                    <span ng-repeat="item in product.sizes">{{item.size}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info" ng-bind-html="product.description"></div>
+                        <div class="price"><span ng-bind-html="product.currency_symbol"></span> {{product.price}}*</div>
+                        <a class="button">
+                            <span class="button_left"></span>
+                            <span class="button_content" translate="dialogs.products.CREATE">Create</span>
+                            <span class="button_right"></span>
+                        </a>
+                    </div>
+                    <div class="right_part"
+                         ng-init="category='Show all'; category_filter=''; size='Show all'; size_filter=''; material='Show all'; material_filter='';">
+                        <div class="head shadow">
+                            <ul class="filter_gender">
+                                <li themeid="1" style="display: list-item;"><a class="gender_item gender_item1 active"
+                                                                               ng-click="ctrl.detail_tab('gender_item1', 'gender_item')"
+                                                                               translate="dialogs.products.MEN">Men</a>
+                                </li>
+                                <li themeid="2" style="display: list-item;"><a class="gender_item gender_item2"
+                                                                               ng-click="ctrl.detail_tab('gender_item2', 'gender_item')"
+                                                                               translate="dialogs.products.WOMEN">Women</a>
+                                </li>
+                                <li themeid="3" style="display: list-item;"><a class="gender_item gender_item3"
+                                                                               ng-click="ctrl.detail_tab('gender_item3', 'gender_item')"
+                                                                               translate="dialogs.products.KIDS">Kids
+                                    and Babies</a></li>
+                                <li themeid="4" style="display: list-item;"><a class="gender_item gender_item4"
+                                                                               ng-click="ctrl.detail_tab('gender_item4', 'gender_item')"
+                                                                               translate="dialogs.products.ACCESSORIES">Accessories</a>
+                                </li>
+                            </ul>
+                            <div class="filter">
+                                <div class="box box_01" ng-click="ctrl.showMenuList('shadow_01')">
+                                    <span class="title"
+                                          translate="dialogs.products.CATEGORY">Select Category</span><span
+                                        class="value">{{category}}</span><span class="icon_arrow"></span>
+
+                                    <div class="dropdown shadow_01" style="display: none;">
+                                        <div class="overlay_top_shadow"></div>
+                                        <div class="shrscrollbarWrapper"
+                                             style="width: 100%; height: 100%; position: relative; overflow: hidden;">
+                                            <ul class="shrscrollbar scrollbar-light"
+                                                data-jquery-scrollbar="cr_ScrollbarFactory.options"
+                                                style="float: none;">
+                                                <li ng-click="category='Show all'; category_filter='';"><a>Show all</a>
+                                                </li>
+                                                <li ng-click="category='T-Shirts'; category_filter='T-Shirts';"><a>T-Shirts</a>
+                                                </li>
+                                                <li ng-click="category='Polo Shirts'; category_filter='Polo Shirts';">
+                                                    <a>Polo Shirts</a></li>
+                                                <li ng-click="category='Jumpers and Hoodies'; category_filter='Jumpers and Hoodies';">
+                                                    <a>Jumpers and Hoodies</a></li>
+                                                <li ng-click="category='Long Sleeves'; category_filter='Long Sleeves';">
+                                                    <a>Long Sleeves</a></li>
+                                                <li ng-click="category='Jackets'; category_filter='Jackets';">
+                                                    <a>Jackets</a></li>
+                                                <li ng-click="category='Sport'; category_filter='Sport';"><a>Sport</a>
+                                                </li>
+                                                <li ng-click="category='Underwear'; category_filter='Underwear';"><a>Underwear</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box box_02" ng-click="ctrl.showMenuList('shadow_02')">
+                                    <span class="title" translate="dialogs.products.SIZE">Sizes</span><span
+                                        class="value">{{size}}</span><span
+                                        class="icon_arrow"></span>
+
+                                    <div class="dropdown shadow_02" style="display: none;">
+                                        <div class="overlay_top_shadow"></div>
+                                        <div class="shrscrollbarWrapper"
+                                             style="width: 100%; height: 100%; position: relative; overflow: hidden;">
+                                            <div class="sizeAll" ng-click="size='Show all'; size_filter='';">Show all
+                                            </div>
+                                            <div class="size_slider_range_wrap shrscrollbar">
+                                                <div class="size_slider_range" style="height: 280px;">
+                                                    <div class="line"
+                                                         style="display: block; top: 270px; height: 0px;"></div>
+                                                </div>
+                                                <div class="size">
+                                                    <div ng-mouseover="ctrl.detail_tab('size_pick1', 'size_pick')"
+                                                         ng-click="size='XS'; size_filter='XS';"
+                                                         class="size_pick size_pick1">
+                                                        <div class="circle"></div>
+                                                        <span>XS</span>
+                                                    </div>
+                                                    <div ng-mouseover="ctrl.detail_tab('size_pick2', 'size_pick')"
+                                                         ng-click="size='S'; size_filter='S';"
+                                                         class="size_pick size_pick2">
+                                                        <div class="circle"></div>
+                                                        <span>S</span>
+                                                    </div>
+                                                    <div ng-mouseover="ctrl.detail_tab('size_pick3', 'size_pick')"
+                                                         ng-click="size='M'; size_filter='M';"
+                                                         class="size_pick size_pick3">
+                                                        <div class="circle"></div>
+                                                        <span>M</span>
+                                                    </div>
+                                                    <div ng-mouseover="ctrl.detail_tab('size_pick4', 'size_pick')"
+                                                         ng-click="size='L'; size_filter='L';"
+                                                         class="size_pick size_pick4">
+                                                        <div class="circle"></div>
+                                                        <span>L</span>
+                                                    </div>
+                                                    <div ng-mouseover="ctrl.detail_tab('size_pick5', 'size_pick')"
+                                                         ng-click="size='XL'; size_filter='XL';"
+                                                         class="size_pick size_pick5">
+                                                        <div class="circle"></div>
+                                                        <span>XL</span>
+                                                    </div>
+                                                    <div ng-mouseover="ctrl.detail_tab('size_pick6', 'size_pick')"
+                                                         ng-click="size='XXL'; size_filter='XXL';"
+                                                         class="size_pick size_pick6">
+                                                        <div class="circle"></div>
+                                                        <span>XXL</span>
+                                                    </div>
+                                                    <div ng-mouseover="ctrl.detail_tab('size_pick7', 'size_pick')"
+                                                         ng-click="size='3XL'; size_filter='3XL';"
+                                                         class="size_pick size_pick7">
+                                                        <div class="circle"></div>
+                                                        <span>3XL</span>
+                                                    </div>
+                                                    <div ng-mouseover="ctrl.detail_tab('size_pick8', 'size_pick')"
+                                                         ng-click="size='4XL'; size_filter='4XL';"
+                                                         class="size_pick size_pick8">
+                                                        <div class="circle"></div>
+                                                        <span>4XL</span>
+                                                    </div>
+                                                    <div ng-mouseover="ctrl.detail_tab('size_pick9', 'size_pick')"
+                                                         ng-click="size='5XL'; size_filter='5XL';"
+                                                         class="size_pick size_pick9">
+                                                        <div class="circle"></div>
+                                                        <span>5XL</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<div class="box box_03"  style="display: block;">-->
+                                <!--<span class="title">Colours</span><span class="colors"><span></span><span></span><span></span><span></span><span></span><span></span></span><span class="icon_arrow"></span>-->
+                                <!--<div class="dropdown shadow_04" style="">-->
+                                <!--<div class="overlay_top_shadow"></div>-->
+                                <!--<div class="pallete"></div>-->
+                                <!--<a class="clear">Delete</a>-->
+                                <!--</div>-->
+                                <!--</div>-->
+                                <div class="box box_04" ng-click="ctrl.showMenuList('shadow_03')">
+                                    <span class="title" translate="dialogs.products.MATERIAL">Material</span><span
+                                        class="value">{{material}}</span><span
+                                        class="icon_arrow"></span>
+
+                                    <div class="dropdown shadow_03" style="display: none;">
+                                        <div class="overlay_top_shadow"></div>
+                                        <div class="shrscrollbarWrapper"
+                                             style="width: 100%; height: 100%; position: relative; overflow: hidden;">
+                                            <ul class="shrscrollbar scrollbar-light"
+                                                data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                                                <li ng-click="material='Show all'; material_filter='';"><a>Show all</a>
+                                                </li>
+                                                <li ng-click="material='Nylon'; material_filter='Nylon';"><a>Nylon</a>
+                                                </li>
+                                                <li ng-click="material='Polyester'; material_filter='Polyester';"><a>Polyester</a>
+                                                </li>
+                                                <li ng-click="material='Polyester Shirt'; material_filter='Polyester Shirt';">
+                                                    <a>Polyester Shirt</a></li>
+                                                <li ng-click="material='Stretch Material Type'; material_filter='Stretch Material Type';">
+                                                    <a>Stretch Material Type</a></li>
+                                                <li ng-click="material='Cotton'; material_filter='Cotton';">
+                                                    <a>Cotton</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box box_05">
+                                    <span class="title" translate="dialogs.products.ZOOM">Zoom</span>
+                                    <a class="icon_zoom minus" ng-click="ctrl.zoom_minus()"></a>
+                                    <a class="icon_zoom plus" ng-click="ctrl.zoom_plus()"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="products_content-row">
+                            <div class="products_wrap-content">
+                                <div class="products_scroll scrollbar-light"
+                                     data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                                    <div class="products_scroll-content">
+                                        <div class="products_content-item item"
+                                             ng-repeat="item in ((products_library | filter : {category : category_filter}) | filter: {size : size_filter}) | filter : {material : material_filter}">
+                                            <img ng-src='{{item.url}}' alt=""/>
+                                            <a class="button">
+                                                <span class="button_left"></span>
+                                                <span class="button_content"
+                                                      translate="dialogs.products.CREATE">Create</span>
+                                                <span class="button_right"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart">
+                </div>
+                <div class="pimp_container"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--<div class="modal-footer">-->
+<!--</div>-->
+</div>

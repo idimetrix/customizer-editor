@@ -1,0 +1,742 @@
+<div class="add_basket video" data-ng-controller="cr_TestApiCtrl">
+    <div class="modal-header header">
+        <span class="title">{{ctrl.modal_title || 'Choose size and amount'}}</span>
+        <span class="close" ng-disabled="loading" ng-click="ctrl.cancel()">{{ctrl.modal_button_cancel || 'CLOSE'}}<div
+                class="cross"></div></span>
+    </div>
+    <div class="modal-body content">
+
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>1. Login</span><br>
+                <input type="text" class="name_login" placeholder="name">
+                <input type="text" class="pass_login" placeholder="pass">
+                <button ng-click="login_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_login"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>2. Join</span><br>
+                <input type="text" class="name_join" placeholder="name">
+                <input type="text" class="email_join" placeholder="email"><br>
+                <input type="text" class="pass_join" placeholder="pass">
+                <button ng-click="join_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_join"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>3. logout</span><br>
+                <button ng-click="logout_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_logout"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>4. Edit user role. Admin method</span><br>
+                <input type="text" class="id_role" placeholder="id">
+                <input type="text" class="role_role" placeholder="role">
+                <button ng-click="role_test()">Button</button>
+                <p>role - [ guest | owner | trial | admin ]</p>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_role"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>5. Edit user info. Additional params will be appended soon</span><br>
+                <input type="text" class="id_edituser" placeholder="id">
+                <input type="text" class="param_edituser" placeholder="param">
+                <input type="text" class="value_edituser" placeholder="value">
+                <button ng-click="edituser_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_role"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>6. Ban</span><br>
+                <input type="text" class="id_ban" placeholder="id">
+                <input type="text" class="active_ban" placeholder="active">
+                <button ng-click="ban_test()">Button</button>
+                <p>ban user if active = 0<br>
+                    unban if active = 1</p>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_ban"></div>
+            </div>
+        </div>
+
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>7. Get list of pics uploaded by user</span><br>
+                <input type="text" class="offset_userpics" placeholder="offset">
+                <input type="text" class="user_key_userpics" placeholder="user_key">
+                <input type="text" class="limit_userpics" placeholder="limit">
+                <button ng-click="userpics_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_userpics"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>8. Get list of motifs in selected category</span><br>
+                <input type="text" class="category_pics" placeholder="category">
+                <button ng-click="pics_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_pics"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>9. Get motif categories list</span><br>
+                <button ng-click="categories_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_categories"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>10. Get products list</span><br>
+                <input type="text" class="user_key_products" placeholder="user_key">
+                <button ng-click="products_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_products"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>11. Get product by id</span><br>
+                <input type="text" class="id_product" placeholder="id">
+                <button ng-click="product_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_product"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>12. Add category</span><br>
+                <input type="text" class="name_addcategory" placeholder="name">
+                <button ng-click="addcategory_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_addcategory"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>13. Add nested category</span><br>
+                <input type="text" class="name_addsubcategory" placeholder="name">
+                <input type="text" class="category_id_addsubcategory" placeholder="category_id">
+                <button ng-click="addsubcategory_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_addsubcategory"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>14. Add new product</span><br>
+                <input type="text" class="user_key_addproduct" placeholder="user_key">
+                <input type="text" class="name_addproduct" placeholder="name"><br>
+                <input type="text" class="description_addproduct" placeholder="description">
+                <input type="text" class="data_addproduct" placeholder="data">
+                <button ng-click="addproduct_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_addproduct"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>15. Edit existing product</span><br>
+                <input type="text" class="user_key_editproduct" placeholder="user_key">
+                <input type="text" class="id_editproduct" placeholder="id"><br>
+                <input type="text" class="data_editproduct" placeholder="data">
+                <button ng-click="editproduct_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_editproduct"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>16. Set category for motif</span><br>
+                <input type="text" class="pic_id_setpiccategory" placeholder="pic_id">
+                <input type="text" class="category_id_setpiccategory" placeholder="category_id"><br>
+                <input type="text" class="position_setpiccategory" placeholder="position">
+                <button ng-click="setpiccategory_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_setpiccategory"></div>
+            </div>
+        </div>
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>17. Make graphic font message.</span><br>
+                <input type="text" class="font_maketext" placeholder="font">
+                <input type="text" class="align_maketext" placeholder="align">
+                <input type="text" class="words_maketext" placeholder="words">
+                <button ng-click="maketext_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_maketext"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>18. Add new font</span><br>
+                <input type="text" class="name_addfont" placeholder="name">
+                <input type="text" class="url_addfont" placeholder="url"><br>
+                <input type="text" class="type_addfont" placeholder="type">
+                <input type="text" class="letters_addfont" placeholder="letters"><br>
+                <input type="text" class="letterspacing_addfont" placeholder="letterspacing">
+                <input type="text" class="linespacing_addfont" placeholder="linespacing"><br>
+                <input type="text" class="data_addfont" placeholder="data">
+                <button ng-click="addfont_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_addfont"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>19. Edit existing font</span><br>
+                <input type="text" class="name_editfont" placeholder="name">
+                <input type="text" class="url_editfont" placeholder="url"><br>
+                <input type="text" class="type_editfont" placeholder="type">
+                <input type="text" class="letters_editfont" placeholder="letters"><br>
+                <input type="text" class="letterspacing_editfont" placeholder="letterspacing">
+                <input type="text" class="linespacing_editfont" placeholder="linespacing"><br>
+                <input type="text" class="data_editfont" placeholder="data">
+                <button ng-click="editfont_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_editfont"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>20. Get graphic fonts list</span><br>
+                <button ng-click="getfonts_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_getfonts"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>21. Get list of templates in selected category</span><br>
+                <input type="text" class="category_templates" placeholder="category">
+                <button ng-click="templates_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_templates"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>22. List of template categories</span><br>
+                <button ng-click="templatecategories_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_templatecategories"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>23. Template by id</span><br>
+                <input type="text" class="id_template" placeholder="id">
+                <button ng-click="template_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_template"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>24. Add new template</span><br>
+                <input type="text" class="user_key_addtemplate" placeholder="user_key">
+                <input type="text" class="name_addtemplate" placeholder="name"><br>
+                <input type="text" class="description_addtemplate" placeholder="description">
+                <input type="text" class="category_addtemplate" placeholder="category"><br>
+                <input type="text" class="data_addtemplate" placeholder="data">
+                <button ng-click="addtemplate_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_addtemplate"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>25. Edit existing template</span><br>
+                <input type="text" class="user_key_edittemplate" placeholder="user_key">
+                <input type="text" class="id_edittemplate" placeholder="id"><br>
+                <input type="text" class="data_edittemplate" placeholder="data">
+                <button ng-click="edittemplate_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_edittemplate"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>26. Set category for template</span><br>
+                <input type="text" class="user_key_settemplatecategory" placeholder="user_key">
+                <input type="text" class="id_settemplatecategory" placeholder="id"><br>
+                <input type="text" class="category_settemplatecategory" placeholder="category">
+                <button ng-click="settemplatecategory_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_settemplatecategory"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>27. Upload user pic</span><br>
+                <input type="text" class="uploader_upload" placeholder="uploader">
+                <input type="text" class="user_key_upload" placeholder="user_key"><br>
+                <input type="text" class="replace_id_upload" placeholder="replace_id">
+                <button ng-click="upload_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_upload"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>28. Upload motif</span><br>
+                <input type="text" class="uploader_uploadlibpic" placeholder="uploader">
+                <input type="text" class="user_key_uploadlibpic" placeholder="user_key"><br>
+                <input type="text" class="replace_id_uploadlibpic" placeholder="replace_id">
+                <button ng-click="uploadlibpic_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_uploadlibpic"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>29. Upload user avatar</span><br>
+                <input type="text" class="uploader_uploadavatar" placeholder="uploader">
+                <input type="text" class="user_id_uploadavatar" placeholder="user_id"><br>
+                <button ng-click="uploadavatar_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_uploadavatar"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>30. Rename uploaded pic in DB</span><br>
+                <input type="text" class="id_uploadrename" placeholder="id">
+                <input type="text" class="name_uploadrename" placeholder="name"><br>
+                <button ng-click="uploadrename_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_uploadrename"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>31. Deactivate uploaded pic (user won't see it)</span><br>
+                <input type="text" class="id_uploaddelete" placeholder="id">
+                <input type="text" class="active_uploaddelete" placeholder="active"><br>
+                <button ng-click="uploaddelete_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_uploaddelete"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>32. Copy uploaded pic to motifs to selected category</span><br>
+                <input type="text" class="id_uploadtomotifs" placeholder="id">
+                <input type="text" class="category_id_uploadtomotifs" placeholder="category_id"><br>
+                <button ng-click="uploadtomotifs_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_uploadtomotifs"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>33. Rename motif</span><br>
+                <input type="text" class="id_motifrename" placeholder="id">
+                <input type="text" class="name_id_motifrename" placeholder="name"><br>
+                <button ng-click="motifrename_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_motifrename"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>34. Deactivate motif (all users won't see it in list)</span><br>
+                <input type="text" class="id_motifdelete" placeholder="id">
+                <input type="text" class="active_id_motifdelete" placeholder="active"><br>
+                <button ng-click="motifdelete_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_motifdelete"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>35. Get settings for host key</span><br>
+                <button ng-click="getsettings_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_getsettings"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>36. Set settings for host key</span><br>
+                <input type="text" class="settings_setsettings" placeholder="settings">
+                <button ng-click="setsettings_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_setsettings"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>37. Authorizeapi payment</span><br>
+                <input type="text" class="number_pay" placeholder="number">
+                <input type="text" class="expire_pay" placeholder="expire"><br>
+                <input type="text" class="amount_pay" placeholder="amount">
+                <input type="text" class="refid_pay" placeholder="refid">
+                <button ng-click="pay_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_pay"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>38. Get current authorized user or user by user_key</span><br>
+                <input type="text" class="user_key_pay" placeholder="user_key">
+                <button ng-click="user_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_user"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>39. Get current user basket (or create empty, if not exists)</span><br>
+                <input type="text" class="user_key_cart" placeholder="user_key">
+                <button ng-click="data_cart()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_cart"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>40. Edit or create user basket</span><br>
+                <input type="text" class="user_key_editcart" placeholder="user_key">
+                <input type="text" class="data_editcart" placeholder="data"><br>
+                <button ng-click="editcart_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_editcart"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>41. Get list of library templates in selected category</span><br>
+                <input type="text" class="category_librarytemplates" placeholder="category">
+                <button ng-click="librarytemplates_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_librarytemplates"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>42. List of library  template categories</span><br>
+                <button ng-click="librarytemplatecategories_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_librarytemplatecategories"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>43. Library template by id</span><br>
+                <input type="text" class="id_librarytemplate" placeholder="id">
+                <button ng-click="librarytemplate_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_librarytemplate"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>44. Add new library template</span><br>
+                <input type="text" class="user_key_addlibrarytemplate" placeholder="user_key">
+                <input type="text" class="name_addlibrarytemplate" placeholder="name"><br>
+                <input type="text" class="description_addlibrarytemplate" placeholder="description">
+                <input type="text" class="category_addlibrarytemplate" placeholder="category"><br>
+                <input type="text" class="data_addlibrarytemplate" placeholder="data">
+                <button ng-click="addlibrarytemplate_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_addlibrarytemplate"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>45. Edit existing library template</span><br>
+                <input type="text" class="user_key_editlibrarytemplate" placeholder="user_key">
+                <input type="text" class="id_editlibrarytemplate" placeholder="id"><br>
+                <input type="text" class="data_editlibrarytemplate" placeholder="data">
+                <button ng-click="editlibrarytemplate_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_editlibrarytemplate"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>46. Set category for library template</span><br>
+                <input type="text" class="user_key_setlibrarytemplatecategory" placeholder="user_key">
+                <input type="text" class="id_setlibrarytemplatecategory" placeholder="id"><br>
+                <input type="text" class="category_setlibrarytemplatecategory" placeholder="category">
+                <button ng-click="setlibrarytemplatecategory_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_setlibrarytemplatecategory"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+        <h3>Все что ниже в доках не описано</h3>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+        <div class="row">
+            <div class="col-sm-6">
+                <span>1. base64_encode_test</span><br>
+                <input type="text" class="data_base64_encode" placeholder="data">
+                <button ng-click="base64_encode_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_base64_encode"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>2. uploadfontpic_test</span><br>
+                <input type="text" class="uploader_uploadfontpic" placeholder="uploader">
+                <input type="text" class="user_key_uploadfontpic" placeholder="user_key"><br>
+                <input type="text" class="replace_id_uploadfontpic" placeholder="replace_id">
+                <button ng-click="uploadfontpic_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_uploadfontpic"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>3. demopay_test</span><br>
+                <button ng-click="demopay_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_demopay"></div>
+            </div>
+        </div>
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>4. deletepiccategory_test</span><br>
+                <input type="text" class="category_id_deletepiccategory" placeholder="category_id">
+                <button ng-click="deletepiccategory_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_deletepiccategory"></div>
+            </div>
+        </div>
+
+
+        <div class="line_testapi m-t-md m-b-md"></div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <span>5. categoryorder_test</span><br>
+                <input type="text" class="positions_id_categoryorder" placeholder="positions">
+                <button ng-click="deletepiccategory_test()">Button</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="data_categoryorder"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer footer">
+        <button type="submit" ng-click="ctrl.ok()" class="btn btn-primary">Ok</button>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="product_detail_tab product_size_tab active">
+    <div class="size_table">
+        <div class="table_top">
+            <span class="title" translate="dialogs.addbasket.TITLE">Measurement table</span>
+
+            <div class="image">
+                <img src="./img/1302.jpg" alt="">
+            </div>
+            <div class="table">
+                <div class="text">
+                    <span class="" translate="dialogs.addbasket.SIZES">Size</span>
+                    <span class="green" translate="dialogs.addbasket.LENGTH">Length / cm</span>
+                    <span class="orange" translate="dialogs.addbasket.WIDTH">Width / cm</span>
+                </div>
+                <div class="row size_item size_item_{{item.size}}"
+                     ng-mouseover="ctrl.detail_tab('size_item_'+item.size, 'size_item'); ctrl.getImageByNameAndSize(main_people, item.size); ctrl.selectSize(item.size);"
+                     ng-repeat="item in product.sizes">
+                    <div class="cell_01">{{item.size}}</div>
+                    <div class="cell_02">{{item.width}}</div>
+                    <div class="cell_03">{{item.length}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="size_preview">
+        <span class="title" translate="dialogs.addbasket.PERSON">Dressed on a person</span>
+
+        <div class="select_size" ng-click="ctrl.showMenuList('listPeople')">
+            <div class="active">
+                <div class="append">
+                    <div class="main_character"><span class="name">{{product.detail_product_img[0].name}}</span> <span
+                            class="small">{{product.detail_product_img[0].size}}</span></div>
+                </div>
+            </div>
+            <div class="hover listPeople">
+                <div class="character character{{item.name}}" ng-repeat="item in product.detail_product_img"
+                     ng-click="ctrl.namePick(item.name, item.size); ctrl.detail_tab('character' + item.name, 'character'); ctrl.selectPeople(item.name);">
+                    <span class="name">{{item.name}} </span><span class="small">{{item.size}}</span></div>
+            </div>
+        </div>
+        <div class="items">
+            <div><img alt="" ng-src="{{preview}}"></div>
+        </div>
+    </div>
+</div>

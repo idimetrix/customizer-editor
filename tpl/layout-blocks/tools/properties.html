@@ -1,0 +1,48 @@
+<div data-ng-controller="cr_PropertiesCtrl" class="properties">
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.ITEXT"
+        ng-include="'tpl/layout-blocks/properties/text.html'"></div>
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.CR_IMAGE"
+        ng-include="'tpl/layout-blocks/properties/image_editor.html'"></div>
+
+    <!--<div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.CR_IMAGE_MOTIFS"-->
+         <!--ng-include="'tpl/layout-blocks/properties/image_editor_motifs.html'"></div>-->
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.CR_QRCODE"
+         ng-include="'tpl/layout-blocks/properties/qr-code.html'"></div>
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.CR_BARCODE"
+         ng-include="'tpl/layout-blocks/properties/bar-code.html'"></div>
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.TEXTBOX"
+         ng-include="'tpl/layout-blocks/properties/richtext.html'"></div>
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.CR_BRIDGE"
+         ng-include="'tpl/layout-blocks/properties/bridge.html'"></div>
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.CR_CURVE_TEXT"
+         ng-include="'tpl/layout-blocks/properties/curver.html'"></div>
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.STAR"
+         ng-include="'tpl/layout-blocks/properties/star.html'"></div>
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.CIRCLE"
+         ng-include="'tpl/layout-blocks/properties/circle.html'"></div>
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.LINE"
+         ng-include="'tpl/layout-blocks/properties/line.html'"></div>
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.OVAL"
+         ng-include="'tpl/layout-blocks/properties/oval.html'"></div>
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.POLYGON"
+         ng-include="'tpl/layout-blocks/properties/polygon.html'"></div>
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.RECT"
+         ng-include="'tpl/layout-blocks/properties/rect.html'"></div>
+
+    <div ng-show="cr_DrawFactory.selected.type == cr_Enums.OBJECT_TYPE.TRIANGLE"
+         ng-include="'tpl/layout-blocks/properties/triangle.html'"></div>
+
+</div>

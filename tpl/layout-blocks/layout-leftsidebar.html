@@ -1,0 +1,30 @@
+<div class="options">
+    <div class="panel panel-default ">
+        <div class="panel-heading">Options</div>
+        <div class="panel-body">
+            <div class="options_scroll scrollbar-light" data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                <div class="options_scroll-content">
+
+                    <div ng-show="cr_DrawFactory.selected"
+                         ng-include="'tpl/layout-blocks/tools/properties.html'"></div>
+
+                    <div ng-show="!cr_DrawFactory.selected"
+                         ng-include="'tpl/layout-blocks/tools/info.html'"></div>
+
+                    <div ng-show="cr_StatesManager.option == cr_Enums.OPTIONS_STATE.HISTORY"
+                         ng-include="'tpl/layout-blocks/tools/history.html'"></div>
+
+                    <div ng-show="cr_StatesManager.option == cr_Enums.OPTIONS_STATE.LAYERS"
+                         ng-include="'tpl/layout-blocks/tools/layers.html'"></div>
+
+                    <div ng-show="cr_StatesManager.option == cr_Enums.OPTIONS_STATE.EFFECTS"
+                         ng-include="'tpl/layout-blocks/tools/effects.html'"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{ctrl.modal_title}}</h3>
+</div>
+<div class="modal-body">
+    <h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>
+    <h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"
+        ng-bind-html="message"></h5>
+    <h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"
+        ng-bind-html="error"></h5>
+</div>
+<div class="modal-footer">
+    <button ng-disabled="ctrl.loading" class="btn btn-primary" ng-click="ctrl.ok()">
+        <i ng-class="{hidden: !ctrl.loading}"
+           class="rotation fa fa-spinner m-r-sm"></i>
+        {{modal_button_ok || 'OK'}}
+    </button>
+</div>

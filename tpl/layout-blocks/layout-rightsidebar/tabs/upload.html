@@ -1,0 +1,66 @@
+<div data-ng-controller="cr_UploadsCtrl">
+    <div class="upload_Box">
+
+        <div class="file_button">
+        <button class="upload_btn m-t-sm m-b-sm btn btn-block btn-lg btn-success" nv-file-drop nv-file-select="acceptSelect();"
+               uploader="file_uploader"><i class="fa fa-cloud-upload"></i>
+            Upload
+            an image</button>
+        <input class="opacity_file" type="file" name="file" nv-file-drop nv-file-select="acceptSelect();"
+               uploader="file_uploader"/>
+        </div>
+
+        <div class="up-buttons">
+            <div class="upload_drop-box btn-file">
+                <snap translate="rightsidebar.tabs.upload.SELECT">
+                    Select File or Drop File
+                </snap>
+                <input type="file" id="file" name="file" nv-file-drop nv-file-select="acceptSelect();"
+                       uploader="file_uploader"/>
+            </div>
+        </div>
+    </div>
+    <div class="contentRow">
+        <div class="upload_headList border" translate="rightsidebar.tabs.upload.MOTIFS">
+            Your Motifs:
+        </div>
+        <div class="update_wrap-content">
+            <div class="upload_scroll scrollbar-light" data-jquery-scrollbar="cr_ScrollbarFactory.options">
+                <div class="upload_scroll-content">
+                    <div class="upload_empty" ng-show="upload_empty" translate="rightsidebar.tabs.upload.EMPTY">
+                        List is empty.. Load file!
+                    </div>
+                    <div ng-init="predicate = 'date'; reverse=true" class="upload_dateGroup" ng-repeat="date in listDate | orderBy:'date':true">
+                        <div class="upload_date active">
+                            {{date.date}}
+                            <span class="glyphicon glyphicon-chevron-up"></span>
+                        </div>
+                        <div class="upload_content-listItem">
+                            <div class="upload_content-item item" ng-repeat="item in LoadImages | filter:date.date"
+                                 data-drag="true"
+                                 data-jqyoui-options="{revert: 'invalid', helper: itemClone, appendTo: 'body'}"
+                                 ng-model="LoadImages"
+                                 jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}"
+                                 ng-style="{'background-image':'url({{item.url}})'}">
+                                <!--<img ng-src='{{item.url}}' alt=""/>-->
+
+                                <div class="delete"></div>
+                                <div class="edit" ng-click="ImageEditorPro(item.url, item.id)"></div>
+                                <div class="zoom"
+                                     data-ng-click="cr_PopoverFactory.data = item;"
+                                     ns-popover
+                                     ns-popover-template="image-popover"
+                                     ns-popover-trigger="click"
+                                     ns-popover-placement="left|bottom"
+                                     ns-popover-theme="ns-popover-tooltip-theme"
+                                     ns-popover-hide-on-click="false"
+                                     ns-popover-timeout="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="add_basket restore">
+    <div class="modal-header header">
+        <span class="title">{{ctrl.modal_title || 'Restore'}}</span>
+        <span class="close" ng-disabled="loading" ng-click="ctrl.cancel()">{{ctrl.modal_button_cancel || 'CLOSE'}}<div
+                class="cross"></div></span>
+    </div>
+    <div class="modal-body content">
+
+        <!--<h4 ng-show="ctrl.modal_description">{{ctrl.modal_description}}</h4>-->
+        <!--<h5 class="text-info" ng-show="ctrl.messages && ctrl.messages.length" data-ng-repeat="message in ctrl.messages"-->
+        <!--ng-bind-html="message"></h5>-->
+        <!--<h5 class="text-danger" ng-show="ctrl.errors && ctrl.errors.length" data-ng-repeat="error in ctrl.errors"-->
+        <!--ng-bind-html="error"></h5>-->
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <h5 translate="dialogs.restore.PASS">Enter new password.</h5>
+                <input type="password" placeholder="Password" name="password" class="m-b-sm form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <input type="password" placeholder="Confirm password" name="ConfirmPassword"
+                       class="m-t-xs form-control">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer footer">
+        <button type="submit" ng-click="ctrl.ok()" class="btn btn-primary">Ok</button>
+    </div>
+</div>

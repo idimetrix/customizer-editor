@@ -1,0 +1,22 @@
+{
+    "author": "AngularTemplate",
+    "name": "AngularTemplate",
+    "description": "",
+    "version": "1.0.1",
+    "private": true,
+    "devDependencies": {
+        "grunt": "*",
+        "grunt-contrib-cssmin": "*",
+        "grunt-contrib-sass": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-cssc": "*",
+        "grunt-htmlhint": "*",
+        "grunt-contrib-copy": "*",
+        "grunt-contrib-clean": "*",
+        "grunt-rename": "*",
+        "grunt-html-build": "*",
+        "grunt-contrib-imagemin": "*",
+        "matchdep": "*"
+    }
+}

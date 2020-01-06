@@ -1,0 +1,65 @@
+<div class="wrap_print" data-ng-controller="cr_MotifsCtrl">
+
+
+    <div class="navigation_category row text-center row">
+        <div class="button_style btn-group col-sm-12" data-toggle="buttons">
+            <label class="btn btn-default btn-sm col-sm-3" ng-class="disabled_button_1 ? 'disabled' : active_button_1 ? 'active' : ''" ng-click="changeCategory(1)">
+                <input type="radio" name="alb" value=""><span>Tab 1</span>
+            </label>
+            <label class="btn btn-default btn-sm col-sm-3" ng-class="disabled_button_2 ? 'disabled' : active_button_2 ? 'active' : ''" ng-click="changeCategory(2)">
+                <input type="radio" name="alb" value=""><span>Tab 2</span>
+            </label>
+            <label class="btn btn-default btn-sm col-sm-3" ng-class="disabled_button_3 ? 'disabled' : active_button_2 ? 'active' : ''" ng-click="changeCategory(3)">
+                <input type="radio" name="alb" value=""><span>Tab 3</span>
+            </label>
+            <label class="btn btn-default btn-sm col-sm-3" ng-class="disabled_button_4 ? 'disabled' : active_button_2 ? 'active' : ''" ng-click="changeCategory(4)">
+                <input type="radio" name="alb" value=""><span>Tab 4</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="motifs_wrap-filter">
+        <div class="motifs_search">
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                <input type="text" class="form-control" placeholder="Search.." ng-model="sort.$"/>
+            </div>
+        </div>
+        <div class="motifs_select">
+            <select class="js-example-placeholder-single" ng-model="sort">
+                <option value=""></option>
+                <option ng-repeat="item in prints.prints_types" value="{{item.text}}">{{item.text}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="motifs_content-row">
+        <div class="motifs_wrap-content">
+            <div class="motifs_scroll scrollbar-light" data-jquery-scrollbar="cr_ScrollbarFactory.options"
+                 infinite-scroll="addItems()" can-load="canLoad" threshold="100">
+                <div class="motifs_scroll-content">
+                    <div class="motifs_content-item item" ng-repeat="item in local_prints | filter: sort"
+                         data-drag="true"
+                         data-jqyoui-options="{revert: 'invalid', helper: itemClone, appendTo: 'body'}"
+                         ng-model="PrintItems"
+                         jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}"
+                         ng-style="{'background-image':'url({{item.url}})'}">
+
+                        <!--<img ng-src='{{item.url}}' alt=""/>-->
+                        <div class="zoom"
+                             data-ng-click="cr_PopoverFactory.data = item;"
+                             ns-popover
+                             ns-popover-template="image-popover"
+                             ns-popover-trigger="click"
+                             ns-popover-placement="left|bottom"
+                             ns-popover-theme="ns-popover-tooltip-theme"
+                             ns-popover-hide-on-click="false"
+                             ns-popover-timeout="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

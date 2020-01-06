@@ -1,0 +1,13 @@
+<div data-ng-controller="cr_DrawCtrl" data-drop="true"
+     jqyoui-droppable="{onDrop:'dropCallback',onOver: 'overCallback', onOut: 'outCallback'}">
+    <div class="loader_wrap" ng-show="cr_LoaderFactory.loader">
+        <div class="loader"></div>
+        <div class="loader-content">
+            <div class="dots-loader">
+                Loading…
+            </div>
+        </div>
+    </div>
+    <canvas class="canvas"></canvas>
+</div>
+
